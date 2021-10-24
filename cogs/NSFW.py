@@ -9,7 +9,7 @@ class NSFW(commands.Cog):
         self.bot = bot
 
 
-    @commands.command(name="nsfwroulette", aliases=["nsfrou"])
+    @commands.command(name="nsfwroulette", aliases=["nsfrou"], help="Lets you do a random Task")
     @commands.is_nsfw()
     async def nsfwroulette(self,ctx):
         await ctx.send(f"{ctx.author.mention} you have to do the task : {random.choice(commands.Bot.nsfwrouletteTasks)}",delete_after=20)

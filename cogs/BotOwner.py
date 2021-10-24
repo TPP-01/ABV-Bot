@@ -7,7 +7,7 @@ class BotOwner(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name="leaveguild", description="leave server")
+    @commands.command(name="leaveguild", description="leave server", hidden=True)
     @commands.is_owner()
     async def leaveguild(ctx):
         # to_leave = client.get_guild(arg1)
