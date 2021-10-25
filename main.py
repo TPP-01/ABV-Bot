@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-import config
+import secrets
 import sys, traceback
 from pyowm import OWM
 
@@ -28,7 +28,7 @@ def get_prefix(bot, message):
 # Think of it like a dot path import
 initial_extensions = ["cogs.MainModule", "cogs.Fun", "cogs.NSFW"]
 
-bot = commands.Bot(command_prefix=get_prefix, description='A Rewrite Cog Example',intents=intents)
+bot = commands.Bot(command_prefix=get_prefix, description="The official ABV bot",intents=intents)
 
 # Here we load our extensions(cogs) listed above in [initial_extensions].
 if __name__ == '__main__':
@@ -44,4 +44,4 @@ async def on_ready():
     print([str(i).replace(',', '\n') for i in bot.guilds])
 
 
-bot.run(config.token, bot=True, reconnect=True)
+bot.run(secrets.token, bot=True, reconnect=True)

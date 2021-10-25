@@ -1,0 +1,1 @@
+bot_version = "BETA0.0.3"
