@@ -17,7 +17,6 @@ class MainModule(commands.Cog):
         embed.add_field(name="blame [user]", value="blames someone", inline=False)
         embed.add_field(name="slap [user]", value="slaps someone", inline=False)
         embed.add_field(name="wahrheitoderpflicht", value="wahrheit oder pflicht", inline=False)
-        embed.add_field(name="undefined", value="undefined", inline=False)
         embed.set_footer(text="made with hate by blockcrafter#5759")
         await ctx.send(embed=embed, delete_after=60)
 
