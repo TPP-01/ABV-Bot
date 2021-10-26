@@ -20,8 +20,18 @@ class Fun(commands.Cog):
         await ctx.send(
             f"{ctx.author.mention} you have to do the task : {random.choice(commands.Bot.wop_questions)}",delete_after=20)
         await ctx.message.delete()
+
+
+
     @commands.command(name="slap", help="now you can slap peaple")
-    async def slap(self, ctx, user_to_be_slapped):
+    async def slap(self, ctx, user_to_be_slapped: discord.Member):
+        if ctx.author == user_to_be_slapped:
+            await ctx.send(f"{ctx.author.mention} was dumb and slapped himself", delete_after=20)
+            await ctx.send("https://tenor.com/bd1Da.gif", delete_after=20)
+        else:
+            await ctx.send(f"{ctx.author.mention} slapped {user_to_be_slapped.mention}", delete_after=20)
+            await ctx.send("https://tenor.com/bd1Da.gif", delete_after=20)
+        await ctx.message.delete()
 
 
 

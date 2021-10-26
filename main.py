@@ -26,9 +26,9 @@ def get_prefix(bot, message):
 
 # Below cogs represents our folder our cogs are in. Following is the file name. So 'meme.py' in cogs, would be cogs.meme
 # Think of it like a dot path import
-initial_extensions = ["cogs.MainModule", "cogs.Fun", "cogs.NSFW"]
+initial_extensions = ["cogs.MainModule", "cogs.Fun", "cogs.NSFW", "cogs.BotOwner"]
 
-bot = commands.Bot(command_prefix=get_prefix, description="The official ABV bot",intents=intents)
+bot = commands.Bot(command_prefix=get_prefix, description="The official ABV bot",intents=intents, help_command=None)
 
 # Here we load our extensions(cogs) listed above in [initial_extensions].
 if __name__ == '__main__':
