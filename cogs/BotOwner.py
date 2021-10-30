@@ -25,8 +25,10 @@ class BotOwner(commands.Cog):
              self.bot.load_extension(cog)
         except Exception as e:
             await ctx.send(f'**`ERROR:`** {type(e).__name__} - {e}')
+            await ctx.message.delete()
         else:
             await ctx.send('**`SUCCESS`**')
+            await ctx.message.delete()
 
     @commands.command(name='unload', hidden=True)
     @commands.is_owner()
@@ -35,8 +37,10 @@ class BotOwner(commands.Cog):
             self.bot.unload_extension(cog)
         except Exception as e:
             await ctx.send(f'**`ERROR:`** {type(e).__name__} - {e}')
+            await ctx.message.delete()
         else:
             await ctx.send('**`SUCCESS`**')
+            await ctx.message.delete()
 
     @commands.command(name='reload', hidden=True)
     @commands.is_owner()
@@ -46,8 +50,10 @@ class BotOwner(commands.Cog):
             self.bot.load_extension(cog)
         except Exception as e:
             await ctx.send(f'**`ERROR:`** {type(e).__name__} - {e}')
+            await ctx.message.delete()
         else:
             await ctx.send('**`SUCCESS`**')
+            await ctx.message.delete()
 
 
 
