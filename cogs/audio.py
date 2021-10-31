@@ -13,8 +13,7 @@ class audio(commands.Cog):
     async def play(self, ctx):
         await ctx.send("tbd")
         voice_channel = ctx.message.author.voice.channel
-        await voice_channel.connect()
-        voice_client = ctx.channel.guild.voice_client
+        voice_client = await voice_channel.connect()
         voice_client.play(discord.FFmpegPCMAudio(source="russia.mp3"))
 
 
