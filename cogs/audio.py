@@ -13,12 +13,14 @@ class audio(commands.Cog):
         await ctx.send("tbd")
         voice_channel = ctx.message.author.voice.channel
         voice_client = await voice_channel.connect()
-        voice_client.play(discord.FFmpegPCMAudio(source="russia.mp3"))
+        voice_client.play(discord.FFmpegPCMAudio(source="russia.mp3"), after=voice_client.disconnect)
 
 
     @commands.command(name="list_songs", aliases=["list"])
     async def list_songs(self, ctx):
         await ctx.send("tbd")
+
+    @commands.command()
 
 
 
