@@ -18,6 +18,12 @@ class MainModule(commands.Cog):
     @commands.command(name="version", help="shows the used discord.py version andtheversion of la bot", delete_after=60)
     async def version(self, ctx):
         await ctx.send(f"Used discord.py version : {discord.__version__}, Bot version : {config.bot_version}")
+
+
+
+
+
+
     @commands.command(name="help", help="well yk what help is do you?")
     async def help(self, ctx):
         embed = discord.Embed(title="HELP (fun module)",description="help ah wait we cant help you anymore (btw prefix is = )", color=0xff0000)
@@ -26,6 +32,21 @@ class MainModule(commands.Cog):
         embed.add_field(name="wahrheitoderpflicht", value="wahrheit oder pflicht", inline=False)
         embed.set_footer(text="made with hate by blockcrafter#5759")
         await ctx.send(embed=embed, delete_after=60)
+
+        embed = discord.Embed(title="Help utility", color=0xff2600)
+        embed.add_field(name="covid", value="gibt die aktuelle Coronazahlen in DE wieder", inline=False)
+        embed.set_footer(text="made by blockcrafter#5759")
+        await ctx.send(embed=embed)
+
+        embed = discord.Embed(title="Help Admin Modul", color=0xff2600)
+        embed.add_field(name="ban [member] [reason]", value="bannt einen user", inline=False)
+        embed.add_field(name="unban [member][reason]", value="entmannt einen user", inline=True)
+        embed.set_footer(text="made by blockcrafter#5759")
+        await ctx.send(embed=embed)
+
+
+
+
 
 
 
