@@ -1,10 +1,14 @@
 import sys
 import traceback
-
+import logging
 import discord
 from discord.ext import commands
 from pyowm import OWM
 import config
+
+
+
+
 class MainModule(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -22,6 +26,13 @@ class MainModule(commands.Cog):
         embed.add_field(name="wahrheitoderpflicht", value="wahrheit oder pflicht", inline=False)
         embed.set_footer(text="made with hate by blockcrafter#5759")
         await ctx.send(embed=embed, delete_after=60)
+
+
+
+
+    #@commands.Cog.listener()
+    #async def on_command(self,ctx):
+        #logging.info(f"on {ctx.guild} in {ctx.channel} executed by {ctx.author} a command was executed")
 
     @commands.Cog.listener()
     async def on_command_error(self, ctx, error):
@@ -55,6 +66,7 @@ class MainModule(commands.Cog):
             return
         if isinstance(error, commands.CommandNotFound):
             await ctx.send("Der Command existiert nicht / the command was not found")
+            #logging.warning(f"on {ctx.guild} in {ctx.channel} executed by {ctx.author} the following error oncurred [Command not found]")
 
         elif isinstance(error, commands.DisabledCommand):
             await ctx.send(f'{ctx.command} has been disabled.')
@@ -78,6 +90,7 @@ class MainModule(commands.Cog):
             # All other Errors not returned come here. And we can just print the default TraceBack.
             print('Ignoring exception in command {}:'.format(ctx.command), file=sys.stderr)
             traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
+
 
 
 
