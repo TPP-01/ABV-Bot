@@ -10,8 +10,8 @@ def get_daily_data():
     r = requests.get(RKI_URL)
     data = json.loads(r.text)
     delta = data.get('delta', {})
-    delta['incidence7days'] = data.get('weekIncidence', None)
-    return(data)
+    delta['weekIncidence'] = data.get('weekIncidence', None)
+    return(delta)
 
 # import rki
 # data = rki.get_daily_data()
