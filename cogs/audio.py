@@ -13,7 +13,8 @@ class audio(commands.Cog):
         await ctx.send("tbd")
         voice_channel = ctx.message.author.voice.channel
         voice_client = await voice_channel.connect()
-        voice_client.play(discord.FFmpegPCMAudio(source="russia.mp3"), after=voice_client.disconnect)
+        voice_client.play(discord.FFmpegPCMAudio(source="russia.mp3"))
+        print(f"played song and left {voice_channel}")
 
 
     @commands.command(name="list_songs", aliases=["list"])
