@@ -26,6 +26,13 @@ class admin(commands.Cog):
         await ctx.guild.unban(discord.Object(id=member_id))
         await ctx.send(f"Unban {member_id}")
 
+    @commands.command(name="purge", help="deletes spectifed number of messages ")
+    @commands.has_permissions(manage_messages=True)
+    async def purge(self,ctx, limit: int):
+        await ctx.channel.purge(limit=limit)
+        print(f"{ctx.channel} on {ctx.guild} was cleared")
+        await ctx.message.delete()
+
 
 
 

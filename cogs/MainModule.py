@@ -56,7 +56,7 @@ class MainModule(commands.Cog):
         if isinstance(error, commands.CommandNotFound):
             await ctx.send("Der Command existiert nicht / the command was not found")
 
-        if isinstance(error, commands.DisabledCommand):
+        elif isinstance(error, commands.DisabledCommand):
             await ctx.send(f'{ctx.command} has been disabled.')
 
         elif isinstance(error, commands.NoPrivateMessage):
@@ -69,6 +69,10 @@ class MainModule(commands.Cog):
         elif isinstance(error, commands.BadArgument):
             if ctx.command.qualified_name == 'tag list':  # Check if the command being invoked is 'tag list'
                 await ctx.send('I could not find that member. Please try again.')
+
+        elif isinstance(error, discord.errors.NotFound):
+            print("some404 error")
+
 
         else:
             # All other Errors not returned come here. And we can just print the default TraceBack.
