@@ -20,7 +20,6 @@ class audio(commands.Cog):
     async def list_songs(self, ctx):
         await ctx.send("tbd")
 
-    @commands.command()
 
 
 
