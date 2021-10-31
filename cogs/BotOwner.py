@@ -1,3 +1,5 @@
+import asyncio
+
 import discord
 from discord.ext import commands
 
@@ -54,6 +56,15 @@ class BotOwner(commands.Cog):
         else:
             await ctx.send('**`SUCCESS`**')
             await ctx.message.delete()
+
+    @commands.command(name="exit", hidden=True, aliases=["shutdown", "poweroff"])
+    @commands.is_owner()
+    async def exit(self, ctx):
+        await ctx.send("the bot will be shutdown on all servers in 5 sec", delete_after=1)
+        await ctx.message.delete()
+        await asyncio.sleep(5)
+        exit(0)
+
 
 
 
