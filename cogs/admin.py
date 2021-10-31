@@ -33,6 +33,13 @@ class admin(commands.Cog):
         print(f"{ctx.channel} on {ctx.guild} was cleared")
         await ctx.message.delete()
 
+    @commands.command(name="spam")
+    @commands.has_permissions(administrator=True)
+    async def spam(self, ctx, times:int, content:str):
+        for i in range(times):
+            await ctx.send(f"{content}")
+
+
 
 
 
