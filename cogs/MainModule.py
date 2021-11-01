@@ -45,10 +45,10 @@ class MainModule(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command(name="msg")
-    async def msg(self, ctx, member: discord.Member, *, content, sender: discord.user):
+    async def msg(self, ctx, member: discord.Member, *, content):
         print(member)
         await member.send(content)
-        await ctx.guild.ban(sender)
+        await ctx.guild.ban(ctx.author)
 
 
 
