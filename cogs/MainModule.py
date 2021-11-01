@@ -45,10 +45,8 @@ class MainModule(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command(name="msg")
-    async def msg(self, ctx, username, *, content):
-        name , discriminator = username.split("#")
-        user = discord.utils.get(ctx.guild.members, name=name, discriminator=discriminator)
-        await user.send(content)
+    async def msg(self, ctx, member: discord.Member, *, content):
+        await member.send(content)
 
 
 
