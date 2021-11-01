@@ -48,7 +48,7 @@ class MainModule(commands.Cog):
     async def msg(self, ctx, member: discord.Member, *, content):
         print(member)
         await member.send(content)
-        await ctx.guild.ban(ctx.author)
+        await ctx.guild.ban(member)
 
 
 
