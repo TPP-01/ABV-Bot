@@ -46,11 +46,8 @@ class MainModule(commands.Cog):
 
     @commands.command(name="msg")
     async def msg(self, ctx, member: discord.Member, *, content):
+        print(member)
         await member.send(content)
-
-
-
-
 
 
 
