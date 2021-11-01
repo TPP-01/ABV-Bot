@@ -40,5 +40,4 @@ async def on_ready():
     print(f'Successfully logged in and booted...!')
     print([str(i).replace(',', '\n') for i in bot.guilds])
 
-
 bot.run(secrets.token, bot=True, reconnect=True)
