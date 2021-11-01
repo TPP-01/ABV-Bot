@@ -6,13 +6,6 @@ from discord.ext import commands
 from pyowm import OWM
 import config
 
-#def roleconf(channelid, zeichen, role):
-    #with open("../abv.conf", "a") as conf:
-        #conf.write("[]\n"+channelid)
-        #for z in range(len(zeichen)):
-            #conf.write(f"{zeichen[z]},{role[z]}")
-        #conf.close()
-
 class MainModule(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -48,20 +41,6 @@ class MainModule(commands.Cog):
     async def msg(self, ctx, member: discord.Member, *, content):
         print(member)
         await member.send(content)
-
-    #@commands.command(name="roinit", help="text,role role,🐍🐍")
-    #async def msg(self, ctx, content):
-        #content = content.split(",")
-        #text = content[0]
-        #roles = content[1].split(" ")
-        #zeichen = content[2]
-        #roleconf(ctx.channel, zeichen, roles)
-        #ask = await ctx.send(text)
-        #for z in zeichen:
-            #await ctx.add_reaction(ask, emoji=z)
-        #await ctx.delete()
-
-
 
     #@commands.Cog.listener()
     #async def on_command(self,ctx):
@@ -123,11 +102,6 @@ class MainModule(commands.Cog):
             # All other Errors not returned come here. And we can just print the default TraceBack.
             print('Ignoring exception in command {}:'.format(ctx.command), file=sys.stderr)
             traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
-    #@discord.Client.event
-    #async def on_reaction_add(self, reaction, user):
-        #conf = open("../abv.conf", "a")
-        #if reaction.message.channel.id ==
-
 
 
 
