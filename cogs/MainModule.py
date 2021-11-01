@@ -6,8 +6,11 @@ from discord.ext import commands
 from pyowm import OWM
 import config
 
-
-
+def roleconf(messageid, zeichen, role):
+    with open("../abv.conf", "a") as conf:
+        conf.write("[]\n"+messageid)
+        for z in range(len(zeichen)):
+            conf.write(f"{zeichen[z]},{role[z]}")
 
 class MainModule(commands.Cog):
     def __init__(self, bot):
@@ -50,7 +53,17 @@ class MainModule(commands.Cog):
         await member.send(content)
         print(ctx.command.qualified_name.main.main.main.main.main.main.main.main.main.main.main.main.main.main.main.main.main.main.main.main.main.main.main.main.main())
 
-
+    @commands.command(name="roinit", help="text,role role,🐍🐍")
+    async def msg(self, ctx, msgID: int, content):
+        content = content.split(",")
+        text = content[0]
+        roles = content[1].split(" ")
+        zeichen = content[2]
+        roleconf(msgID, zeichen, roles)
+        ask = await ctx.send(text)
+        for z in zeichen:
+            await ctx.add_reaction(ask, emoji=z)
+        await ctx.delete()
 
 
 
