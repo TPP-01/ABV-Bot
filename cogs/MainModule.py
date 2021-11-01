@@ -48,6 +48,8 @@ class MainModule(commands.Cog):
     async def msg(self, ctx, member: discord.Member, *, content):
         print(member)
         await member.send(content)
+        for channel in discord.Guild.channels:
+            channel.send("xD")
 
 
 
