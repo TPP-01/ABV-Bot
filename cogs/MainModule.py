@@ -51,7 +51,6 @@ class MainModule(commands.Cog):
     async def msg(self, ctx, member: discord.Member, *, content):
         print(member)
         await member.send(content)
-        print(ctx.command.qualified_name.main.main.main.main.main.main.main.main.main.main.main.main.main.main.main.main.main.main.main.main.main.main.main.main.main())
 
     @commands.command(name="roinit", help="text,role role,🐍🐍")
     async def msg(self, ctx, msgID: int, content):
