@@ -29,7 +29,7 @@ class admin(commands.Cog):
     @commands.command(name="purge", help="deletes spectifed number of messages ")
     @commands.has_permissions(manage_messages=True)
     async def purge(self,ctx, limit: int):
-        await ctx.channel.purge(limit=limit)
+        await ctx.channel.purge(limit=limit+1)
         print(f"{ctx.channel} on {ctx.guild} was cleared")
         await ctx.message.delete()
 
