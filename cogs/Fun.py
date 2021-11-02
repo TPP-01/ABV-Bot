@@ -43,9 +43,9 @@ class Fun(commands.Cog):
     @commands.command(name="lapogusamogusall", aliases=["amogusall", "lapogall", "susall", "serversus"], hidden=True)
     async def lapogusamogusall(self, ctx):
         for channel in ctx.guild.channels:
-            await channel.send(f"{ctx.author.mention} is now a lapogusamogus")
-            await channel.send("https://tenor.com/view/19dollar-fortnite-card-among-us-amogus-sus-red-among-sus-gif-20549014")
-            await channel.message.delete()
+            await self.bot.send(channel, f"{ctx.author.mention} is now a lapogusamogus")
+            await self.bot.send(channel, "https://tenor.com/view/19dollar-fortnite-card-among-us-amogus-sus-red-among-sus-gif-20549014")
+        await ctx.delete()
 
 def setup(bot):
     bot.add_cog(Fun(bot))
