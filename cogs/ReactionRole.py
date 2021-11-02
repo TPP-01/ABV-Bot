@@ -34,7 +34,7 @@ class ReactionRole(commands.Cog):
         await ctx.send(f"Add \"{self.args}\" ")
 
     @commands.command(name="rodeploy")
-    async def rodeploy(self, ctx, arg):
+    async def rodeploy(self, ctx):
         self.msg = self.channel.send(self.text)
         for self.emoji in self.emojireturn():
             await self.msg.add_reaction(self.emoji)
