@@ -22,6 +22,7 @@ class ReactionRole(commands.Cog):
 
     @commands.command(name="roinit")
     async def roinit(self, ctx, arg):
+        await self.msg.delete()
         self.roles = []
         self.channel = ctx.channel
         self.channelid = ctx.channel.id
@@ -50,6 +51,16 @@ class ReactionRole(commands.Cog):
                     break
             if not user.bot:
                 await user.add_roles(self.roget)
+
+    @commands.Cog.listener(name="on_reaction_delete")
+    async def on_reaction_delete(self, reaction, user):
+        if reaction.message.channel.id == self.channelid:
+            for self.em in self.emojireturn():
+                if reaction.emoji == self.em:
+                    self.roget = discord.utils.get(user.guild.roles, name=self.rolereturn(self.em))
+                    break
+            if not user.bot:
+                await user.delete_roles(self.roget)
 
 def setup(bot):
     bot.add_cog(ReactionRole(bot))
