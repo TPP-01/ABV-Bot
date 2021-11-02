@@ -22,7 +22,10 @@ class ReactionRole(commands.Cog):
 
     @commands.command(name="roinit")
     async def roinit(self, ctx, arg):
-        await self.msg.delete()
+        try:
+            await self.msg.delete()
+        except:
+            print("First init this session")
         self.roles = []
         self.channel = ctx.channel
         self.channelid = ctx.channel.id
