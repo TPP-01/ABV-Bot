@@ -40,8 +40,8 @@ class ReactionRole(commands.Cog):
         for self.emoji in self.emojireturn():
             await self.msg.add_reaction(self.emoji)
 
-    @commands.Cog.listener()
-    async def on_raw_reaction(self, reaction, user):
+
+    async def on_reaction_add(self, reaction, user):
         if reaction.message.channel == self.channelid:
             for self.em in self.emojireturn():
                 if reaction.emoji == self.em:
