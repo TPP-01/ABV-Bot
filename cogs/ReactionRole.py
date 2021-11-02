@@ -4,7 +4,6 @@ from discord.ext import commands
 class ReactionRole(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.roles = []
 
 
     def emojireturn(self):
@@ -23,6 +22,7 @@ class ReactionRole(commands.Cog):
 
     @commands.command(name="roinit")
     async def roinit(self, ctx, arg):
+        self.roles = []
         self.channel = ctx.channel
         self.channelid = ctx.channel.id
         self.text = arg
@@ -36,18 +36,16 @@ class ReactionRole(commands.Cog):
 
     @commands.command(name="rodeploy")
     async def rodeploy(self, ctx):
-        #await ctx.send(f"Debug: {self.emojireturn()}")
+        ctx.channel.purge()
         self.msg = await self.channel.send(self.text)
         for self.emoji in self.emojireturn():
             await self.msg.add_reaction(self.emoji)
 
     @commands.Cog.listener(name="on_reaction_add")
     async def on_reaction_add(self, reaction, user):
-        await reaction.message.channel.send("Debug: onreactionadd")
         if reaction.message.channel.id == self.channelid:
             for self.em in self.emojireturn():
                 if reaction.emoji == self.em:
-                    await reaction.message.channel.send(self.rolereturn(self.em))
                     self.roget = discord.utils.get(user.guild.roles, name=self.rolereturn(self.em))
                     break
             if not user.bot:
