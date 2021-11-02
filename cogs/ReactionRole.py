@@ -15,9 +15,10 @@ class ReactionRole(commands.Cog):
 
     def rolereturn(self, emoji):
         self.r = ""
+        self.ro = ""
         for self.r in self.roles:
-            if self.r[0] == emoji:
-                self.ro = self.r[1]
+            if self.r[1] == emoji:
+                self.ro = self.r[0]
         return self.ro
 
     @commands.command(name="roinit")
@@ -47,9 +48,9 @@ class ReactionRole(commands.Cog):
             for self.em in self.emojireturn():
                 if reaction.emoji == self.em:
                     await reaction.message.channel.send(self.rolereturn(self.em))
-                    roget = discord.utils.get(user.server.roles, self.rolereturn(self.em))
+                    self.roget = discord.utils.get(user.server.roles, self.rolereturn(self.em))
                     break
-            await self.bot.add_roles(user, roget)
+            await self.bot.add_roles(user, self.roget)
 
 def setup(bot):
     bot.add_cog(ReactionRole(bot))
