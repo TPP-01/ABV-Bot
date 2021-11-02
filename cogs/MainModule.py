@@ -23,12 +23,20 @@ class MainModule(commands.Cog):
         embed.add_field(name="blame [user]", value="blames someone", inline=False)
         embed.add_field(name="slap [user]", value="slaps someone", inline=False)
         embed.add_field(name="wahrheitoderpflicht", value="wahrheit oder pflicht", inline=False)
+        embed.add_field(name="lapogusamogus", value="sus", inline=False)
         embed.set_footer(text="made with hate by blockcrafter#5759")
         await ctx.send(embed=embed, delete_after=60)
 
         embed = discord.Embed(title="Help utility", color=0xff2600)
         embed.add_field(name="covid", value="gibt die aktuelle Coronazahlen in DE wieder", inline=False)
         embed.set_footer(text="made by blockcrafter#5759")
+        await ctx.send(embed=embed)
+
+        embed = discord.Embed(title="Help ReactionRole", color=0xff2600)
+        embed.add_field(name="roinit [message content]", value="needs to be executed in channel before the other commands. Note that this will set the channel where the reaction role msg will appear",inline=False)
+        embed.add_field(name="roadd [name of the role to be given],[emoji]", value="this can be executed multiple times . it will set the combination of the role to be given and the corresponding emoji",inline=False)
+        embed.add_field(name="rodeploy", value="sends the message adds the emoji(s) and clears the channel", inline=False)
+        embed.set_footer(text="made by the ABV-Bot Development Team")
         await ctx.send(embed=embed)
 
         embed = discord.Embed(title="Help Admin Modul", color=0xff2600)
