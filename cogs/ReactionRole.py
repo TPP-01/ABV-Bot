@@ -37,7 +37,7 @@ class ReactionRole(commands.Cog):
     async def rodeploy(self, ctx):
         self.msg = self.channel.send(self.text)
         for self.emoji in self.emojireturn():
-            await self.bot.add_reaction(self.msg, self.emoji)
+            await self.msg.add_reaction(self.emoji)
 
     @commands.Cog.listener()
     async def on_reaction_add(self, reaction, user):
