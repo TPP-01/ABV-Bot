@@ -40,7 +40,7 @@ class Fun(commands.Cog):
         await ctx.send("https://tenor.com/view/19dollar-fortnite-card-among-us-amogus-sus-red-among-sus-gif-20549014")
         await ctx.message.delete()
 
-    @commands.command(name="lapogusamogusall", aliases=["amogusall", "lapogall", "susall"], hidden=True)
+    @commands.command(name="lapogusamogusall", aliases=["amogusall", "lapogall", "susall", "serversus"], hidden=True)
     async def lapogusamogusall(self, ctx):
         for channel in ctx.guild.channels:
             await channel.send(f"{ctx.author.mention} is now a lapogusamogus")
