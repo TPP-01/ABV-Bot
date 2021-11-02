@@ -6,12 +6,14 @@ class ReactionRole(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+    #returns the emojis of the roles
     def emojireturn(self):
         self.emojis = []
         for self.role in self.roles:
             self.emojis.append(self.role[1])
         return self.emojis
 
+    #returns the role for a emoji
     def rolereturn(self, emoji):
         self.r = ""
         self.ro = ""
@@ -20,6 +22,7 @@ class ReactionRole(commands.Cog):
                 self.ro = self.r[0]
         return self.ro
 
+    #initiates the name and channel
     @commands.command(name="roinit")
     async def roinit(self, ctx, arg):
         self.roles = []
@@ -32,12 +35,14 @@ class ReactionRole(commands.Cog):
             print("First init this session")
         await ctx.send("Init Done!")
 
+    #adds the roles to the list
     @commands.command(name="roadd")
     async def roadd(self, ctx, arg):
         self.args = arg.split(",")
         self.roles.append(self.args)
         await ctx.send(f"Add \"{self.args}\" ")
 
+    #deploys everything together
     @commands.command(name="rodeploy")
     async def rodeploy(self, ctx):
         await ctx.channel.purge(limit=len(await ctx.channel.history().flatten()))
@@ -45,6 +50,7 @@ class ReactionRole(commands.Cog):
         for self.emoji in self.emojireturn():
             await self.msg.add_reaction(self.emoji)
 
+    #reaction listeners
     @commands.Cog.listener(name="on_reaction_add")
     async def on_reaction_add(self, reaction, user):
         if reaction.message.channel.id == self.channelid:
