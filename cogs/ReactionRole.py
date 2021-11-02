@@ -17,8 +17,8 @@ class ReactionRole(commands.Cog):
         self.r = ""
         for self.r in self.roles:
             if self.r[0] == emoji:
-                self.r = self.role[1]
-        return self.r
+                self.ro = self.r[1]
+        return self.ro
 
     @commands.command(name="roinit")
     async def roinit(self, ctx, arg):
