@@ -31,13 +31,13 @@ class ReactionRole(commands.Cog):
     async def roadd(self, ctx, arg):
         self.args = arg.split(" ")
         self.roles.append(self.args)
-        ctx.send(f"Add \"{self.args}\" ")
+        await ctx.send(f"Add \"{self.args}\" ")
 
     @commands.command(name="rodeploy")
     async def rodeploy(self):
         self.msg = self.channel.send(self.text)
         for self.emoji in self.emojireturn():
-            self.bot.add_reaction(self.msg, self.emoji)
+            await self.bot.add_reaction(self.msg, self.emoji)
 
     @commands.Cog.listener()
     async def on_reaction_add(self, reaction, user):
