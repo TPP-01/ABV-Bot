@@ -48,7 +48,7 @@ class ReactionRole(commands.Cog):
             for self.em in self.emojireturn():
                 if reaction.emoji == self.em:
                     await reaction.message.channel.send(self.rolereturn(self.em))
-                    self.roget = discord.utils.get(user.server.roles, self.rolereturn(self.em))
+                    self.roget = discord.utils.get(user.guild.roles, self.rolereturn(self.em))
                     break
             await self.bot.add_roles(user, self.roget)
 
