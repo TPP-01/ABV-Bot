@@ -50,7 +50,8 @@ class ReactionRole(commands.Cog):
                     await reaction.message.channel.send(self.rolereturn(self.em))
                     self.roget = discord.utils.get(user.guild.roles, name=self.rolereturn(self.em))
                     break
-            await user.add_roles(self.roget)
+            if not user.bot:
+                await user.add_roles(self.roget)
 
 def setup(bot):
     bot.add_cog(ReactionRole(bot))
