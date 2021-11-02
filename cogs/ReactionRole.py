@@ -25,7 +25,7 @@ class ReactionRole(commands.Cog):
         self.channel = ctx.channel
         self.channelid = ctx.channel.id
         self.text = arg
-        ctx.send("Init Done!")
+        await ctx.send("Init Done!")
 
     @commands.command(name="roadd")
     async def roadd(self, ctx, arg):
