@@ -25,6 +25,7 @@ class ReactionRole(commands.Cog):
         self.roles = []
         self.channel = ctx.channel
         self.channelid = ctx.channel.id
+        self.text = arg
         try:
             await self.msg.delete()
         except:
