@@ -55,15 +55,15 @@ class ReactionRole(commands.Cog):
             if not user.bot:
                 await user.add_roles(self.roget)
 
-    @commands.Cog.listener(name="on_reaction_delete")
-    async def on_reaction_delete(self, reaction, user):
+    @commands.Cog.listener(name="on_reaction_remove")
+    async def on_reaction_remove(self, reaction, user):
         if reaction.message.channel.id == self.channelid:
             for self.em in self.emojireturn():
                 if reaction.emoji == self.em:
                     self.roget = discord.utils.get(user.guild.roles, name=self.rolereturn(self.em))
                     break
             if not user.bot:
-                await user.delete_roles(self.roget)
+                await user.remove_roles(self.roget)
 
 
 def setup(bot):
