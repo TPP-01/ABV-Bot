@@ -25,11 +25,13 @@ class ReactionRole(commands.Cog):
         self.channel = ctx.channel
         self.channelid = ctx.channel.id
         self.text = arg
+        ctx.send("Init Done!")
 
     @commands.command(name="roadd")
     async def roadd(self, ctx, arg):
         self.args = arg.split(" ")
         self.roles.append(self.args)
+        ctx.send(f"Add \"{self.args}\" ")
 
     @commands.command(name="rodeploy")
     async def rodeploy(self):
