@@ -32,7 +32,7 @@ class MainModule(commands.Cog):
         embed.set_footer(text="made by blockcrafter#5759")
         await ctx.send(embed=embed)
 
-        embed = discord.Embed(title="Help ReactionRole")
+        embed = discord.Embed(title="Help ReactionRole", color=0xff2600)
         embed.add_field(name="roinit [message content]", value="needs to be executed in channel before the other commands. Note that this will set the channel where the reaction role msg will appear",inline=False)
         embed.add_field(name="roadd [name of the role to be given],[emoji]", value="this can be executed multiple times . it will set the combination of the role to be given and the corresponding emoji",inline=False)
         embed.add_field(name="rodeploy", value="sends the message adds the emoji(s) and clears the channel", inline=False)
