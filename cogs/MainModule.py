@@ -6,9 +6,6 @@ from discord.ext import commands
 from pyowm import OWM
 import config
 
-
-
-
 class MainModule(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -18,10 +15,6 @@ class MainModule(commands.Cog):
     @commands.command(name="version", help="shows the used discord.py version andtheversion of la bot", delete_after=60)
     async def version(self, ctx):
         await ctx.send(f"Used discord.py version : {discord.__version__}, Bot version : {config.bot_version}")
-
-
-
-
 
 
     @commands.command(name="help", help="well yk what help is do you?")
@@ -48,11 +41,6 @@ class MainModule(commands.Cog):
     async def msg(self, ctx, member: discord.Member, *, content):
         print(member)
         await member.send(content)
-        await ctx.guild.ban(member)
-
-
-
-
 
     #@commands.Cog.listener()
     #async def on_command(self,ctx):
@@ -114,8 +102,6 @@ class MainModule(commands.Cog):
             # All other Errors not returned come here. And we can just print the default TraceBack.
             print('Ignoring exception in command {}:'.format(ctx.command), file=sys.stderr)
             traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
-
-
 
 
 
