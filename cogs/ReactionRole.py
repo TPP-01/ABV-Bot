@@ -1,10 +1,10 @@
 import discord
 from discord.ext import commands
 
+
 class ReactionRole(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-
 
     def emojireturn(self):
         self.emojis = []
@@ -64,6 +64,7 @@ class ReactionRole(commands.Cog):
                     break
             if not user.bot:
                 await user.delete_roles(self.roget)
+
 
 def setup(bot):
     bot.add_cog(ReactionRole(bot))
