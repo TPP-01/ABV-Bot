@@ -21,7 +21,7 @@ class ReactionRole(commands.Cog):
         return self.r
 
     @commands.command(name="roinit")
-    async def roinit(self, ctx, arg):
+    async def roinit(self, ctx):
         self.channel = ctx.channel
         self.channelid = ctx.channel.id
         self.text = arg
