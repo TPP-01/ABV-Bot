@@ -74,7 +74,8 @@ class ReactionRole(commands.Cog):
     @commands.Cog.listener(name="on_raw_reaction_add")
     async def on_raw_reaction_add(self, payload):
         self.channel = self.bot.get_channel(payload.channel_id)
-        self.user = self.bot.get_user(payload.user_id)
+        self.guild = self.bot.get_guild(payload.guild_id)
+        self.user = self.guild.get_member(payload.user_id)
         self.message = await self.channel.fetch_message(payload.message_id)
 
         print("Debug: on_reaction_add")
