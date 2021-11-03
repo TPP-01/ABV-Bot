@@ -74,9 +74,9 @@ class ReactionRole(commands.Cog):
     # deploys everything together
     @commands.command(name="rodeploy")
     async def rodeploy(self, ctx):
-        await ctx.send(self.emojireturn())
         self.roconfig()
         await self.channel.purge(limit=len(await ctx.channel.history().flatten()))
+        await ctx.send(self.emojireturn())
         self.msg = await self.channel.send(self.text)
         for self.emoji in self.emojireturn():
             await self.msg.add_reaction(self.emoji)
