@@ -13,7 +13,7 @@ class ReactionRole(commands.Cog):
         self.conf.read("rorole.conf")
         self.roles = self.conf.items("roles")
         self.channelid = self.conf.get("channel", "channelid")
-        print(f"Debug: {self.roles}, {self.channelid}")
+        print(f"Debug: {self.roles}, {self.channelid} {self.rolereturn(self.roles[0][1])}")
 
     def roconfig(self, mode="w"):
         if mode == "w":
