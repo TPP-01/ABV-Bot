@@ -73,20 +73,20 @@ class ReactionRole(commands.Cog):
     # reaction listeners
     @commands.Cog.listener(name="on_raw_reaction_add")
     async def on_raw_reaction_add(self, payload):
-        channel = self.bot.get_channel(payload.channel_id)
-        user = self.bot.get_user(payload.user_id)
-        message = await channel.fetch_message(payload.message_id)
+        self.channel = self.bot.get_channel(payload.channel_id)
+        self.user = self.bot.get_user(payload.user_id)
+        self.message = await self.channel.fetch_message(payload.message_id)
 
         print("Debug: on_reaction_add")
-        await message.channel.send(f"Debug: on_reaction_add: {payload.channel_id} {user.guild.roles} {payload.emoji}")
+        await self.message.channel.send(f"Debug: on_reaction_add: {payload.channel_id} {payload.emoji}")
 
         if payload.channel_id == self.channelid:
             for self.em in self.emojireturn():
                 if payload.emoji == self.em:
-                    self.roget = discord.utils.get(user.guild.roles, name=self.rolereturn(self.em))
+                    self.roget = discord.utils.get(self.user.guild.roles, name=self.rolereturn(self.em))
                     break
-            if not user.bot:
-                await user.add_roles(self.roget)
+            if not self.user.bot:
+                await self.user.add_roles(self.roget)
 
     @commands.Cog.listener(name="on_raw_reaction_remove")
     async def on_raw_reaction_remove(self, payload):
