@@ -79,12 +79,12 @@ class ReactionRole(commands.Cog):
         self.message = await self.channel.fetch_message(payload.message_id)
 
         print("Debug: on_reaction_add")
-        await self.message.channel.send(f"Debug: on_reaction_add: {payload.channel_id} {payload.emoji}")
+        await self.message.channel.send(f"Debug: on_reaction_add: {payload.channel_id} {self.guild.roles} {payload.emoji} {self.user.DisplayName}")
 
         if payload.channel_id == self.channelid:
             for self.em in self.emojireturn():
                 if payload.emoji == self.em:
-                    self.roget = discord.utils.get(self.user.guild.roles, name=self.rolereturn(self.em))
+                    self.roget = discord.utils.get(self.guild.roles, name=self.rolereturn(self.em))
                     break
             if not self.user.bot:
                 await self.user.add_roles(self.roget)
