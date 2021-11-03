@@ -11,8 +11,8 @@ class ReactionRole(commands.Cog):
         self.bot = bot
         self.conf = configparser.ConfigParser()
         self.conf.read("rorole.conf")
-        self.roles = self.conf.items("roles")
         try:
+            self.roles = self.conf.items("roles")
             for self.role in self.roles:
                 self.swap = self.role[0]
                 self.role[0] = self.role[1]
@@ -22,7 +22,7 @@ class ReactionRole(commands.Cog):
             print("No Roles loaded")
 
         self.channelid = self.conf.get("channel", "channelid")
-        print(f"Debug: {self.roles}, {self.channelid} {self.rolereturn(self.roles[0][1])}")
+        #print(f"Debug: {self.roles}, {self.channelid} {self.rolereturn(self.roles[0][1])}")
 
     def roconfig(self, mode="w"):
         if mode == "w":
