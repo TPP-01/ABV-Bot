@@ -88,7 +88,7 @@ class ReactionRole(commands.Cog):
                 if str(self.em) == str(payload.emoji):
                     self.roget = discord.utils.get(self.guild.roles, name=self.rolereturn(self.em))
                     if not self.user.bot:
-                        await self.user.add_role(self.roget)
+                        await discord.Member.add_roles(self.user, self.roget)
                     break
 
     @commands.Cog.listener(name="on_raw_reaction_remove")
