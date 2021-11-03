@@ -69,7 +69,7 @@ class ReactionRole(commands.Cog):
         self.args = arg.split(",")
         self.args[1].replace("\\", "")
         self.roles.append(self.args)
-        await ctx.send(f"Add \"{self.args}\" ")
+        await ctx.send(f"Add \"{self.args[1]}\" ")
 
     # deploys everything together
     @commands.command(name="rodeploy")
