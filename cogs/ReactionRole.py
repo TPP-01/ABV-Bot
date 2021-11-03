@@ -1,4 +1,5 @@
 import configparser
+import time
 
 import discord
 from discord.ext import commands
@@ -92,4 +93,5 @@ class ReactionRole(commands.Cog):
 
 
 def setup(bot):
+    time.sleep(5)
     bot.add_cog(ReactionRole(bot))
