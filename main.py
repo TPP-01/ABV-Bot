@@ -1,10 +1,7 @@
 import discord
 from discord.ext import commands
+
 import secrets
-import sys, traceback
-from pyowm import OWM
-
-
 
 intents = discord.Intents.default()
 intents.members = True

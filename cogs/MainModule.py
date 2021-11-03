@@ -1,9 +1,7 @@
 import sys
 import traceback
-import logging
 import discord
 from discord.ext import commands
-from pyowm import OWM
 import config
 
 class MainModule(commands.Cog):
