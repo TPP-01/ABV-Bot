@@ -71,7 +71,7 @@ class ReactionRole(commands.Cog):
             await self.msg.add_reaction(self.emoji)
 
     # reaction listeners
-    @commands.Cog.listener(name="on_reaction_add")
+    @commands.Cog.listener(name="on_raw_reaction_add")
     async def on_raw_reaction_add(self, payload):
         channel = self.bot.get_channel(payload.channel_id)
         user = self.bot.get_user(payload.user_id)
@@ -88,7 +88,7 @@ class ReactionRole(commands.Cog):
             if not user.bot:
                 await user.add_roles(self.roget)
 
-    @commands.Cog.listener(name="on_reaction_remove")
+    @commands.Cog.listener(name="on_raw_reaction_remove")
     async def on_raw_reaction_remove(self, payload):
         channel = self.bot.get_channel(payload.channel_id)
         user = self.bot.get_user(payload.user_id)
