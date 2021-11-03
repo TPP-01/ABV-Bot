@@ -82,6 +82,7 @@ class ReactionRole(commands.Cog):
         await self.message.channel.send(f"Debug: on_reaction_add: {payload.channel_id} {self.channelid} {self.emojireturn()} {payload.emoji} {self.user.name} {self.rolereturn(payload.emoji)}")
 
         if int(payload.channel_id) == int(self.channelid):
+            await self.message.channel.send(f"Debug: on_channel_check: Check True!")
             for self.em in self.emojireturn():
                 await self.message.channel.send(f"Debug: on_emoji_return: {self.em}")
                 if self.em == payload.emoji:
