@@ -12,10 +12,15 @@ class ReactionRole(commands.Cog):
         self.conf = configparser.ConfigParser()
         self.conf.read("rorole.conf")
         self.roles = self.conf.items("roles")
-        for self.role in self.roles:
-            self.swap = self.role[0]
-            self.role[0] = self.role[1]
-            self.role[1] = self.swap
+        try:
+            for self.role in self.roles:
+                self.swap = self.role[0]
+                self.role[0] = self.role[1]
+                self.role[1] = self.swap
+            print("Roles loaded")
+        except:
+            print("No Roles loaded")
+
         self.channelid = self.conf.get("channel", "channelid")
         print(f"Debug: {self.roles}, {self.channelid} {self.rolereturn(self.roles[0][1])}")
 
