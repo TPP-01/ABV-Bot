@@ -19,7 +19,7 @@ class ReactionRole(commands.Cog):
                 self.role[1] = self.swap
             print("Roles loaded")
         except:
-            print("No Roles loaded")
+            print("Role load Error")
 
         self.channelid = self.conf.get("channel", "channelid")
         #print(f"Debug: {self.roles}, {self.channelid} {self.rolereturn(self.roles[0][1])}")
@@ -74,6 +74,7 @@ class ReactionRole(commands.Cog):
     # deploys everything together
     @commands.command(name="rodeploy")
     async def rodeploy(self, ctx):
+        await ctx.send(self.emojireturn())
         self.roconfig()
         await self.channel.purge(limit=len(await ctx.channel.history().flatten()))
         self.msg = await self.channel.send(self.text)
