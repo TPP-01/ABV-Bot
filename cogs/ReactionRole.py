@@ -44,6 +44,7 @@ class ReactionRole(commands.Cog):
     @commands.command(name="roinit")
     async def roinit(self, ctx, arg):
         self.roles = []
+        self.channel = ctx.channel
         self.channelid = ctx.channel.id
         self.text = arg
         try:
@@ -63,7 +64,7 @@ class ReactionRole(commands.Cog):
     @commands.command(name="rodeploy")
     async def rodeploy(self, ctx):
         self.roconfig()
-        await ctx.channel.purge(limit=len(await ctx.channel.history().flatten()))
+        await self.channel.purge(limit=len(await ctx.channel.history().flatten()))
         self.msg = await self.channel.send(self.text)
         for self.emoji in self.emojireturn():
             await self.msg.add_reaction(self.emoji)
