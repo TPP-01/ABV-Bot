@@ -50,6 +50,12 @@ class ReactionRole(commands.Cog):
                 self.ro = self.r[0]
         return self.ro
 
+    def emojiiter(self, ctx, emname):
+        for self.emoji in ctx.guild.emojis:
+            if self.emoji.name == emname:
+                return self.emoji
+                break
+
     # initiates the name and channel
     @commands.command(name="roinit")
     async def roinit(self, ctx, arg):
@@ -79,7 +85,7 @@ class ReactionRole(commands.Cog):
         await ctx.send(self.emojireturn())
         self.msg = await self.channel.send(self.text)
         for self.emoji in self.emojireturn():
-            await self.msg.add_reaction(self.emoji)
+            await self.msg.add_reaction(self.emojiiter(ctx, self.emoji))
 
     # reaction listeners
     @commands.Cog.listener(name="on_raw_reaction_add")
