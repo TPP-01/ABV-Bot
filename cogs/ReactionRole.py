@@ -12,6 +12,10 @@ class ReactionRole(commands.Cog):
         self.conf = configparser.ConfigParser()
         self.conf.read("rorole.conf")
         self.roles = self.conf.items("roles")
+        for self.role in self.roles:
+            self.swap = self.role[0]
+            self.role[0] = self.role[1]
+            self.role[1] = self.swap
         self.channelid = self.conf.get("channel", "channelid")
         print(f"Debug: {self.roles}, {self.channelid} {self.rolereturn(self.roles[0][1])}")
 
@@ -19,7 +23,7 @@ class ReactionRole(commands.Cog):
         if mode == "w":
             self.roledic = {}
             for self.role in self.roles:
-                self.roledic[self.role[0]] = self.role[1]
+                self.roledic[self.role[1]] = self.role[0]
             self.conf["roles"] = self.roledic
             self.conf["channel"] = {"channelid": self.channelid}
             with open("rorole.conf", "w") as file:
