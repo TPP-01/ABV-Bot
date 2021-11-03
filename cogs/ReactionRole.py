@@ -67,7 +67,7 @@ class ReactionRole(commands.Cog):
     @commands.command(name="roadd")
     async def roadd(self, ctx, arg):
         self.args = arg.split(",")
-        self.args[1].replace("\\", "")
+        self.args[1] = self.args[1].replace("\\", "")
         self.roles.append(self.args)
         await ctx.send(f"Add \"{self.args}\" ")
 
