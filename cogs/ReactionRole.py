@@ -73,7 +73,7 @@ class ReactionRole(commands.Cog):
     # reaction listeners
     @commands.Cog.listener(name="on_reaction_add")
     async def on_reaction_add(self, reaction, user):
-        self.bot.get_channel(self.channelid).send("Debug: on_reaction_add")
+        reaction.message.channel.send("Debug: on_reaction_add")
         if reaction.message.channel.id == self.channelid:
             for self.em in self.emojireturn():
                 if reaction.emoji == self.em:
