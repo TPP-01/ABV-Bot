@@ -72,22 +72,31 @@ class ReactionRole(commands.Cog):
 
     # reaction listeners
     @commands.Cog.listener(name="on_reaction_add")
-    async def on_reaction_add(self, reaction, user):
+    async def on_raw_reaction_add(self, payload):
+        channel = self.bot.get_channel(payload.channel_id)
+        user = self.bot.get_user(payload.user_id)
+        message = await channel.fetch_message(payload.message_id)
+
         print("Debug: on_reaction_add")
-        self.bot.send_message(reaction.message.channel, "Debug: on_reaction_add")
-        if reaction.message.channel.id == self.channelid:
+        message.channel.send("Debug: on_reaction_add")
+
+        if payload.channel_id == self.channelid:
             for self.em in self.emojireturn():
-                if reaction.emoji == self.em:
+                if payload.emoji == self.em:
                     self.roget = discord.utils.get(user.guild.roles, name=self.rolereturn(self.em))
                     break
             if not user.bot:
                 await user.add_roles(self.roget)
 
     @commands.Cog.listener(name="on_reaction_remove")
-    async def on_reaction_remove(self, reaction, user):
-        if reaction.message.channel.id == self.channelid:
+    async def on_raw_reaction_remove(self, payload):
+        channel = self.bot.get_channel(payload.channel_id)
+        user = self.bot.get_user(payload.user_id)
+        message = await channel.fetch_message(payload.message_id)
+
+        if payload.channel_id == self.channelid:
             for self.em in self.emojireturn():
-                if reaction.emoji == self.em:
+                if payload.emoji == self.em:
                     self.roget = discord.utils.get(user.guild.roles, name=self.rolereturn(self.em))
                     break
             if not user.bot:
