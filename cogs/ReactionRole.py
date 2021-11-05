@@ -8,7 +8,7 @@ class ReactionRole(commands.Cog):
 
     def __init__(self, bot):
         with open("rorole.conf", "r") as f:
-            self._data = f.readlines
+            self._data = f.readlines()
             print(str(int(f.readlines()[0])))
             if self._data != [] or self._data != None:
                 self.channelid = int(self._data[0])
