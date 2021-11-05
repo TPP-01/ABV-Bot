@@ -11,13 +11,13 @@ class ReactionRole(commands.Cog):
         self.roles = []
         self.r = ""
         self.ro = ""
-        self.rep = lambda x: x.replace("'", "").replace("[", "").replace("]", "").replace("\n", "").split(",") #xD Hat jemand eine bessere Lösung?
+        self._rep = lambda x: x.replace("'", "").replace("[", "").replace("]", "").replace("\n", "").split(",") #xD Hat jemand eine bessere Lösung?
         with open("rorole.conf", "r") as f:
             self._data = f.readlines()
             if self._data != [] or self._data != None:
                 self.channelid = int(self._data[0])
                 for self.r in range(1, len(self._data)):
-                    self.roles.append(self.rep(self._data[self.r]))
+                    self.roles.append(self._rep(self._data[self.r]))
             else:
                 print("No Data loaded")
             f.close()
@@ -39,6 +39,7 @@ class ReactionRole(commands.Cog):
 
     # returns the role for a emoji
     def rolereturn(self, emoji):
+        print(self.roles)
         for self.r in self.roles:
             if self.r[1] == emoji:
                 self.ro = self.r[0]
