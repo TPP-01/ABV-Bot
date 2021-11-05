@@ -18,7 +18,7 @@ class ReactionRole(commands.Cog):
 
     def getconf(self, chid):
         self.roles = []
-        with open(f"server/{chid}", "r") as f:
+        with open(f"channels/{chid}", "r") as f:
             _data = f.readlines()
             if _data != [] and int(chid) == int(_data[0]):
                 for r in range(len(_data)):
