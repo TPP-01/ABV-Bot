@@ -38,7 +38,7 @@ class ReactionRole(commands.Cog):
     def emojireturn(self):
         self.emojis = []
         for self.role in self.roles:
-            self.emojis.append(self.role[1])
+            self.emojis.append(self.role[2])
         return self.emojis
 
     # returns the role for a emoji
@@ -85,7 +85,7 @@ class ReactionRole(commands.Cog):
         await ctx.send(self.emojireturn())
         self.msg = await self.channel.send(self.text)
         for self.emoji in self.emojireturn():
-            await self.msg.add_reaction(self.emojiiter(ctx, self.emoji))
+            await self.msg.add_reaction(ctx, self.emoji)
 
     # reaction listeners
     @commands.Cog.listener(name="on_raw_reaction_add")
