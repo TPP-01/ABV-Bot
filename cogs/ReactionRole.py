@@ -27,7 +27,7 @@ class ReactionRole(commands.Cog):
     def emojireturn(self):
         self.emojis = []
         for self.role in self.roles:
-            self.emojis.append(self.role[2])
+            self.emojis.append(self.role[1])
         return self.emojis
 
     def config(self):
