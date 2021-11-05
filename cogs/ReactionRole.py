@@ -17,7 +17,7 @@ class ReactionRole(commands.Cog):
             if self._data != [] or self._data != None:
                 self.channelid = int(self._data[0])
                 for self.r in range(1, len(self._data)):
-                    self.roles.append(list(self._data[self.r]))
+                    self.roles.append(self._data[self.r].replace("'", "").replace("[", "").replace("]", "").split(","))
             else:
                 print("No Data loaded")
             f.close()
