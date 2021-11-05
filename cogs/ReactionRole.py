@@ -35,7 +35,6 @@ class ReactionRole(commands.Cog):
 
     # returns the role for a emoji
     def rolereturn(self, emoji):
-        print(self.roles)
         for self.r in self.roles:
             if self.r[1] == emoji:
                 self.ro = self.r[0]
