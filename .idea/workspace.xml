@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="da261876-d1cb-40a4-bc0f-e8449dd77cb5" name="Changes" comment="Revert 1.0">
+      <change beforePath="$PROJECT_DIR$/cogs/ReactionRole.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/ReactionRole.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="20PWf0cy5yaYZ0P0KZ2rvH0UpUd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="conftest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="abv-bot2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/conftest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.conftest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="da261876-d1cb-40a4-bc0f-e8449dd77cb5" name="Changes" comment="" />
+      <created>1635946803697</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1635946803697</updated>
+      <workItem from="1635946805249" duration="11705000" />
+      <workItem from="1636125376206" duration="2055000" />
+    </task>
+    <task id="LOCAL-00001" summary="Persistent Role Test">
+      <created>1635948387030</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1635948387031</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Persistent Role Test">
+      <created>1635949309487</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1635949309487</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Persistent Role Test">
+      <created>1635949767026</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1635949767026</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Persistent Role Test">
+      <created>1635950113742</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1635950113742</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Persistent Role Test">
+      <created>1635950184787</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1635950184787</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Persistent Role Test">
+      <created>1635950489097</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1635950489097</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Persistent Role Test">
+      <created>1635950532820</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1635950532820</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Persistent Role Test - raw events">
+      <created>1635950946128</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1635950946128</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Persistent Role Test - raw events">
+      <created>1635951005715</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1635951005715</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Persistent Role Test - raw events">
+      <created>1635951052132</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1635951052132</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Persistent Role Test - raw events">
+      <created>1635951191072</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1635951191072</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Persistent Role Test - raw events">
+      <created>1635951276841</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1635951276841</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Persistent Role Test - raw events">
+      <created>1635951741556</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1635951741556</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Persistent Role Test - raw events">
+      <created>1635951824572</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1635951824572</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Persistent Role Test - raw events">
+      <created>1635951905494</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1635951905494</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Persistent Role Test - raw events">
+      <created>1635952031764</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1635952031764</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Persistent Role Test - raw events">
+      <created>1635952442180</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1635952442180</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Persistent Role Test - raw events">
+      <created>1635952638431</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1635952638431</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Persistent Role Test - raw events">
+      <created>1635952895382</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1635952895382</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Persistent Role Test - raw events">
+      <created>1635952984784</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1635952984784</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Persistent Role Test - raw events">
+      <created>1635953033177</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1635953033177</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Persistent Role Test - raw events">
+      <created>1635953101044</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1635953101044</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Persistent Role Test - raw events">
+      <created>1635953197411</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1635953197411</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Persistent Role Test - raw events">
+      <created>1635953712071</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1635953712071</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Persistent Role Test - raw events">
+      <created>1635953876155</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1635953876155</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Persistent Role Test - raw events">
+      <created>1635953998966</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1635953998966</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Persistent Role Test - raw events">
+      <created>1635954740257</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1635954740257</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Persistent Role Test - raw events">
+      <created>1635954986153</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1635954986153</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Persistent Role Test - raw events">
+      <created>1635955050777</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1635955050777</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Persistent Role Test - raw events">
+      <created>1635955186161</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1635955186161</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Persistent Role Test - raw events">
+      <created>1635955934600</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1635955934600</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Persistent Role Test - raw events">
+      <created>1635956445694</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1635956445694</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Persistent Role Test - raw events">
+      <created>1635956716204</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1635956716204</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Persistent Role Test - raw events">
+      <created>1635956786717</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1635956786717</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Persistent Role Test - raw events">
+      <created>1635956871897</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1635956871897</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Persistent Role Test - raw events">
+      <created>1635957027502</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1635957027502</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Persistent Role Test - raw events">
+      <created>1635957078380</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1635957078380</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Persistent Role Test - raw events">
+      <created>1635958573789</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1635958573789</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Persistent Role Test - raw events">
+      <created>1636125536062</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1636125536062</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Persistent Role Test - raw events">
+      <created>1636125776017</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1636125776017</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Revert 1.0">
+      <created>1636126402489</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1636126402489</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Persistent Role Test" />
+    <MESSAGE value="Persistent Role Test - raw events" />
+    <MESSAGE value="Revert 1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revert 1.0" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/abv_bot2$conftest.coverage" NAME="conftest Coverage Results" MODIFIED="1636125529945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
