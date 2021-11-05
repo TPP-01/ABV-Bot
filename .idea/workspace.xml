@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da261876-d1cb-40a4-bc0f-e8449dd77cb5" name="Changes" comment="Persistend Role 2.0 - Test">
-      <change beforePath="$PROJECT_DIR$/cogs/ReactionRole.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/ReactionRole.py" afterDir="false" />
-    </list>
+    <list default="true" id="da261876-d1cb-40a4-bc0f-e8449dd77cb5" name="Changes" comment="Persistend Role 2.0 - Test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,28 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1635946803697</updated>
       <workItem from="1635946805249" duration="11705000" />
-      <workItem from="1636125376206" duration="5010000" />
-    </task>
-    <task id="LOCAL-00011" summary="Persistent Role Test - raw events">
-      <created>1635951191072</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1635951191072</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Persistent Role Test - raw events">
-      <created>1635951276841</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1635951276841</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Persistent Role Test - raw events">
-      <created>1635951741556</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1635951741556</updated>
+      <workItem from="1636125376206" duration="5356000" />
     </task>
     <task id="LOCAL-00014" summary="Persistent Role Test - raw events">
       <created>1635951824572</created>
@@ -422,7 +399,28 @@
       <option name="project" value="LOCAL" />
       <updated>1636130428007</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Persistend Role 2.0 - Test">
+      <created>1636130643168</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1636130643168</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Persistend Role 2.0 - Test">
+      <created>1636130784796</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1636130784796</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Persistend Role 2.0 - Test">
+      <created>1636130923394</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1636130923394</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
