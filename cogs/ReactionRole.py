@@ -76,15 +76,18 @@ class ReactionRole(commands.Cog):
         self.guild = self.bot.get_guild(payload.guild_id)
         self.user = self.guild.get_member(payload.user_id)
         self.message = await self.channel.fetch_message(payload.message_id)
-        self.getconf(payload.channel_id)
 
-        if int(payload.channel_id) == int(self.channelid):
-            for self.em in self.emojireturn():
-                if str(self.em) == str(payload.emoji):
-                    self.roget = discord.utils.get(self.guild.roles, name=self.rolereturn(self.em))
-                    if not self.user.bot:
-                        await self.user.add_roles(self.roget)
-                    break
+        try:
+            self.getconf(payload.channel_id)
+        except:
+            pass
+
+        for self.em in self.emojireturn():
+            if str(self.em) == str(payload.emoji):
+                self.roget = discord.utils.get(self.guild.roles, name=self.rolereturn(self.em))
+                if not self.user.bot:
+                    await self.user.add_roles(self.roget)
+                break
 
     @commands.Cog.listener(name="on_raw_reaction_remove")
     async def on_raw_reaction_remove(self, payload):
@@ -92,15 +95,19 @@ class ReactionRole(commands.Cog):
         self.guild = self.bot.get_guild(payload.guild_id)
         self.user = self.guild.get_member(payload.user_id)
         self.message = await self.channel.fetch_message(payload.message_id)
-        self.getconf(payload.channel_id)
 
-        if int(payload.channel_id) == int(self.channelid):
-            for self.em in self.emojireturn():
-                if str(self.em) == str(payload.emoji):
-                    self.roget = discord.utils.get(self.guild.roles, name=self.rolereturn(self.em))
-                    if not self.user.bot:
-                        await self.user.remove_roles(self.roget)
-                    break
+        try:
+            self.getconf(payload.channel_id)
+        except:
+            pass
+
+    if int(payload.channel_id) == int(self.channelid):
+        for self.em in self.emojireturn():
+            if str(self.em) == str(payload.emoji):
+                self.roget = discord.utils.get(self.guild.roles, name=self.rolereturn(self.em))
+                if not self.user.bot:
+                    await self.user.remove_roles(self.roget)
+                break
 
 
 def setup(bot):
