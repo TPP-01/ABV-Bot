@@ -79,28 +79,7 @@
       <updated>1635946803697</updated>
       <workItem from="1635946805249" duration="11705000" />
       <workItem from="1636125376206" duration="7220000" />
-      <workItem from="1636133559013" duration="2138000" />
-    </task>
-    <task id="LOCAL-00024" summary="Persistent Role Test - raw events">
-      <created>1635953712071</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1635953712071</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Persistent Role Test - raw events">
-      <created>1635953876155</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1635953876155</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Persistent Role Test - raw events">
-      <created>1635953998966</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1635953998966</updated>
+      <workItem from="1636133559013" duration="2439000" />
     </task>
     <task id="LOCAL-00027" summary="Persistent Role Test - raw events">
       <created>1635954740257</created>
@@ -424,7 +403,28 @@
       <option name="project" value="LOCAL" />
       <updated>1636135577901</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Multi Instances - Test">
+      <created>1636135800766</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1636135800766</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Multi Instances - Test">
+      <created>1636136041798</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1636136041798</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Multi Instances - Test">
+      <created>1636136097256</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1636136097256</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
