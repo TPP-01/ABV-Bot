@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da261876-d1cb-40a4-bc0f-e8449dd77cb5" name="Changes" comment="Persistend Role 2.0 - Test" />
+    <list default="true" id="da261876-d1cb-40a4-bc0f-e8449dd77cb5" name="Changes" comment="Persistend Role 2.0 - Test">
+      <change beforePath="$PROJECT_DIR$/cogs/ReactionRole.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/ReactionRole.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1635946803697</updated>
       <workItem from="1635946805249" duration="11705000" />
-      <workItem from="1636125376206" duration="2439000" />
+      <workItem from="1636125376206" duration="2841000" />
     </task>
     <task id="LOCAL-00001" summary="Persistent Role Test">
       <created>1635948387030</created>
@@ -385,7 +387,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636127605898</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Persistend Role 2.0 - Test">
+      <created>1636127930531</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1636127930531</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Persistend Role 2.0 - Test">
+      <created>1636128008885</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1636128008885</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

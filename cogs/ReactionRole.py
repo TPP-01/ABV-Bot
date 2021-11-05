@@ -7,15 +7,18 @@ from discord.ext import commands
 class ReactionRole(commands.Cog):
 
     def __init__(self, bot):
-        with open("rorole.conf", "r") as f:
-            self._data = f.readlines
-            if self._data != [] or self._data != None:
-                self.channelid = self._data[0]
-                for self.r in range(len(1, len(self._data))):
-                    self.roles.append(list(self._data[self.r]))
-            else:
-                print("No Data loaded")
-            f.close()
+        try:
+            with open("rorole.conf", "r") as f:
+                self._data = f.readlines
+                if self._data != [] or self._data != None:
+                    self.channelid = self._data[0]
+                    for self.r in range(len(1, len(self._data))):
+                        self.roles.append(list(self._data[self.r]))
+                else:
+                    print("No Data loaded")
+                f.close()
+        except:
+            print("No Data loaded")
 
         self.bot = bot
         #print(f"Debug: {self.roles}, {self.channelid} {self.rolereturn(self.roles[0][1])}")
