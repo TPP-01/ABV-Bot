@@ -11,7 +11,7 @@ class ReactionRole(commands.Cog):
         self.roles = []
         self.r = ""
         self.ro = ""
-        self._rep = lambda x: x.replace("'", "").replace("[", "").replace("]", "").replace("\n", "").split(",") #xD Hat jemand eine bessere Lösung?
+        self._rep = lambda x: x.replace("'", "").replace("[", "").replace("]", "").replace("\n", "").replace(" ", "").split(",") #xD Hat jemand eine bessere Lösung?
         with open("rorole.conf", "r") as f:
             self._data = f.readlines()
             if self._data != [] or self._data != None:

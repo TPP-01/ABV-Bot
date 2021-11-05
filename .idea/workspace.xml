@@ -77,21 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1635946803697</updated>
       <workItem from="1635946805249" duration="11705000" />
-      <workItem from="1636125376206" duration="5661000" />
-    </task>
-    <task id="LOCAL-00015" summary="Persistent Role Test - raw events">
-      <created>1635951905494</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1635951905494</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Persistent Role Test - raw events">
-      <created>1635952031764</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1635952031764</updated>
+      <workItem from="1636125376206" duration="5973000" />
     </task>
     <task id="LOCAL-00017" summary="Persistent Role Test - raw events">
       <created>1635952442180</created>
@@ -422,7 +408,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636131164452</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Persistend Role 2.0 - Test">
+      <created>1636131294859</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1636131294859</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Persistend Role 2.0 - Test">
+      <created>1636131559996</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1636131559996</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -446,6 +446,17 @@
     <MESSAGE value="Revert 1.0" />
     <MESSAGE value="Persistend Role 2.0 - Test" />
     <option name="LAST_COMMIT_MESSAGE" value="Persistend Role 2.0 - Test" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/cogs/ReactionRole.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/abv_bot2$conftest.coverage" NAME="conftest Coverage Results" MODIFIED="1636125529945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
