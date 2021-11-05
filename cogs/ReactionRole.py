@@ -1,4 +1,3 @@
-import configparser
 import time
 
 import discord
@@ -9,30 +8,8 @@ class ReactionRole(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
-        self.conf = configparser.ConfigParser()
-        self.conf.read("rorole.conf")
-        try:
-            self.roles = self.conf.items("roles")
-            for self.role in self.roles:
-                self.swap = self.role[0]
-                self.role[0] = self.role[1]
-                self.role[1] = self.swap
-            print("Roles loaded")
-        except:
-            print("Role load Error")
-
         self.channelid = self.conf.get("channel", "channelid")
         #print(f"Debug: {self.roles}, {self.channelid} {self.rolereturn(self.roles[0][1])}")
-
-    def roconfig(self, mode="w"):
-        if mode == "w":
-            self.roledic = {}
-            for self.role in self.roles:
-                self.roledic[self.role[1]] = self.role[0]
-            self.conf["roles"] = self.roledic
-            self.conf["channel"] = {"channelid": self.channelid}
-            with open("rorole.conf", "w") as file:
-                self.conf.write(file)
 
     # returns the emojis of the roles
     def emojireturn(self):
@@ -49,12 +26,6 @@ class ReactionRole(commands.Cog):
             if self.r[1] == emoji:
                 self.ro = self.r[0]
         return self.ro
-
-    def emojiiter(self, ctx, emname):
-        for self.emoji in ctx.guild.emojis:
-            if self.emoji.name == emname:
-                return self.emoji
-                break
 
     # initiates the name and channel
     @commands.command(name="roinit")
@@ -80,7 +51,6 @@ class ReactionRole(commands.Cog):
     # deploys everything together
     @commands.command(name="rodeploy")
     async def rodeploy(self, ctx):
-        self.roconfig()
         await self.channel.purge(limit=len(await ctx.channel.history().flatten()))
         await ctx.send(self.emojireturn())
         self.msg = await self.channel.send(self.text)
