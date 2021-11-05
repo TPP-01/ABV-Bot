@@ -11,7 +11,7 @@ class ReactionRole(commands.Cog):
             with open("rorole.conf", "r") as f:
                 self._data = f.readlines
                 if self._data != [] or self._data != None:
-                    self.channelid = self._data[0]
+                    self.channelid = int(self._data[0])
                     for self.r in range(len(1, len(self._data))):
                         self.roles.append(list(self._data[self.r]))
                 else:
@@ -32,9 +32,9 @@ class ReactionRole(commands.Cog):
 
     def config(self):
         with open("rorole.conf", "w") as f:
-            f.write(self.channelid+"\n")
+            f.write(str(self.channelid)+"\n")
             for self.role in self.roles:
-                f.write(self.role+"\n")
+                f.write(str(self.role)+"\n")
             f.close()
 
     # returns the role for a emoji
