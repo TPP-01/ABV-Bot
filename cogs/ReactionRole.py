@@ -105,12 +105,12 @@ class ReactionRole(commands.Cog):
         self.user = self.guild.get_member(payload.user_id)
         self.message = await self.channel.fetch_message(payload.message_id)
 
-        if payload.channel_id == self.channelid:
+        if int(payload.channel_id) == int(self.channelid):
             for self.em in self.emojireturn():
-                if payload.emoji == self.em:
-                    self.roget = discord.utils.get(self.user.guild.roles, name=self.rolereturn(self.em))
+                if str(self.em) == str(payload.emoji.name):
+                    self.roget = discord.utils.get(self.guild.roles, name=self.rolereturn(self.em))
                     if not self.user.bot:
-                        self.user.remove_role(self.roget)
+                        await self.user.remove_roles(self.roget)
                     break
 
 
