@@ -9,7 +9,6 @@ class ReactionRole(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.roles = []
-        self.emojis = []
         self.r = ""
         self.ro = ""
         self.rep = lambda x: x.replace("'", "").replace("[", "").replace("]", "").replace("\n", "").split(",") #xD Hat jemand eine bessere Lösung?
@@ -26,6 +25,7 @@ class ReactionRole(commands.Cog):
 
     # returns the emojis of the roles
     def emojireturn(self):
+        self.emojis = []
         for self.role in self.roles:
             self.emojis.append(self.role[1])
         return self.emojis
