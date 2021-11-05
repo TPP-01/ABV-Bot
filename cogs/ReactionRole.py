@@ -9,6 +9,9 @@ class ReactionRole(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.roles = []
+        self.emojis = []
+        self.r = ""
+        self.ro = ""
         with open("rorole.conf", "r") as f:
             self._data = f.readlines()
             if self._data != [] or self._data != None:
@@ -18,10 +21,10 @@ class ReactionRole(commands.Cog):
             else:
                 print("No Data loaded")
             f.close()
+        print(self.roles)
 
     # returns the emojis of the roles
     def emojireturn(self):
-        self.emojis = []
         for self.role in self.roles:
             self.emojis.append(self.role[1])
         return self.emojis
@@ -35,8 +38,6 @@ class ReactionRole(commands.Cog):
 
     # returns the role for a emoji
     def rolereturn(self, emoji):
-        self.r = ""
-        self.ro = ""
         for self.r in self.roles:
             if self.r[1] == emoji:
                 self.ro = self.r[0]
