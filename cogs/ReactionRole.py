@@ -75,7 +75,7 @@ class ReactionRole(commands.Cog):
         await ctx.send(self.emojireturn())
         self.msg = await self.channel.send(self.text)
         for self.emoji in self.emojireturn():
-            await self.msg.add_reaction(ctx, self.emoji)
+            await self.msg.add_reaction(self.emoji)
 
     # reaction listeners
     @commands.Cog.listener(name="on_raw_reaction_add")
