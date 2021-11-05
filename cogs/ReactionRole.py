@@ -7,6 +7,8 @@ from discord.ext import commands
 class ReactionRole(commands.Cog):
 
     def __init__(self, bot):
+        self.bot = bot
+        self.roles = []
         with open("rorole.conf", "r") as f:
             self._data = f.readlines()
             if self._data != [] or self._data != None:
@@ -16,10 +18,6 @@ class ReactionRole(commands.Cog):
             else:
                 print("No Data loaded")
             f.close()
-
-
-        self.bot = bot
-        #print(f"Debug: {self.roles}, {self.channelid} {self.rolereturn(self.roles[0][1])}")
 
     # returns the emojis of the roles
     def emojireturn(self):
