@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da261876-d1cb-40a4-bc0f-e8449dd77cb5" name="Changes" comment="Persistend Role 2.0 - Test">
+    <list default="true" id="da261876-d1cb-40a4-bc0f-e8449dd77cb5" name="Changes" comment="Version 1.1">
       <change beforePath="$PROJECT_DIR$/cogs/ReactionRole.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/ReactionRole.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +38,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
   </component>
   <component name="RunManager">
     <configuration name="conftest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -77,28 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1635946803697</updated>
       <workItem from="1635946805249" duration="11705000" />
-      <workItem from="1636125376206" duration="5973000" />
-    </task>
-    <task id="LOCAL-00017" summary="Persistent Role Test - raw events">
-      <created>1635952442180</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1635952442180</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Persistent Role Test - raw events">
-      <created>1635952638431</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1635952638431</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Persistent Role Test - raw events">
-      <created>1635952895382</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1635952895382</updated>
+      <workItem from="1636125376206" duration="6293000" />
     </task>
     <task id="LOCAL-00020" summary="Persistent Role Test - raw events">
       <created>1635952984784</created>
@@ -422,7 +402,28 @@
       <option name="project" value="LOCAL" />
       <updated>1636131559996</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Persistend Role 2.0 - Test">
+      <created>1636131606899</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1636131606899</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Version 1.1">
+      <created>1636131773156</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1636131773156</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Version 1.1">
+      <created>1636131859096</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1636131859097</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,14 +446,15 @@
     <MESSAGE value="Persistent Role Test - raw events" />
     <MESSAGE value="Revert 1.0" />
     <MESSAGE value="Persistend Role 2.0 - Test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Persistend Role 2.0 - Test" />
+    <MESSAGE value="Version 1.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 1.1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/cogs/ReactionRole.py</url>
-          <line>13</line>
+          <line>9</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
