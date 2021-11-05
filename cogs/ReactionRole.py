@@ -1,5 +1,3 @@
-import time
-
 import discord
 from discord.ext import commands
 
@@ -9,9 +7,7 @@ class ReactionRole(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.roles = []
-        self.r = ""
-        self.ro = ""
-        self._rep = lambda x: x.replace("'", "").replace("[", "").replace("]", "").replace("\n", "").replace(" ", "").split(",") #xD Hat jemand eine bessere Lösung?
+        self._rep = lambda x: x.replace("'", "").replace("[", "").replace("]", "").replace("\n", "").replace(" ","").split(",")  # xD Hat jemand eine bessere Lösung?
         with open("rorole.conf", "r") as f:
             self._data = f.readlines()
             if self._data != [] or self._data != None:
@@ -32,9 +28,9 @@ class ReactionRole(commands.Cog):
 
     def config(self):
         with open("rorole.conf", "w") as f:
-            f.write(str(self.channelid)+"\n")
+            f.write(str(self.channelid) + "\n")
             for self.role in self.roles:
-                f.write(str(self.role)+"\n")
+                f.write(str(self.role) + "\n")
             f.close()
 
     # returns the role for a emoji
@@ -84,13 +80,8 @@ class ReactionRole(commands.Cog):
         self.user = self.guild.get_member(payload.user_id)
         self.message = await self.channel.fetch_message(payload.message_id)
 
-        print("Debug: on_reaction_add")
-        await self.message.channel.send(f"Debug: on_reaction_add: {payload.channel_id} {self.channelid} {self.emojireturn()} {payload.emoji.name} {self.user.name} {self.rolereturn(payload.emoji)}")
-
         if int(payload.channel_id) == int(self.channelid):
-            await self.message.channel.send(f"Debug: on_channel_check: Check True!")
             for self.em in self.emojireturn():
-                await self.message.channel.send(f"Debug: on_emoji_return: {self.em}")
                 if str(self.em) == str(payload.emoji):
                     self.roget = discord.utils.get(self.guild.roles, name=self.rolereturn(self.em))
                     if not self.user.bot:
