@@ -7,38 +7,37 @@ class ReactionRole(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.roles = []
-        self._rep = lambda x: x.replace("'", "").replace("[", "").replace("]", "").replace("\n", "").replace(" ","").split(",")  # xD Hat jemand eine bessere Lösung?
-        with open("rorole.conf", "r") as f:
-            self._data = f.readlines()
-            if self._data != [] or self._data != None:
-                self.channelid = int(self._data[0])
-                for self.r in range(1, len(self._data)):
-                    self.roles.append(self._rep(self._data[self.r]))
-            else:
-                print("No Data loaded")
-            f.close()
-        print(self.roles)
+        self._rep = lambda x: x.replace("'", "").replace("[", "").replace("]", "").replace("\n", "").replace(" ", "").split(",")  # xD Hat jemand eine bessere Lösung?
 
     # returns the emojis of the roles
     def emojireturn(self):
-        self.emojis = []
-        for self.role in self.roles:
-            self.emojis.append(self.role[1])
-        return self.emojis
+        emojis = []
+        for role in self.roles:
+            emojis.append(role[1])
+        return emojis
+
+    def getconf(self, chid):
+        self.roles = []
+        with open(f"server/{chid}", "r") as f:
+            _data = f.readlines()
+            if _data != [] and int(chid) == int(_data[0]):
+                for r in range(len(_data)):
+                    self.roles.append(self._rep(_data[r]))
+            f.close()
+        return self.roles
 
     def config(self):
-        with open("rorole.conf", "w") as f:
-            f.write(str(self.channelid) + "\n")
-            for self.role in self.roles:
-                f.write(str(self.role) + "\n")
+        with open(f"channels/{self.channelid}", "w") as f:
+            for role in self.roles:
+                f.write(str(role) + "\n")
             f.close()
 
     # returns the role for a emoji
     def rolereturn(self, emoji):
-        for self.r in self.roles:
-            if self.r[1] == emoji:
-                self.ro = self.r[0]
-        return self.ro
+        for r in self.roles:
+            if r[1] == emoji:
+                ro = r[0]
+        return ro
 
     # initiates the name and channel
     @commands.command(name="roinit")
@@ -77,6 +76,7 @@ class ReactionRole(commands.Cog):
         self.guild = self.bot.get_guild(payload.guild_id)
         self.user = self.guild.get_member(payload.user_id)
         self.message = await self.channel.fetch_message(payload.message_id)
+        self.getconf(payload.channel_id)
 
         if int(payload.channel_id) == int(self.channelid):
             for self.em in self.emojireturn():
@@ -92,6 +92,7 @@ class ReactionRole(commands.Cog):
         self.guild = self.bot.get_guild(payload.guild_id)
         self.user = self.guild.get_member(payload.user_id)
         self.message = await self.channel.fetch_message(payload.message_id)
+        self.getconf(payload.channel_id)
 
         if int(payload.channel_id) == int(self.channelid):
             for self.em in self.emojireturn():
