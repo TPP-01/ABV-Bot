@@ -20,7 +20,7 @@ class ReactionRole(commands.Cog):
         self.roles = []
         with open(f"channels/{chid}", "r") as f:
             _data = f.readlines()
-            if _data != [] and int(chid) == int(_data[0]):
+            if _data != []:
                 for r in range(len(_data)):
                     self.roles.append(self._rep(_data[r]))
             f.close()
