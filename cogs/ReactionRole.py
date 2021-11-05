@@ -7,8 +7,14 @@ from discord.ext import commands
 class ReactionRole(commands.Cog):
 
     def __init__(self, bot):
+        with open("rorole.conf", "r") as f:
+            self._data = f.readlines
+            self.channelid = self._data[0]
+            for self.r in range(len(1, len(self._data))):
+                self.roles.append(list(self._data[self.r]))
+            f.close()
+
         self.bot = bot
-        self.channelid = self.conf.get("channel", "channelid")
         #print(f"Debug: {self.roles}, {self.channelid} {self.rolereturn(self.roles[0][1])}")
 
     # returns the emojis of the roles
@@ -17,6 +23,14 @@ class ReactionRole(commands.Cog):
         for self.role in self.roles:
             self.emojis.append(self.role[2])
         return self.emojis
+
+    def config(self):
+        with open("rorole.conf", "w") as f:
+            f.write(self.channelid+"\n")
+            for self.role in self.roles:
+                f.write(self.role+"\n")
+            f.close()
+
 
     # returns the role for a emoji
     def rolereturn(self, emoji):
