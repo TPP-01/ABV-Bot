@@ -31,8 +31,6 @@ if __name__ == '__main__':
 
 @bot.event
 async def on_ready():
-
-
     print(f'\n\nLogged in as: {bot.user.name} - {bot.user.id}\nVersion: {discord.__version__}\n')
     print(f'Successfully logged in and booted...!')
     print([str(i).replace(',', '\n') for i in bot.guilds])
