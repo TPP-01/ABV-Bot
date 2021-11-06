@@ -7,7 +7,7 @@ class ReactionRole(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.roles = []
-        self._rep = lambda x: x.replace("'", "").replace("[", "").replace("]", "").replace("\n", "").replace(" ", "").split(",")  # xD Hat jemand eine bessere Lösung?
+        self.rep = lambda x: x.replace("'", "").replace("[", "").replace("]", "").replace("\n", "").replace(" ", "").split(",")  # xD Hat jemand eine bessere Lösung?
 
     # returns the emojis of the roles
     def emojireturn(self):
@@ -22,7 +22,7 @@ class ReactionRole(commands.Cog):
             _data = f.readlines()
             if _data != []:
                 for r in range(len(_data)):
-                    self.roles.append(self._rep(_data[r]))
+                    self.roles.append(self.rep(_data[r]))
             f.close()
         return self.roles
 
@@ -37,7 +37,7 @@ class ReactionRole(commands.Cog):
         for r in self.roles:
             if r[1] == emoji:
                 ro = r[0]
-        return ro
+        return discord.utils.get(guild.roles, name=ro)
 
     # initiates the name and channel
     @commands.command(name="roinit")
@@ -84,9 +84,8 @@ class ReactionRole(commands.Cog):
 
         for em in self.emojireturn():
             if str(em) == str(payload.emoji):
-                roget = discord.utils.get(guild.roles, name=self.rolereturn(em))
                 if not user.bot:
-                    await user.add_roles(roget)
+                    await user.add_roles(self.rolereturn(em))
                 break
 
     @commands.Cog.listener(name="on_raw_reaction_remove")
@@ -103,9 +102,8 @@ class ReactionRole(commands.Cog):
 
         for em in self.emojireturn():
             if str(em) == str(payload.emoji):
-                roget = discord.utils.get(guild.roles, name=self.rolereturn(em))
                 if not user.bot:
-                    await user.remove_roles(roget)
+                    await user.remove_roles(self.rolereturn(em))
                 break
 
 
