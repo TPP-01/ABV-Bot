@@ -79,20 +79,6 @@
       <workItem from="1636125376206" duration="7220000" />
       <workItem from="1636133559013" duration="2841000" />
     </task>
-    <task id="LOCAL-00035" summary="Persistent Role Test - raw events">
-      <created>1635956871897</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1635956871897</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Persistent Role Test - raw events">
-      <created>1635957027502</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1635957027502</updated>
-    </task>
     <task id="LOCAL-00037" summary="Persistent Role Test - raw events">
       <created>1635957078380</created>
       <option name="number" value="00037" />
@@ -422,7 +408,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636188779136</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Cleanup">
+      <created>1636189005832</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1636189005832</updated>
+    </task>
+    <task id="LOCAL-00085" summary="Cleanup">
+      <created>1636189136317</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1636189136317</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

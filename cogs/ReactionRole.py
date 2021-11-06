@@ -23,7 +23,7 @@ class ReactionRole(commands.Cog):
             _data = f.readlines()
             if _data != []:
                 for r in range(len(_data)):
-                    self.roles.append(_data[r].split(","))
+                    self.roles.append(_data[r].replace("\n", "").split(","))
             f.close()
         return self.roles
 
