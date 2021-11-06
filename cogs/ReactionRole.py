@@ -10,7 +10,6 @@ class ReactionRole(commands.Cog):
 
     # returns the emojis of the roles
     def emojireturn(self):
-        print(self.roles)
         emojis = []
         for role in self.roles:
             emojis.append(role[1])
@@ -65,7 +64,6 @@ class ReactionRole(commands.Cog):
     @commands.command(name="rodeploy")
     async def rodeploy(self, ctx):
         self.config()
-        print(self.roles)
         await ctx.channel.purge(limit=len(await ctx.channel.history().flatten()))
         msg = await ctx.channel.send(self.text)
         for emoji in self.emojireturn():
