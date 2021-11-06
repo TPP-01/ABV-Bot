@@ -66,7 +66,7 @@ class ReactionRole(commands.Cog):
         self.config()
         print(self.roles)
         await self.channel.purge(limit=len(await ctx.channel.history().flatten()))
-        msg = await self.channel.send(self.text)
+        msg = await ctx.channel.send(self.text)
         for emoji in self.emojireturn():
             await msg.add_reaction(emoji)
 
