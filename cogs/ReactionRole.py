@@ -10,6 +10,7 @@ class ReactionRole(commands.Cog):
 
     # returns the emojis of the roles
     def emojireturn(self):
+        print(self.roles)
         emojis = []
         for role in self.roles:
             emojis.append(role[1])
