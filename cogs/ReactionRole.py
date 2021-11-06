@@ -1,4 +1,5 @@
 import discord
+import os
 from discord.ext import commands
 
 
@@ -25,6 +26,9 @@ class ReactionRole(commands.Cog):
                     self.roles.append(_data[r].replace("\n", "").split(","))
             f.close()
         return self.roles
+
+    def delconf(self, chid):
+        os.remove(f"channels/{chid}")
 
     # saves the configuration
     def config(self):
@@ -68,6 +72,12 @@ class ReactionRole(commands.Cog):
         msg = await ctx.channel.send(self.text)
         for emoji in self.emojireturn():
             await msg.add_reaction(emoji)
+
+    # deletes reaction role conf of the channel and purges it
+    @commands.command(name="rodelete")
+    async def rodelete(self, ctx):
+        await ctx.channel.purge(limit=len(await ctx.channel.history().flatten()))
+        self.delconf(ctx.channel.id)
 
     # reaction listeners
     @commands.Cog.listener(name="on_raw_reaction_add")
