@@ -31,6 +31,7 @@ class ReactionRole(commands.Cog):
     def config(self):
         with open(f"channels/{self.channelid}", "w") as f:
             for role in self.roles:
+                conf = ""
                 for r in role:
                     conf = conf + r
                     if r == role[0]:
