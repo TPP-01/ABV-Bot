@@ -32,7 +32,7 @@ class ReactionRole(commands.Cog):
         with open(f"channels/{self.channelid}", "w") as f:
             for role in self.roles:
                 for r in role:
-                    conf = r
+                    conf = conf + r
                     if r == role[0]:
                         conf = conf + ","
                 f.write(conf + "\n")
