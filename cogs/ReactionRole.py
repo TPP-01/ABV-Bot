@@ -7,7 +7,6 @@ class ReactionRole(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.roles = []
-        self.rep = lambda x: x.replace("'", "").replace("[", "").replace("]", "").replace("\n", "").replace(" ", "").split(",")  # xD Hat jemand eine bessere Lösung?
 
     # returns the emojis of the roles
     def emojireturn(self):
@@ -16,20 +15,26 @@ class ReactionRole(commands.Cog):
             emojis.append(role[1])
         return emojis
 
+    # gets the configuration of the channel
     def getconf(self, chid):
         self.roles = []
         with open(f"channels/{chid}", "r") as f:
             _data = f.readlines()
             if _data != []:
                 for r in range(len(_data)):
-                    self.roles.append(self.rep(_data[r]))
+                    self.roles.append(_data[r].split(","))
             f.close()
         return self.roles
 
+    # saves the configuration
     def config(self):
         with open(f"channels/{self.channelid}", "w") as f:
             for role in self.roles:
-                f.write(str(role) + "\n")
+                for r in role:
+                    conf = r
+                    if r == role[0]:
+                        conf = conf + ","
+                f.write(conf + "\n")
             f.close()
 
     # returns the role for a emoji
