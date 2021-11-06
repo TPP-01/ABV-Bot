@@ -27,6 +27,7 @@ class ReactionRole(commands.Cog):
             f.close()
         return self.roles
 
+    # deletes configuration of the channel
     def delconf(self, chid):
         os.remove(f"channels/{chid}")
 
