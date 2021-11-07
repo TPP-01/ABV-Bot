@@ -34,6 +34,7 @@ class MainModule(commands.Cog):
         embed.add_field(name="roinit [message content]", value="needs to be executed in channel before the other commands. Note that this will set the channel where the reaction role msg will appear",inline=False)
         embed.add_field(name="roadd [name of the role to be given],[emoji]", value="this can be executed multiple times . it will set the combination of the role to be given and the corresponding emoji. NOTE : you need to send the Role name , mentioning the role will not work, also the role name is case-sensetive",inline=False)
         embed.add_field(name="rodeploy", value="sends the message adds the emoji(s) and clears the channel", inline=False)
+        embed.add_field(name="rodelete", value="Deletes the channel configuration and clears the channel", inline=False)
         embed.set_footer(text="made by the ABV-Bot Development Team")
         await ctx.send(embed=embed)
 
