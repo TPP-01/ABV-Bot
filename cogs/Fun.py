@@ -35,10 +35,15 @@ class Fun(commands.Cog):
 
 
     @commands.command(name="lapogusamogus", aliases=["amogus", "lapog", "sus"], hidden=True)
-    async def lapogusamogus(self, ctx):
-        await ctx.send(f"{ctx.author.mention} is now a lapogusamogus")
-        await ctx.send("https://tenor.com/view/19dollar-fortnite-card-among-us-amogus-sus-red-among-sus-gif-20549014")
-        await ctx.message.delete()
+    async def lapogusamogus(self, ctx, user_to_sus: discord.Member=None):
+        if user_to_sus is not None:
+            await ctx.send(f"{user_to_sus.mention} is now a lapogusamogus")
+            await ctx.send("https://tenor.com/view/19dollar-fortnite-card-among-us-amogus-sus-red-among-sus-gif-20549014")
+            await ctx.message.delete()
+        else:
+            await ctx.send(f"{ctx.author.mention} is now a lapogusamogus")
+            await ctx.send("https://tenor.com/view/19dollar-fortnite-card-among-us-amogus-sus-red-among-sus-gif-20549014")
+            await ctx.message.delete()
 
 def setup(bot):
     bot.add_cog(Fun(bot))

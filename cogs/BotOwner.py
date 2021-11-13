@@ -19,6 +19,7 @@ class BotOwner(commands.Cog):
         print(f"left server: {ctx.guild}")
 
 
+
     @commands.command(name='load', hidden=True)
     @commands.is_owner()
     async def load(self, ctx, *, cog: str):
