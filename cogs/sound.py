@@ -10,7 +10,8 @@ class sound(commands.Cog):
 
     @commands.command(name="earrape", aliases=["er"])
     async def earrape(self, ctx):
-        voice_channel = ctx.author.channel
+        voice_channel = ctx.author.voice.channel
+
         channelname = None
         if voice_channel is not None:
             channelname = voice_channel.name
