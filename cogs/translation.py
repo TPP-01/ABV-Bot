@@ -19,7 +19,7 @@ class translation(commands.Cog):
         embed.add_field(name="Output", value=f"Translation: {textout}\nPronunciation: {pronout}", inline=True)
         embed.set_footer(text="made by the ABV-Bot Development Team")
         await ctx.message.delete()
-        await ctx.send(embed=embed)
+        await ctx.send(embed=embed, delete_after=1)
 
 
 def setup(bot):
