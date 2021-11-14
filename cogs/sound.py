@@ -15,16 +15,23 @@ class sound(commands.Cog):
         channelname = None
         if voice_channel is not None:
             channelname = voice_channel.name
-            ctx.send(f"Playing in {channelname}")
-            vc = await voice_channel.connect()
-            vc.play(discord.FFmpegPCMAudio(source="music/earrape.mp3"))
+            await ctx.send(f"Playing in {channelname}")
+            self.vc = await self.voice_channel.connect()
+            self.vc.play(discord.FFmpegPCMAudio(source="music/earrape.mp3"))
             while vc.is_playing():
                 time.sleep(0.5)
-            await vc.disconnect()
+            try:
+                await self.vc.disconnect()
+            except: pass
         else:
             ctx.send(f"{ctx.author.name} is not in a channel")
         await ctx.message.delete()
 
+    @commands.command(name="disconnect", aliases=["dc"])
+    async def disconnect(self):
+        self.vc.disconnect()
+        await ctx.send("Disconnected!")
+        await ctx.message.delete()
 
 def setup(bot):
     bot.add_cog(sound(bot))

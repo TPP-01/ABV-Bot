@@ -109,13 +109,6 @@
       <workItem from="1636133559013" duration="2841000" />
       <workItem from="1636822060991" duration="361000" />
     </task>
-    <task id="LOCAL-00052" summary="Persistend Role 2.0 - Test">
-      <created>1636128789447</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1636128789447</updated>
-    </task>
     <task id="LOCAL-00053" summary="Persistend Role 2.0 - Test">
       <created>1636129002348</created>
       <option name="number" value="00053" />
@@ -452,7 +445,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636913377025</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="first test - earrape">
+      <created>1636914053946</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1636914053946</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
