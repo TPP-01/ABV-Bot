@@ -1,12 +1,12 @@
 import discord
-from discord.ext import commands
 import time
+from discord.ext import commands
+
 
 class sound(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
-
 
     @commands.command(name="earrape", aliases=["er"])
     async def earrape(self, ctx):
@@ -22,7 +22,8 @@ class sound(commands.Cog):
                 time.sleep(0.5)
             try:
                 await self.vc.disconnect()
-            except: pass
+            except:
+                pass
         else:
             ctx.send(f"{ctx.author.name} is not in a channel")
         await ctx.message.delete()
@@ -32,6 +33,7 @@ class sound(commands.Cog):
         self.vc.disconnect()
         await ctx.send("Disconnected!")
         await ctx.message.delete()
+
 
 def setup(bot):
     bot.add_cog(sound(bot))
