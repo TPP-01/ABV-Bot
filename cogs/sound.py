@@ -26,4 +26,4 @@ class sound(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(translation(bot))
+    bot.add_cog(sound(bot))
