@@ -11,10 +11,12 @@ class translation(commands.Cog):
 
     @commands.command(name="translate", aliases=["tr"])
     async def translate(self, ctx, text, target_lang):
-        output = self.translator.translate(text, dest=target_lang)
+        translate = self.translator.translate(text, dest=target_lang)
+        textout = translate.text
+        pronout = translate.pronunciation
         embed = discord.Embed(title="Translator")
         embed.add_field(name="Input", value=text, inline=True)
-        embed.add_field(name="Output", value=output, inline=True)
+        embed.add_field(name="Output", value=f"Translation: {textout}\nPronunciation: {pronout}", inline=True)
         embed.set_footer(text="made by the ABV-Bot Development Team")
         await ctx.send(embed=embed)
 
