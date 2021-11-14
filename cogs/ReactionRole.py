@@ -20,10 +20,10 @@ class ReactionRole(commands.Cog):
     def getconf(self, chid):
         self.roles = []
         with open(f"channels/{chid}", "r") as f:
-            _data = f.readlines()
-            if _data != []:
-                for r in range(len(_data)):
-                    self.roles.append(_data[r].replace("\n", "").split(","))
+            data = f.readlines()
+            if data != []:
+                for r in range(len(data)):
+                    self.roles.append(data[r].replace("\n", "").split(","))
             f.close()
         return self.roles
 
