@@ -23,3 +23,7 @@ class sound(commands.Cog):
         else:
             ctx.send(f"{ctx.author.name} is not in a channel")
         await ctx.message.delete()
+
+
+def setup(bot):
+    bot.add_cog(translation(bot))
