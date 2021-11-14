@@ -14,7 +14,7 @@ class utility(commands.Cog):
         embed.add_field(name="Neue Fälle DE", value=commands.Bot.data.get("cases"), inline=False)
         embed.add_field(name="Neue Todesfälle DE", value=commands.Bot.data.get("deaths"), inline=False)
         embed.add_field(name="7-Tages-Inzidenz DE", value=f'{commands.Bot.data.get("weekIncidence"):.2f}', inline=False)
-        embed.set_footer(text="made by blockcrafter#5759")
+        embed.set_footer(text="made by the ABV-Bot Development Team")
         await ctx.send(embed=embed, delete_after=30)
         await ctx.message.delete()
 
