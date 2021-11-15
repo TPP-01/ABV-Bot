@@ -33,7 +33,10 @@ class sound(commands.Cog):
     async def disconnect(self, ctx):
         await self.vc.disconnect()
         await ctx.send("Disconnected!")
-        await ctx.message.delete()
+        try:
+            await ctx.message.delete()
+        except:
+            print("No Permissions to delete ctx.message")
 
 
 def setup(bot):
