@@ -1,7 +1,7 @@
 import discord
 import time
 from discord.ext import commands
-
+import asyncio
 
 class sound(commands.Cog):
 
@@ -20,7 +20,7 @@ class sound(commands.Cog):
             self.vc = await self.voice_channel.connect()
             self.vc.play(discord.FFmpegPCMAudio(source="music/earrape.mp3"))
             while self.vc.is_playing():
-                time.sleep(0.5)
+                asyncio.sleep()
             try:
                 await self.vc.disconnect()
             except:
