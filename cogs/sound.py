@@ -10,10 +10,11 @@ class sound(commands.Cog):
 
     @commands.command(name="earrape", aliases=["er"])
     async def earrape(self, ctx):
-        voice_channel = ctx.author.voice.channel
-
+        voice_channel = ctx.author.voice
         channelname = None
+        
         if voice_channel is not None:
+            voice_channel = voice_channel.channel
             channelname = voice_channel.name
             await ctx.send(f"Playing in {channelname}")
             self.vc = await self.voice_channel.connect()
