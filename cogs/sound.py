@@ -31,7 +31,7 @@ class sound(commands.Cog):
 
     @commands.command(name="disconnect", aliases=["dc"])
     async def disconnect(self, ctx):
-        self.vc.disconnect()
+        await self.vc.disconnect()
         await ctx.send("Disconnected!")
         await ctx.message.delete()
 
