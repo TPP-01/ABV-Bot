@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da261876-d1cb-40a4-bc0f-e8449dd77cb5" name="Changes" comment="Final Cleanup">
+    <list default="true" id="da261876-d1cb-40a4-bc0f-e8449dd77cb5" name="Changes" comment="first test - earrape">
       <change beforePath="$PROJECT_DIR$/cogs/sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/sound.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,9 +40,31 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.conftest">
     <configuration name="conftest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="abv-bot2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\emilk\AppData\Local\Microsoft\WindowsApps\python3.8.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/conftest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ABV-Bot" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -54,7 +76,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/conftest.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -63,9 +85,14 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.conftest" />
+      <item itemvalue="Python.main" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.conftest" />
+        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -80,97 +107,7 @@
       <workItem from="1635946805249" duration="11705000" />
       <workItem from="1636125376206" duration="7220000" />
       <workItem from="1636133559013" duration="2841000" />
-    </task>
-    <task id="LOCAL-00040" summary="Persistent Role Test - raw events">
-      <created>1636125776017</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1636125776017</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Revert 1.0">
-      <created>1636126402489</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1636126402489</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Revert 1.0">
-      <created>1636127547047</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1636127547047</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Revert 1.0">
-      <created>1636127578584</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1636127578584</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Persistend Role 2.0 - Test">
-      <created>1636127605898</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1636127605898</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Persistend Role 2.0 - Test">
-      <created>1636127930531</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1636127930531</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Persistend Role 2.0 - Test">
-      <created>1636128008885</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1636128008885</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Persistend Role 2.0 - Test">
-      <created>1636128263092</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1636128263092</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Persistend Role 2.0 - Test">
-      <created>1636128356722</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1636128356722</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Persistend Role 2.0 - Test">
-      <created>1636128452385</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1636128452385</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Persistend Role 2.0 - Test">
-      <created>1636128510302</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1636128510302</updated>
-    </task>
-    <task id="LOCAL-00051" summary="Persistend Role 2.0 - Test">
-      <created>1636128676905</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1636128676905</updated>
-    </task>
-    <task id="LOCAL-00052" summary="Persistend Role 2.0 - Test">
-      <created>1636128789447</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1636128789447</updated>
+      <workItem from="1636822060991" duration="361000" />
     </task>
     <task id="LOCAL-00053" summary="Persistend Role 2.0 - Test">
       <created>1636129002348</created>
@@ -424,7 +361,98 @@
       <option name="project" value="LOCAL" />
       <updated>1636189813946</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="first test - translation">
+      <created>1636908421340</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1636908421340</updated>
+    </task>
+    <task id="LOCAL-00090" summary="first test - translation">
+      <created>1636908546749</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1636908546749</updated>
+    </task>
+    <task id="LOCAL-00091" summary="first test - translation">
+      <created>1636909139047</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1636909139047</updated>
+    </task>
+    <task id="LOCAL-00092" summary="fixed #2">
+      <created>1636909303470</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1636909303470</updated>
+    </task>
+    <task id="LOCAL-00093" summary="fixed #2">
+      <created>1636909376926</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1636909376926</updated>
+    </task>
+    <task id="LOCAL-00094" summary="fixed #2">
+      <created>1636909397015</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1636909397015</updated>
+    </task>
+    <task id="LOCAL-00095" summary="translation">
+      <created>1636909411721</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1636909411721</updated>
+    </task>
+    <task id="LOCAL-00096" summary="translation">
+      <created>1636909471121</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1636909471121</updated>
+    </task>
+    <task id="LOCAL-00097" summary="first test - earrape">
+      <created>1636913233542</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1636913233542</updated>
+    </task>
+    <task id="LOCAL-00098" summary="first test - earrape">
+      <created>1636913297276</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1636913297276</updated>
+    </task>
+    <task id="LOCAL-00099" summary="first test - earrape">
+      <created>1636913332022</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1636913332023</updated>
+    </task>
+    <task id="LOCAL-00100" summary="first test - earrape">
+      <created>1636913377025</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1636913377025</updated>
+    </task>
+    <task id="LOCAL-00101" summary="first test - earrape">
+      <created>1636914053946</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1636914053946</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,9 +480,15 @@
     <MESSAGE value="Multi Instances - Test" />
     <MESSAGE value="Cleanup" />
     <MESSAGE value="Final Cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final Cleanup" />
+    <MESSAGE value="first test - translation" />
+    <MESSAGE value="Translation" />
+    <MESSAGE value="fixed #2" />
+    <MESSAGE value="translation" />
+    <MESSAGE value="first test - earrape" />
+    <option name="LAST_COMMIT_MESSAGE" value="first test - earrape" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/abv_bot2$conftest.coverage" NAME="conftest Coverage Results" MODIFIED="1636125529945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/abv_bot2$conftest.coverage" NAME="conftest Coverage Results" MODIFIED="1636908966652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ABV_Bot$main.coverage" NAME="main Coverage Results" MODIFIED="1636822326563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
