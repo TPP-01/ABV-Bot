@@ -15,7 +15,7 @@ class sound(commands.Cog):
 
         if self.voice_channel is not None:
             self.voice_channel = self.voice_channel.channel
-            channelname = voice_channel.name
+            channelname = self.voice_channel.name
             await ctx.send(f"Playing in {channelname}")
             self.vc = await self.voice_channel.connect()
             self.vc.play(discord.FFmpegPCMAudio(source="music/earrape.mp3"))
