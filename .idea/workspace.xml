@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da261876-d1cb-40a4-bc0f-e8449dd77cb5" name="Changes" comment="first test - earrape">
+    <list default="true" id="da261876-d1cb-40a4-bc0f-e8449dd77cb5" name="Changes" comment="cleanup">
       <change beforePath="$PROJECT_DIR$/cogs/sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/sound.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,20 +108,6 @@
       <workItem from="1636125376206" duration="7220000" />
       <workItem from="1636133559013" duration="2841000" />
       <workItem from="1636822060991" duration="361000" />
-    </task>
-    <task id="LOCAL-00053" summary="Persistend Role 2.0 - Test">
-      <created>1636129002348</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1636129002348</updated>
-    </task>
-    <task id="LOCAL-00054" summary="Persistend Role 2.0 - Test">
-      <created>1636129223486</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1636129223487</updated>
     </task>
     <task id="LOCAL-00055" summary="Persistend Role 2.0 - Test">
       <created>1636129311723</created>
@@ -452,7 +438,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636914053946</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="cleanup">
+      <created>1636967369778</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1636967369778</updated>
+    </task>
+    <task id="LOCAL-00103" summary="cleanup">
+      <created>1636967440456</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1636967440456</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,7 +485,8 @@
     <MESSAGE value="fixed #2" />
     <MESSAGE value="translation" />
     <MESSAGE value="first test - earrape" />
-    <option name="LAST_COMMIT_MESSAGE" value="first test - earrape" />
+    <MESSAGE value="cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleanup" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/abv_bot2$conftest.coverage" NAME="conftest Coverage Results" MODIFIED="1636908966652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
