@@ -19,7 +19,7 @@ class sound(commands.Cog):
             await ctx.send(f"Playing in {channelname}")
             self.vc = await self.voice_channel.connect()
             self.vc.play(discord.FFmpegPCMAudio(source="music/earrape.mp3"))
-            while vc.is_playing():
+            while self.vc.is_playing():
                 time.sleep(0.5)
             try:
                 await self.vc.disconnect()
@@ -30,7 +30,7 @@ class sound(commands.Cog):
         await ctx.message.delete()
 
     @commands.command(name="disconnect", aliases=["dc"])
-    async def disconnect(self):
+    async def disconnect(self, ctx):
         self.vc.disconnect()
         await ctx.send("Disconnected!")
         await ctx.message.delete()
