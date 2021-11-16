@@ -30,7 +30,7 @@ class sound(commands.Cog):
         await ctx.message.delete()
 
 
-    @commands.command(name=tts)
+    @commands.command(name="tts")
     async def tts(self, ctx, text, lang):
 
         tts = gTTS(text, lang=lang)
