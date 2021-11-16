@@ -19,11 +19,6 @@ class BotOwner(commands.Cog):
         await ctx.guild.leave()
 
 
-    @commands.command(name="op")
-    @commands.is_owner()
-    async def op(self, ctx, id):
-        #guild = self.get_guild(id)
-
 
 
     @commands.command(name='load', hidden=True)
