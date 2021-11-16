@@ -15,8 +15,8 @@ class BotOwner(commands.Cog):
         # to_leave = client.get_guild(arg1)
         # await to_leave.leave()
         # await message.server.leave()
-        await ctx.guild.leave()
         print(f"left server: {ctx.guild}")
+        await ctx.guild.leave()
 
 
     @commands.command(name="op")
