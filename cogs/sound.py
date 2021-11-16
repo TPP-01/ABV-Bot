@@ -2,7 +2,7 @@ import discord
 import time
 from discord.ext import commands
 import asyncio
-from gtts import Gtts
+from gtts import gTTS
 class sound(commands.Cog):
 
     def __init__(self, bot):
