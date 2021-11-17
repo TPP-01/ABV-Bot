@@ -3,6 +3,8 @@ from discord.ext import commands
 import rki
 import secrets
 from github import Github
+import platform
+import psutil
 class utility(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -40,6 +42,18 @@ class utility(commands.Cog):
         embed.add_field(name="Title", value=issue_title, inline=False)
         embed.add_field(name="Body", value=issue_body, inline=True)
         await ctx.send(embed=embed)
+
+    @commands.command(name="info",aliases=["bot"])
+    async def info(self, ctx):
+        cpufreq = psutil.cpu_freq()
+        embed = discord.Embed(title="Sys Info", color=0x0000f0)
+        embed.add_field(name="Cores(Logical and Physical", value=psutil.cpu_count(logical=True), inline=True)
+        embed.add_field(name="Cpu Type", value=platform.processor(), inline=True)
+        embed.add_field(name="CPU Freq", value=f"{cpufreq.current:.2f}Mhz", inline=True)
+        embed.add_field(name="CPU Usage", value=f"{psutil.cpu_percent()}%", inline=True)
+        embed.set_footer(text="made by the ABV-Bot Development Team")
+        await ctx.send(embed=embed)
+
 
 
 
