@@ -36,7 +36,7 @@ class sound(commands.Cog):
 
         tts = gTTS(text, lang=lang)
         filename = f"tts_file_{lang}_{text}.mp3"
-        tts.save(f'tts_file_{lang}_{text}.mp3')
+        tts.save(f"tts_audio/{filename}")
         print("file saved")
         self.voice_channel = ctx.author.voice
         channelname = None
