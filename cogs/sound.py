@@ -52,6 +52,7 @@ class sound(commands.Cog):
             try:
                 await self.vc.disconnect()
                 os.remove(filename)
+                print("file deleted")
             except:
                 pass
         else:
