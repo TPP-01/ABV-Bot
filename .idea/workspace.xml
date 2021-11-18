@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da261876-d1cb-40a4-bc0f-e8449dd77cb5" name="Changes" comment="add bug command">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/Utility.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/Utility.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cogs/sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/sound.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,20 +110,7 @@
       <workItem from="1636822060991" duration="361000" />
       <workItem from="1637154798406" duration="1441000" />
       <workItem from="1637161017491" duration="1087000" />
-    </task>
-    <task id="LOCAL-00064" summary="Persistend Role 2.0 - Test">
-      <created>1636131294859</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1636131294859</updated>
-    </task>
-    <task id="LOCAL-00065" summary="Persistend Role 2.0 - Test">
-      <created>1636131559996</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1636131559996</updated>
+      <workItem from="1637242893311" duration="304000" />
     </task>
     <task id="LOCAL-00066" summary="Persistend Role 2.0 - Test">
       <created>1636131606899</created>
@@ -455,7 +441,21 @@
       <option name="project" value="LOCAL" />
       <updated>1637156184508</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="add bug command">
+      <created>1637243078850</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1637243078851</updated>
+    </task>
+    <task id="LOCAL-00114" summary="add bug command">
+      <created>1637243169543</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1637243169543</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,6 +494,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/abv_bot2$conftest.coverage" NAME="conftest Coverage Results" MODIFIED="1636908966652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ABV_Bot$main.coverage" NAME="main Coverage Results" MODIFIED="1637162079411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ABV_Bot$main.coverage" NAME="main Coverage Results" MODIFIED="1637242959449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -21,6 +21,7 @@ class sound(commands.Cog):
             self.vc = await self.voice_channel.connect()
             self.vc.play(discord.FFmpegPCMAudio(source="music/earrape.mp3"))
             while self.vc.is_playing():
+                await asyncio.sleep(0.5)
             try:
                 await self.vc.disconnect()
             except:
