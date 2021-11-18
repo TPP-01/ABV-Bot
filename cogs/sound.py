@@ -36,7 +36,8 @@ class sound(commands.Cog):
 
         tts = gTTS(text, lang=lang)
         filename = f"tts_file_{lang}_{text}.mp3"
-        tts.save(f"tts_audio/{filename}")
+        full_path = f"tts_audio/{filename}"
+        tts.save(full_path)
         print("file saved")
         self.voice_channel = ctx.author.voice
         channelname = None
@@ -46,7 +47,7 @@ class sound(commands.Cog):
             channelname = self.voice_channel.name
             await ctx.send(f"Playing in {channelname}")
             self.vc = await self.voice_channel.connect()
-            self.vc.play(discord.FFmpegPCMAudio(source=filename))
+            self.vc.play(discord.FFmpegPCMAudio(source=full_path))
             while self.vc.is_playing():
                 await asyncio.sleep(0.5)
             try:
