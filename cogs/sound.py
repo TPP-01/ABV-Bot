@@ -52,7 +52,7 @@ class sound(commands.Cog):
                 await asyncio.sleep(0.5)
             try:
                 await self.vc.disconnect()
-                os.remove(filename)
+                os.remove(full_path)
                 print("file deleted")
             except:
                 pass
