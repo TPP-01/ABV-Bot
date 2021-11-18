@@ -3,6 +3,7 @@ import time
 from discord.ext import commands
 import asyncio
 from gtts import gTTS
+import os
 class sound(commands.Cog):
 
     def __init__(self, bot):
@@ -20,7 +21,7 @@ class sound(commands.Cog):
             self.vc = await self.voice_channel.connect()
             self.vc.play(discord.FFmpegPCMAudio(source="music/earrape.mp3"))
             while self.vc.is_playing():
-                await asyncio.sleep(0.5)
+
             try:
                 await self.vc.disconnect()
             except:
