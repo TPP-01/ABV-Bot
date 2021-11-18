@@ -88,7 +88,7 @@ class MainModule(commands.Cog):
                 await ctx.send('I could not find that member. Please try again.')
 
         elif isinstance(error, commands.MissingRequiredArgument(param=)):
-            await ctx.send(f"You forgot an argument")
+            await ctx.send(f"You forgot an argument{}")
 
         elif isinstance(error, discord.errors.NotFound):
             print("some404 error")
