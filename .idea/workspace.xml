@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da261876-d1cb-40a4-bc0f-e8449dd77cb5" name="Changes" comment="update tts command">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/MainModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/MainModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="da261876-d1cb-40a4-bc0f-e8449dd77cb5" name="Changes" comment="update tts command" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,14 +108,7 @@
       <workItem from="1636822060991" duration="361000" />
       <workItem from="1637154798406" duration="1441000" />
       <workItem from="1637161017491" duration="1087000" />
-      <workItem from="1637242893311" duration="1386000" />
-    </task>
-    <task id="LOCAL-00073" summary="Multi Instances - Test">
-      <created>1636135800766</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1636135800766</updated>
+      <workItem from="1637242893311" duration="1524000" />
     </task>
     <task id="LOCAL-00074" summary="Multi Instances - Test">
       <created>1636136041798</created>
@@ -457,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637243758106</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="update tts command">
+      <created>1637244420575</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1637244420575</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

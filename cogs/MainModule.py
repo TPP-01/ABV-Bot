@@ -87,7 +87,7 @@ class MainModule(commands.Cog):
             if ctx.command.qualified_name == 'tag list':
                 await ctx.send('I could not find that member. Please try again.')
 
-        elif isinstance(error, commands.MissingRequiredArgument()):
+        elif isinstance(error, commands.MissingRequiredArgument(param)):
             await ctx.send(f"You forgot an argument")
 
         elif isinstance(error, discord.errors.NotFound):
