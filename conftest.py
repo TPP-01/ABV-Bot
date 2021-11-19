@@ -1,5 +1,6 @@
-import googletrans
+role = "Test"
+emoji = "Test"
+roles = []
+roles.append([role, emoji])
 
-translator = googletrans.Translator()
-
-print(translator.translate("Hallo", dest="ja"))
+print(roles)
