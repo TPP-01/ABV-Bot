@@ -7,24 +7,20 @@ intents = discord.Intents.default()
 intents.members = True
 
 def get_prefix(bot, message):
-    # Notice how you can use spaces in prefixes. Try to keep them simple though.
+    # in this list are all prefixes allowed
     prefixes = ['=']
 
-    # Check to see if we are outside of a guild. e.g DM's etc.
+    # if the command is not in a guild use only this prefixes
     if not message.guild:
-        # Only allow ? to be used in DMs
         return '='
-    # If we are in a guild, we allow for the user to mention us or use any of the prefixes in our list.
     return commands.when_mentioned_or(*prefixes)(bot, message)
 
 
-# Below cogs represents our folder our cogs are in. Following is the file name. So 'meme.py' in cogs, would be cogs.meme
-# Think of it like a dot path import
+#cogs to use
 initial_extensions = ["cogs.MainModule", "cogs.Fun", "cogs.NSFW", "cogs.BotOwner", "cogs.Admin", "cogs.Utility", "cogs.ReactionRole", "cogs.translation", "cogs.sound"]
 
 bot = commands.Bot(command_prefix=get_prefix, description="The official ABV bot",intents=intents, help_command=None)
 
-# Here we load our extensions(cogs) listed above in [initial_extensions].
 if __name__ == '__main__':
     for extension in initial_extensions:
         bot.load_extension(extension)

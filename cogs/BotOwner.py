@@ -11,12 +11,13 @@ class BotOwner(commands.Cog):
 
     @commands.command(name="leaveguild", description="leave server", hidden=True)
     @commands.is_owner()
-    async def leaveguild(ctx):
+    async def leaveguild(self, ctx):
         # to_leave = client.get_guild(arg1)
         # await to_leave.leave()
         # await message.server.leave()
-        await ctx.guild.leave()
         print(f"left server: {ctx.guild}")
+        await ctx.guild.leave()
+
 
 
 

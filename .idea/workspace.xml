@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da261876-d1cb-40a4-bc0f-e8449dd77cb5" name="Changes" comment="cleanup">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/ReactionRole.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/ReactionRole.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cogs/sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/sound.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,9 +108,13 @@
       <workItem from="1636125376206" duration="7220000" />
       <workItem from="1636133559013" duration="2841000" />
       <workItem from="1636822060991" duration="361000" />
-      <workItem from="1636975310748" duration="1001000" />
-      <workItem from="1637258609410" duration="709000" />
-      <workItem from="1637346589955" duration="470000" />
+    </task>
+    <task id="LOCAL-00063" summary="Persistend Role 2.0 - Test">
+      <created>1636131164452</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1636131164452</updated>
     </task>
     <task id="LOCAL-00064" summary="Persistend Role 2.0 - Test">
       <created>1636131294859</created>
@@ -450,14 +452,7 @@
       <option name="project" value="LOCAL" />
       <updated>1636969280891</updated>
     </task>
-    <task id="LOCAL-00112" summary="cleanup">
-      <created>1636969379023</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1636969379023</updated>
-    </task>
-    <option name="localTasksCounter" value="113" />
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,7 +489,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="cleanup" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/abv_bot2$conftest.coverage" NAME="conftest Coverage Results" MODIFIED="1637347045676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/abv_bot2$conftest.coverage" NAME="conftest Coverage Results" MODIFIED="1636908966652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ABV_Bot$main.coverage" NAME="main Coverage Results" MODIFIED="1636822326563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
