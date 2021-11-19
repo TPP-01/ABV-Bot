@@ -62,7 +62,7 @@ class ReactionRole(commands.Cog):
     @commands.command(name="roadd")
     async def roadd(self, ctx, role, emoji):
         self.roles.append([role, emoji])
-        await ctx.send(f"Add \"{args}\" ")
+        await ctx.send(f"Add \"{role},{emoji}\"")
 
     # deploys everything together
     @commands.command(name="rodeploy")
