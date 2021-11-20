@@ -57,7 +57,7 @@ class sound(commands.Cog):
             except:
                 pass
         else:
-            ctx.send(f"{ctx.author.name} is not in a channel")
+            await ctx.send(f"{ctx.author.name} is not in a channel")
         await ctx.message.delete()
 
 
