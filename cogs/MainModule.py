@@ -17,31 +17,10 @@ class MainModule(commands.Cog):
 
     @commands.command(name="help", help="well yk what help is do you?")
     async def help(self, ctx):
-        embed = discord.Embed(title="HELP (fun module)",description="help ah wait we cant help you anymore (btw prefix is = )", color=0xff0000)
-        embed.add_field(name="blame [user]", value="blames someone", inline=False)
-        embed.add_field(name="slap [user]", value="slaps someone", inline=False)
-        embed.add_field(name="wahrheitoderpflicht", value="wahrheit oder pflicht", inline=False)
-        embed.add_field(name="lapogusamogus", value="sus", inline=False)
-        embed.set_footer(text="made by the ABV-Bot Development Team")
-        await ctx.send(embed=embed, delete_after=60)
-
-        embed = discord.Embed(title="Help utility", color=0xff2600)
-        embed.add_field(name="covid", value="sends the covid cases for germany", inline=False)
-        embed.set_footer(text="made by the ABV-Bot Development Team")
-        await ctx.send(embed=embed)
-
-        embed = discord.Embed(title="Help ReactionRole", color=0xff2600)
-        embed.add_field(name="roinit [message content]", value="needs to be executed in channel before the other commands. Note that this will set the channel where the reaction role msg will appear",inline=False)
-        embed.add_field(name="roadd [name of the role to be given],[emoji]", value="this can be executed multiple times . it will set the combination of the role to be given and the corresponding emoji. NOTE : you need to send the Role name , mentioning the role will not work, also the role name is case-sensetive",inline=False)
-        embed.add_field(name="rodeploy", value="sends the message adds the emoji(s) and clears the channel", inline=False)
-        embed.add_field(name="rodelete", value="Deletes the channel configuration and clears the channel", inline=False)
-        embed.set_footer(text="made by the ABV-Bot Development Team")
-        await ctx.send(embed=embed)
-
-        embed = discord.Embed(title="Help Admin Modul", color=0xff2600)
-        embed.add_field(name="ban [member] [reason]", value="bannt einen user", inline=False)
-        embed.add_field(name="unban [member][reason]", value="entbannt einen user", inline=True)
-        embed.set_footer(text="made by the ABV-Bot Development Team")
+        embed = discord.Embed(title="Help", color=0xff2600)
+        embed.add_field(name="Please visit our GitHub wiki for all comands",
+                        value="https://github.com/TPP-01/ABV-Bot/wiki/Commands", inline=False)
+        embed.set_footer(text="made by the ABV-Team")
         await ctx.send(embed=embed)
 
     @commands.command(name="msg")
