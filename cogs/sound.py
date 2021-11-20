@@ -35,7 +35,7 @@ class sound(commands.Cog):
     async def tts(self, ctx, text, lang="de"):
 
         tts = gTTS(text, lang=lang)
-        filename = f"tts_file_{lang}_{text}.mp3"
+        filename = f"temp.mp3"
         full_path = f"tts_audio/{filename}"
         tts.save(full_path)
         print("file saved")
