@@ -60,7 +60,7 @@ class utility(commands.Cog):
         message = await self.bot.wait_for("message", check=check)
         issue_body = message.content
         repo = g.get_repo("TPP-01/ABV-Bot")
-        label = repo.get_label("suggestion_bot ")
+        label = repo.get_label("suggestion_bot")
         repo.create_issue(title=issue_title, body=issue_body, labels=[label])
         embed = discord.Embed(title="Suggestion Issue was created", color=0xff0000)
         embed.add_field(name="Title", value=issue_title, inline=False)
