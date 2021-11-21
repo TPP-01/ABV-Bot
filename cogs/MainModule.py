@@ -70,6 +70,9 @@ class MainModule(commands.Cog):
             print(error)
             await ctx.send(f"You forgot an argument: {error}")
 
+        elif isinstance(error, commands.MissingPermissions):
+            await ctx.send(f"i have not enough permissions the following perms are missing: {error}. Please contact the Owner of this Server")
+
         elif isinstance(error, discord.errors.NotFound):
             print("some404 error")
 
