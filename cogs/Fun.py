@@ -17,8 +17,7 @@ class Fun(commands.Cog):
 
     @commands.command(name="wahrheitoderpflicht", aliases=["wop"], help="SFW Wahrheit oder Pflicht")
     async def wahrheitoderpflicht(self, ctx):
-        await ctx.send(
-            f"{ctx.author.mention} you have to do the task : {random.choice(commands.Bot.wop_questions)}",delete_after=20)
+        await ctx.send(f"{ctx.author.mention} you have to do the task : {random.choice(commands.Bot.wop_questions)}",delete_after=20)
         await ctx.message.delete()
 
 
