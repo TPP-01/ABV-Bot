@@ -47,7 +47,7 @@ class help_cmd(commands.Cog):
         """Shows all modules of that bot"""
 
         # !SET THOSE VARIABLES TO MAKE THE COG FUNCTIONAL!
-        prefix =  # ENTER YOUR PREFIX - loaded from config, as string or how ever you want!
+        prefix =  # ENTER YOUR PREFIX - loaded from configdir, as string or how ever you want!
         version =  # enter version of your code
 
         # setting owner name - if you don't wanna be mentioned remove line 49-60 and adjust help text (line 88)

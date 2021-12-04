@@ -2,7 +2,8 @@ import sys
 import traceback
 import discord
 from discord.ext import commands
-import config
+
+from configdir import config
 
 class MainModule(commands.Cog):
     def __init__(self, bot):
