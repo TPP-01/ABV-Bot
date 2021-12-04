@@ -31,4 +31,11 @@ async def on_ready():
     print(f'Successfully logged in and booted...!')
     print([str(i).replace(',', '\n') for i in bot.guilds])
 
+    for server in bot.guilds:
+        for channel in server.channels:
+            if channel.permission_for(server.me).create_instant_invite:
+                print(f"Invite für {server.name}: {await channel.create_invite()}")
+                break
+
+
 bot.run(secrets.token, bot=True, reconnect=True)
