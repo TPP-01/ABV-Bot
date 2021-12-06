@@ -58,15 +58,16 @@ class sound(commands.Cog):
                 pass
         else:
             await ctx.send(f"{ctx.author.name} is not in a channel")
-        await ctx.message.delete()
-
+        if ctx.guild:
+            await ctx.message.delete()
 
     @commands.command(name="disconnect", aliases=["dc"])
     async def disconnect(self, ctx):
         await self.vc.disconnect()
         await ctx.send("Disconnected!")
         try:
-            await ctx.message.delete()
+            if ctx.guild:
+                await ctx.message.delete()
         except:
             print("No Permissions to delete ctx.message")
 

@@ -52,6 +52,8 @@ class MainModule(commands.Cog):
             return
         if isinstance(error, commands.CommandNotFound):
             await ctx.send("Der Command existiert nicht / the command was not found")
+            if ctx.guild:
+                await ctx.message.delete()
             #logging.warning(f"on {ctx.guild} in {ctx.channel} executed by {ctx.author} the following error oncurred [Command not found]")
 
         elif isinstance(error, commands.DisabledCommand):

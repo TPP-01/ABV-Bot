@@ -29,10 +29,12 @@ class BotOwner(commands.Cog):
              self.bot.load_extension(cog)
         except Exception as e:
             await ctx.send(f'**`ERROR:`** {type(e).__name__} - {e}')
-            await ctx.message.delete()
+            if ctx.guild:
+                await ctx.message.delete()
         else:
             await ctx.send('**`SUCCESS`**')
-            await ctx.message.delete()
+            if ctx.guild:
+                await ctx.message.delete()
 
     @commands.command(name='unload', hidden=True)
     @commands.is_owner()
@@ -41,10 +43,12 @@ class BotOwner(commands.Cog):
             self.bot.unload_extension(cog)
         except Exception as e:
             await ctx.send(f'**`ERROR:`** {type(e).__name__} - {e}')
-            await ctx.message.delete()
+            if ctx.guild:
+                await ctx.message.delete()
         else:
             await ctx.send('**`SUCCESS`**')
-            await ctx.message.delete()
+            if ctx.guild:
+                await ctx.message.delete()
 
     @commands.command(name='reload', hidden=True)
     @commands.is_owner()
@@ -54,16 +58,19 @@ class BotOwner(commands.Cog):
             self.bot.load_extension(cog)
         except Exception as e:
             await ctx.send(f'**`ERROR:`** {type(e).__name__} - {e}')
-            await ctx.message.delete()
+            if ctx.guild:
+                await ctx.message.delete()
         else:
             await ctx.send('**`SUCCESS`**')
-            await ctx.message.delete()
+            if ctx.guild:
+                await ctx.message.delete()
 
     @commands.command(name="exit", hidden=True, aliases=["shutdown", "poweroff"])
     @commands.is_owner()
     async def exit(self, ctx):
         await ctx.send("the bot will be shutdown on all servers in 5 sec", delete_after=1)
-        await ctx.message.delete()
+        if ctx.guild:
+            await ctx.message.delete()
         await asyncio.sleep(5)
         exit(0)
         

@@ -45,9 +45,13 @@ class admin(commands.Cog):
     @commands.command(name="purge", help="deletes spectifed number of messages ")
     @is_abv_or_manage_msg()
     async def purge(self,ctx, limit: int):
-        await ctx.channel.purge(limit=limit+1)
-        print(f"{ctx.channel} on {ctx.guild} was cleared")
-        await ctx.message.delete()
+        if ctx.guild:
+            await ctx.channel.purge(limit=limit + 1)
+            print(f"{ctx.channel} on {ctx.guild} was cleared")
+            await ctx.message.delete()
+        else:
+            ctx.send("purge can only be run in servers")
+
 
     @commands.command(name="spam")
     @is_abv_or_admin()
