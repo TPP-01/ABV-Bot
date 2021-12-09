@@ -17,7 +17,7 @@ def get_prefix(bot, message):
 
 
 #cogs to use
-initial_extensions = ["cogs.MainModule", "cogs.Fun", "cogs.NSFW", "cogs.BotOwner", "cogs.Admin", "cogs.Utility", "cogs.ReactionRole", "cogs.translation", "cogs.sound"]
+initial_extensions = ["cogs.MainModule", "cogs.Fun", "cogs.NSFW", "cogs.BotOwner", "cogs.Admin", "cogs.Utility", "cogs.ReactionRole", "cogs.translation", "cogs.sound", "cogs.slashtest"]
 
 bot = commands.Bot(command_prefix=get_prefix, description="The official ABV bot",intents=intents, help_command=None)
 
@@ -31,11 +31,11 @@ async def on_ready():
     print(f'Successfully logged in and booted...!')
     print([str(i).replace(',', '\n') for i in bot.guilds])
 
-    for server in bot.guilds:
-        for channel in server.channels:
-            if channel.permission_for(server.me).create_instant_invite:
-                print(f"Invite für {server.name}: {await channel.create_invite()}")
-                break
+    #for server in bot.guilds:
+        #for channel in server.channels:
+            #if channel.permission_for(server.me).create_instant_invite:
+                #print(f"Invite für {server.name}: {await channel.create_invite()}")
+                #break
 
 
-bot.run(secrets.token, bot=True, reconnect=True)
+bot.run(secrets.token, reconnect=True)
