@@ -10,7 +10,7 @@ class memes(commands.Cog):
     @commands.command(name="meme")
     async def meme(self, ctx):
         embed = discord.Embed(title="Random Meme", color=0x07e43e)
-        embed.set_image(url=self.memes(random.randint(0, len(self.memes) - 1)))
+        embed.set_image(url=self.memes[random.randint(0, len(self.memes) - 1)])
         embed.set_footer(text="made by the ABV-Bot Development Team")
 
 def setup(bot):
