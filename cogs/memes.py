@@ -14,4 +14,4 @@ class memes(commands.Cog):
         embed.set_footer(text="made by the ABV-Bot Development Team")
 
 def setup(bot):
-    bot.add_cog(Help(bot))
+    bot.add_cog(memes(bot))
