@@ -1,6 +1,5 @@
 from discord.ext import commands
 import discord
-import json
 import requests
 import random
 # Credits to the API to https://github.com/Iapetus-11
@@ -42,7 +41,7 @@ class minecraft(commands.Cog):
             embed.set_footer(text="made by the ABV-Bot Development Team, (inspired by https://github.com/Iapetus-11 `s Villager-Bot)")
             await ctx.send(embed=embed)
         else:
-            embed = discord.Embed(title=f"No Minecraft Server detected at: {str(ip)} is down", color=0xff0000)
+            embed = discord.Embed(title=f"No Minecraft Server detected at: {str(ip)} !", color=0xff0000)
             embed.set_footer(
                 text="made by the ABV-Bot Development Team, (inspired by https://github.com/Iapetus-11 `s Villager-Bot)")
             await ctx.send(embed=embed)
