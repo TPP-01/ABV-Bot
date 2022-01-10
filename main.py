@@ -25,9 +25,10 @@ if __name__ == '__main__':
     for extension in initial_extensions:
         bot.load_extension(extension)
 
+
 @bot.event
 async def on_ready():
-    print(f'\n\nLogged in as: {bot.user.name} - {bot.user.id}\nVersion: {discord.__version__}\n')
+    print(f'\n\nLogged in as: {bot.user.name} - {bot.user.id}\nVersion: {discord.__version__}\nBot Latency: {round(bot.latency * 1000,2)}ms')
     print(f'Successfully logged in and booted...!')
     print([str(i).replace(',', '\n') for i in bot.guilds])
 
