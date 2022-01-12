@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-
+import cogs.minecraft
 import secrets
 
 intents = discord.Intents.default()
@@ -31,7 +31,6 @@ async def on_ready():
     print(f'\n\nLogged in as: {bot.user.name} - {bot.user.id}\nVersion: {discord.__version__}\nBot Latency: {round(bot.latency * 1000,2)}ms')
     print(f'Successfully logged in and booted...!')
     print([str(i).replace(',', '\n') for i in bot.guilds])
-
     #for server in bot.guilds:
         #for channel in server.channels:
             #if channel.permission_for(server.me).create_instant_invite:
