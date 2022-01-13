@@ -70,7 +70,7 @@ class minecraft(commands.Cog):
             channel = discord.get_channel(channel_id)
             message = channel.fetch_message(message_id)
             embed1 = server_info_funct(server_ip)
-            await message.edit(embed1)
+            await message.edit(content=embed1)
             print("done")
 
 
