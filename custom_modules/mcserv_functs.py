@@ -2,6 +2,7 @@ import discord
 import requests
 import json
 import random
+from datetime import datetime
 class mcsrv_functs():
     def __init__(self):
         print("good")
@@ -30,13 +31,15 @@ class mcsrv_functs():
 
                 else:
                     players = players + backtick + name + backtick + seperator  # add \n to make new line for every player
+            current_time = datetime.now()
+            dt_string = current_time.strftime("%d/%m/%Y %H:%M:%S")
             embed = discord.Embed(title=f"{ip} is online", color=0x07e43e)
             embed.set_image(url=f"https://api.iapetus11.me/mc/servercard/{str(ip)}?v={random.random() * 100000}")
             embed.add_field(name="Ip", value=ip, inline=True)
             embed.add_field(name="Version", value=res["version"]["software"], inline=True)
             embed.add_field(name=f"Online Players ({online_players}/{max_players}", value=players, inline=False)
             embed.set_footer(
-                text="made by the ABV-Bot Development Team, (inspired by https://github.com/Iapetus-11 `s Villager-Bot)")
+                text=f"made by the ABV-Bot Development Team, (inspired by https://github.com/Iapetus-11 `s Villager-Bot) \nlast updated at {dt_string}")
             return embed
         else:
             embed = discord.Embed(title=f"No Minecraft Server detected at: {str(ip)} !", color=0xff0000)

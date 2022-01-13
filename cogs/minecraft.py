@@ -24,7 +24,7 @@ class minecraft(commands.Cog):
     async def mysticcraft_serv_checker(self):
         server_ip_my = "185.208.205.128:25565"
         guild_id_my = 907991840408608768
-        message_id_my = 930859497755377704
+        message_id_my = 931238519576330370
         ch_id_my = 930547160376827914
         channel = self.bot.get_channel(ch_id_my)
         message = await channel.fetch_message(message_id_my)
