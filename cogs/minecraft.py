@@ -5,6 +5,7 @@ import discord
 import requests
 import random
 import asyncio
+import cust
 # Credits to the API to https://github.com/Iapetus-11
 class minecraft(commands.Cog):
 
