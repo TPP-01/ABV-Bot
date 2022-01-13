@@ -1,11 +1,11 @@
 import discord
-import  requests
+import requests
 import json
-
+import random
 class mcsrv_functs():
     def __init__(self):
         print("good")
-    def server_info_funct(self, ip):
+    def server_info_funct(ip):
         player_list_cut = []
         API_URL = f"https://api.iapetus11.me/mc/status/{str(ip)}"
         r = requests.get(API_URL)

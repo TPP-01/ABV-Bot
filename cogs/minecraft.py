@@ -20,6 +20,16 @@ class minecraft(commands.Cog):
         self.mysticcraft_serv_checker.start()
         self.json_data = json_para()
 
+    @tasks.loop(seconds=5.0)
+    async def mysticcraft_serv_checker(self):
+        server_ip_my = "185.208.205.128:25565"
+        guild_id_my = 907991840408608768
+        message_id_my = 930859497755377704
+        ch_id_my = 930547160376827914
+        channel = self.bot.get_channel(ch_id_my)
+        message = await channel.fetch_message(message_id_my)
+        embed1 = custom_modules.mcserv_functs.mcsrv_functs.server_info_funct(ip=server_ip_my)
+        await message.edit(embed=embed1)
 
 
     @tasks.loop(seconds=5.0)
@@ -36,22 +46,13 @@ class minecraft(commands.Cog):
             embed1 = custom_modules.mcserv_functs.mcsrv_functs.server_info_funct(server_ip)
             await message.edit(embed=embed1)
             print("done")
-    @tasks.loop(seconds=5.0)
-    async def mysticcraft_serv_checker(self):
-
-        server_ip_my = "185.208.205.128:25565"
-        guild_id_my = 907991840408608768
-        message_id_my = 930859497755377704
-        ch_id_my = 930547160376827914
-        channel = self.bot.get_channel(ch_id_my)
-        message = await channel.fetch_message(message_id_my)
-        await message.edit(content="test2")
 
 
 
 
 
-    @minecraft_server_checker.before_loop
+
+    @mysticcraft_serv_checker.before_loop
     async def before_mineservchecker(self):
         print('waiting...')
         await self.bot.wait_until_ready()
