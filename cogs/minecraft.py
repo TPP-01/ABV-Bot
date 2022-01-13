@@ -32,7 +32,7 @@ class minecraft(commands.Cog):
         await message.edit(embed=embed1)
 
 
-    @tasks.loop(seconds=5.0)
+    @tasks.loop(seconds=10.0)
     async def minecraft_server_checker(self):
         print(str(self.json_data))
         data = self.json_data
