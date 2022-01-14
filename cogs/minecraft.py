@@ -15,46 +15,51 @@ class minecraft(commands.Cog):
         def json_para():
             with open("config.json") as f:
                 data = json.load(f)
+                print(type(data))
                 return data
         self.lock = asyncio.Lock()
-        self.mysticcraft_serv_checker.start()
+        #self.mysticcraft_serv_checker.start()
+        self.minecraft_server_checker.start()
         self.json_data = json_para()
+    #only here for demo
+    #@tasks.loop(seconds=5.0)
+    #async def mysticcraft_serv_checker(self):
+        #server_ip_my = "185.208.205.128:25565"
+        #guild_id_my = 907991840408608768
+        #message_id_my = 931238519576330370
+        #ch_id_my = 930547160376827914
+        #channel = self.bot.get_channel(ch_id_my)
+        #message = await channel.fetch_message(message_id_my)
+        #embed1 = custom_modules.mcserv_functs.mcsrv_functs.server_info_funct(ip=server_ip_my)
+        #await message.edit(embed=embed1)
+
 
     @tasks.loop(seconds=5.0)
-    async def mysticcraft_serv_checker(self):
-        server_ip_my = "185.208.205.128:25565"
-        guild_id_my = 907991840408608768
-        message_id_my = 931238519576330370
-        ch_id_my = 930547160376827914
-        channel = self.bot.get_channel(ch_id_my)
-        message = await channel.fetch_message(message_id_my)
-        embed1 = custom_modules.mcserv_functs.mcsrv_functs.server_info_funct(ip=server_ip_my)
-        await message.edit(embed=embed1)
-
-
-    @tasks.loop(seconds=10.0)
     async def minecraft_server_checker(self):
-        print(str(self.json_data))
         data = self.json_data
-        Servers = data.get("Servers")
-        for i in Servers:
-            message_id = i.get("message_id")
-            channel_id = i.get("channel_id")
-            server_ip = i.get("ip")
-            channel = discord.get_channel(channel_id)
-            message = channel.fetch_message(message_id)
-            embed1 = custom_modules.mcserv_functs.mcsrv_functs.server_info_funct(server_ip)
+        servers = data.get("Servers")
+        for k,v in servers.items():
+            message_id = v.get("message_id")
+            channel_id = v.get("channel_id")
+            server_ip = v.get("ip")
+            channel = self.bot.get_channel(channel_id)
+            message = await channel.fetch_message(message_id)
+            embed1 = custom_modules.mcserv_functs.mcsrv_functs.server_info_funct(ip=server_ip)
             await message.edit(embed=embed1)
-            print("done")
 
 
 
 
 
 
-    @mysticcraft_serv_checker.before_loop
-    async def before_mineservchecker(self):
-        print('waiting...')
+    #@mysticcraft_serv_checker.before_loop
+    #async def before_mineservchecker(self):
+        #print('waiting...')
+        #await self.bot.wait_until_ready()
+
+
+    @minecraft_server_checker.before_loop
+    async def before_minecrft_chern(self):
         await self.bot.wait_until_ready()
     @commands.command(name="serverinfo", aliases=["si"])
     async def serverinfo(self, ctx, ip):
