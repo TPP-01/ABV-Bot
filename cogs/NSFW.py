@@ -1,6 +1,5 @@
-import discord
 from discord.ext import commands
-import lists
+from configdir import lists
 import random
 commands.Bot.nsfw_wop_questions = lists.nsfw_wop_questions
 commands.Bot.nsfw_wop_tasks = lists.nsfw_wop_tasks

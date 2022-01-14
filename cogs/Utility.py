@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-import rki
+from custom_modules import rki
 import secrets
 from github import Github
 import platform
