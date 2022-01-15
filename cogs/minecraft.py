@@ -45,6 +45,7 @@ class minecraft(commands.Cog):
             channel = self.bot.get_channel(channel_id)
             message = await channel.fetch_message(message_id)
             embed1 = custom_modules.mcserv_functs.mcsrv_functs.server_info_funct(ip=server_ip)
+            print(type(embed1))
             await message.edit(embed=embed1)
 
 
