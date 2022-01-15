@@ -34,7 +34,7 @@ class minecraft(commands.Cog):
         #await message.edit(embed=embed1)
 
 
-    @tasks.loop(seconds=5.0)
+    @tasks.loop(seconds=10.0)
     async def minecraft_server_checker(self):
         data = self.json_data
         servers = data.get("Servers")
