@@ -58,14 +58,35 @@ class ReactionRole(commands.Cog):
         self.text = arg
         await ctx.send("Init Done!")
 
+    @commands.slash_command(guild_ids=[907991840408608768])
+    async def roinit(self, ctx, arg):
+        self.roles = []
+        self.channelid = ctx.channel.id
+        self.text = arg
+        await ctx.respond("Init Done!")
+
     # adds the roles to the list
     @commands.command(name="roadd")
     async def roadd(self, ctx, role, emoji):
         self.roles.append([role, emoji])
         await ctx.send(f"Add \"{role},{emoji}\"")
 
+    @commands.slash_command(guild_ids=[907991840408608768])
+    async def roadd(self, ctx, role, emoji):
+        self.roles.append([role, emoji])
+        await ctx.respond(f"Add \"{role},{emoji}\"")
     # deploys everything together
     @commands.command(name="rodeploy")
+    async def rodeploy(self, ctx, delete_channel:str):
+        self.config()
+        if delete_channel == "y" or delete_channel == "j":
+            await ctx.channel.purge(limit=len(await ctx.channel.history().flatten()))
+        #await ctx.channel.purge(limit=len(await ctx.channel.history().flatten()))
+        msg = await ctx.channel.send(self.text)
+        for emoji in self.emojireturn():
+            await msg.add_reaction(emoji)
+
+    @commands.slash_command(guild_ids=[907991840408608768])
     async def rodeploy(self, ctx, delete_channel:str):
         self.config()
         if delete_channel == "y" or delete_channel == "j":
