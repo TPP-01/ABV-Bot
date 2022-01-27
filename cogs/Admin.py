@@ -48,7 +48,6 @@ class admin(commands.Cog):
         if ctx.guild:
             await ctx.channel.purge(limit=limit + 1)
             print(f"{ctx.channel} on {ctx.guild} was cleared")
-            await ctx.message.delete()
         else:
             ctx.send("purge can only be run in servers")
 

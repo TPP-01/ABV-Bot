@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-import rki
+from custom_modules import rki
 import secrets
 from github import Github
 import platform
@@ -77,6 +77,7 @@ class utility(commands.Cog):
         embed.add_field(name="Cpu Type", value=platform.processor(), inline=True)
         embed.add_field(name="CPU Freq", value=f"{cpufreq.current:.2f}Mhz", inline=True)
         embed.add_field(name="CPU Usage", value=f"{psutil.cpu_percent()}%", inline=True)
+        embed.add_field(name="Ping", value=f"{round(self.bot.latency * 1000,2)}ms", inline=True)
         embed.set_footer(text="made by the ABV-Bot Development Team")
         await ctx.send(embed=embed)
 

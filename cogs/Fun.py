@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 import random
-import lists
+from configdir import lists
 
 commands.Bot.wop_questions = lists.warheitoderpflicht
 
