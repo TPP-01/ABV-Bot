@@ -12,8 +12,7 @@ class twitch(commands.Cog):
         self.twitch_authorization_key = "r26y5m85n32s1paqug9dgvc2qxkzy1"
 
     def doesstream(self, login_name):
-        ret = json.loads(requests.get(f'https://api.twitch.tv/helix/streams?user_login="{login_name}"', headers={"Authorization": f"Bearer {self.twitch_authorization_key}", "Client-Id": f"{self.twitch_client_id}"}).content.decode())
-        print(ret)
+        ret = json.loads(requests.get(f'https://api.twitch.tv/helix/streams?user_login={login_name}', headers={"Authorization": f"Bearer {self.twitch_authorization_key}", "Client-Id": f"{self.twitch_client_id}"}).content.decode())
         streams, gamename, since = ret["data"] != [], ret["data"][0]["game_name"], \
                                    ret["data"][0]["started_at"].replace("Z", "").split("T")[1]
 
