@@ -31,6 +31,7 @@ class twitch(commands.Cog):
             await ctx.send(f"{login} streamt {gamename} seit {since}!")
         else:
             await ctx.send(f"{login} streamt nicht.")
+        await ctx.delete()
 
 
 def setup(bot):
