@@ -30,17 +30,5 @@ class NSFW(commands.Cog):
         #await ctx.send(f"{ctx.author.mention} you have to do the task : {random.choice(commands.Bot.nsfwrouletteTasks)}",delete_after=20)
         #await ctx.message.delete()
 
-
-
-
-
-
-
-
-
-
-
-
-
 def setup(bot):
     bot.add_cog(NSFW(bot))
