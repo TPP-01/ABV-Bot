@@ -14,17 +14,19 @@ class twitch(commands.Cog):
         ret = json.loads(requests.get(f'https://api.twitch.tv/helix/streams?user_login="{login_name}"',
                                       headers=[f"Authorization: Bearer {self.twitch_authorization_key}",
                                                f"Client-Id: {self.twitch_client_id}"]).content.decode())
-        streams, gamename, since = ret["data"] != [], ret["data"][0]["game_name"], ret["data"][0]["started_at"].replace("Z", "").split("T")[1]
+        streams, gamename, since = ret["data"] != [], ret["data"][0]["game_name"], \
+                                   ret["data"][0]["started_at"].replace("Z", "").split("T")[1]
 
         return streams, gamename, since
 
     @commands.command(name="streams", help="Show the streaming state with login_names")
-    async def stream(self, ctx, login):
+    async def streams(self, ctx, login):
         streams, gamename, since = self.streams(login)
         if streams:
             await ctx.send(f"{login} streamt {gamename} seit {since}")
         else:
             await ctx.send(f"{login} streamt nicht")
+
 
 def setup(bot):
     bot.add_cog(twitch(bot))
