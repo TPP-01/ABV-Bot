@@ -3,12 +3,13 @@ import json
 import requests
 from discord.ext import commands
 
+import secrets
 
 class twitch(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.twitch_client_id = "c6ntn3sbtupd03nwe9qhlh2ek2at9d"
-        self.twitch_authorization_key = "r26y5m85n32s1paqug9dgvc2qxkzy1"
+        self.twitch_client_id = secrets.twitch_client_id
+        self.twitch_authorization_key = secrets.twitch_authorization_key
 
     def doesstream(self, login_name):
         ret = json.loads(requests.get(f'https://api.twitch.tv/helix/streams?user_login={login_name}',
