@@ -1,8 +1,7 @@
-import discord
-from discord.ext import commands
-import requests
 import json
-import asyncio
+
+import requests
+from discord.ext import commands
 
 
 class twitch(commands.Cog):
@@ -12,10 +11,14 @@ class twitch(commands.Cog):
         self.twitch_authorization_key = "r26y5m85n32s1paqug9dgvc2qxkzy1"
 
     def doesstream(self, login_name):
-        ret = json.loads(requests.get(f'https://api.twitch.tv/helix/streams?user_login={login_name}', headers={"Authorization": f"Bearer {self.twitch_authorization_key}", "Client-Id": f"{self.twitch_client_id}"}).content.decode())
-        streams, gamename, since = ret["data"] != [], ret["data"][0]["game_name"], \
-                                   ret["data"][0]["started_at"].replace("Z", "").split("T")[1]
-
+        ret = json.loads(requests.get(f'https://api.twitch.tv/helix/streams?user_login={login_name}',
+                                      headers={"Authorization": f"Bearer {self.twitch_authorization_key}",
+                                               "Client-Id": f"{self.twitch_client_id}"}).content.decode())
+        try:
+            streams, gamename, since = ret["data"] != [], ret["data"][0]["game_name"], \
+                                       ret["data"][0]["started_at"].replace("Z", "").split("T")[1]
+        except IndexError:
+            streams, gamename, since = False, None, None
         return streams, gamename, since
 
     @commands.command(name="streams", help="Show the streaming state with login_names")
