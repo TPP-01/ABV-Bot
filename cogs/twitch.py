@@ -2,7 +2,6 @@ import discord
 from discord.ext import commands
 import requests
 import json
-import asyncio
 
 
 class twitch(commands.Cog):
@@ -23,8 +22,8 @@ class twitch(commands.Cog):
 
     @commands.command(name="streams", help="Show the streaming state with login_names")
     async def streams(self, ctx, login):
-        print(asyncio.run(self.streams(login)))
-        streams, gamename, since = asyncio.run(self.streams(login))
+        print(self.streams(login))
+        streams, gamename, since = self.streams(login)
         if streams:
             await ctx.send(f"{login} streamt {gamename} seit {since}")
         else:
