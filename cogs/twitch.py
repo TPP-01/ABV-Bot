@@ -11,7 +11,7 @@ class twitch(commands.Cog):
         self.twitch_client_id = "c6ntn3sbtupd03nwe9qhlh2ek2at9d"
         self.twitch_authorization_key = "r26y5m85n32s1paqug9dgvc2qxkzy1"
 
-    def streams(self, login_name):
+    async def streams(self, login_name):
         ret = json.loads(requests.get(f'https://api.twitch.tv/helix/streams?user_login="{login_name}"',
                                       headers=[f"Authorization: Bearer {self.twitch_authorization_key}",
                                                f"Client-Id: {self.twitch_client_id}"]).content.decode())
