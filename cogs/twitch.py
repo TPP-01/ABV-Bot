@@ -57,6 +57,7 @@ class twitch(commands.Cog):
         with open("twitch.json", "r") as j:
             try:
                 twitchjson = json.loads(j.read())
+                print(twitchjson)###################
                 for userid, streamers in twitchjson.items():
                     userid = int(userid)
                     print(twitchjson.items())###################
