@@ -43,6 +43,7 @@ class twitch(commands.Cog):
                 print(type(twitchjson))
                 print(twitchjson)
                 twitchjson[str(ctx.author.id)] = twitchjson[str(ctx.author.id)].append(login)
+                print(twitchjson)
                 json.dump(twitchjson, j)
                 await ctx.send("Der Reminder wurde gesetzt")
                 if ctx.guild:
