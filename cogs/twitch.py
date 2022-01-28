@@ -39,14 +39,14 @@ class twitch(commands.Cog):
         with open("twitch.json", "r+") as j:
             try:
                 twitchjson = json.loads(j.read())
-                twitchjson[ctx.author.id] = twitchjson[ctx.author.id].append(login)
+                twitchjson[str(ctx.author.id)] = twitchjson[str(ctx.author.id)].append(login)
                 j.write(json.dumps(twitchjson))
                 await ctx.send("Der Reminder wurde gesetzt")
                 if ctx.guild:
                     await ctx.message.delete()
 
             except json.decoder.JSONDecodeError:
-                twitchjson = {ctx.author.id: [login]}
+                twitchjson = {str(ctx.author.id): [login]}
                 j.write(json.dumps(twitchjson))
                 await ctx.send("Der Reminder wurde gesetzt")
                 if ctx.guild:
@@ -58,6 +58,7 @@ class twitch(commands.Cog):
             try:
                 twitchjson = json.loads(j.read())
                 for userid, streamers in twitchjson.items():
+                    userid = int(userid)
                     print(twitchjson.items())###################
                     user = await self.bot.get_user(userid)
                     for streamer in streamers:
