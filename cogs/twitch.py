@@ -39,14 +39,14 @@ class twitch(commands.Cog):
         with open("twitch.json", "r+") as j:
             try:
                 twitchjson = json.loads(j.read())
-                twitchjson[ctx.member.id] = twitchjson[ctx.member.id].append(login)
+                twitchjson[ctx.author.id] = twitchjson[ctx.author.id].append(login)
                 j.write(json.dumps(twitchjson))
                 ctx.send("Der Reminder wurde gesetzt")
                 if ctx.guild:
                     ctx.message.delete()
 
             except json.decoder.JSONDecodeError:
-                twitchjson = {ctx.member.id: [login]}
+                twitchjson = {ctx.author.id: [login]}
                 j.write(json.dumps(twitchjson))
                 ctx.send("Der Reminder wurde gesetzt")
                 if ctx.guild:
