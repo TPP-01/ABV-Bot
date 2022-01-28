@@ -60,14 +60,13 @@ class twitch(commands.Cog):
         with open("twitch.json", "r") as j:
             s = j.read()
             if s != "":
-                print(j.read())
                 twitchjson = json.loads(s)
                 print(twitchjson)###################
                 for userid, streamers in twitchjson.items():
                     userid = int(userid)
                     streamers = streamers
                     print(twitchjson.items())###################
-                    user = await self.bot.get_user(userid)
+                    user = self.bot.get_user(userid)
                     for streamer in streamers:
                         print(streamers)###################
                         streams, gamename, since = self.doesstream(streamer)
