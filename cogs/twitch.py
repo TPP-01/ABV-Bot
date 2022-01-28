@@ -82,7 +82,7 @@ class twitch(commands.Cog):
                             print(since)
                             print(int(str(datetime.datetime.now()).split(":")[1].split(".")[0]))
                             print(int(since.split(":")[2]))
-                            if streams == True and int(str(datetime.datetime.now()).split(":")[1].split(".")[0]) - int(since.split(":")[2]) <= 3:
+                            if streams == True and int(str(datetime.datetime.now()).split(":")[1].split(".")[0]) - int(since.split(":")[1]) <= 3:
                                 print("Doesstream")  ###################
                                 await user.send(f"Der Streamer {streamer} streamt {gamename}!")
                 print("Errorcode: 0")  ###################
