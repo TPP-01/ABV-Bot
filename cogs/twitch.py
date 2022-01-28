@@ -67,6 +67,7 @@ class twitch(commands.Cog):
                     userid = int(userid)
                     streamers = streamers
                     print(twitchjson.items())  ###################
+                    user = None
                     for guild in self.bot.guilds:
                         user = await guild.query_members(user_ids=[userid])
                         if user is not None:
