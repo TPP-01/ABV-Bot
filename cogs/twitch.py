@@ -39,6 +39,8 @@ class twitch(commands.Cog):
         with open("twitch.json", "r+") as j:
             try:
                 twitchjson = json.load(j)
+                print(type(twitchjson))
+                print(twitchjson)
                 twitchjson[str(ctx.author.id)] = twitchjson[str(ctx.author.id)].append(login)
                 json.dump(twitchjson, j)
                 await ctx.send("Der Reminder wurde gesetzt")
