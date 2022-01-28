@@ -4,6 +4,8 @@ import secrets
 import requests
 from discord.ext import commands, tasks
 
+import datetime
+
 
 class twitch(commands.Cog):
     def __init__(self, bot):
@@ -56,7 +58,7 @@ class twitch(commands.Cog):
                 if ctx.guild:
                     await ctx.message.delete()
 
-    @tasks.loop(seconds=10)
+    @tasks.loop(seconds=120)
     async def twitchreminder(self):
         with open("twitch.json", "r") as j:
             s = j.read()
@@ -77,7 +79,7 @@ class twitch(commands.Cog):
                         for streamer in streamers:
                             print(streamers)  ###################
                             streams, gamename, since = self.doesstream(streamer)
-                            if streams == True:
+                            if streams == True and int(int(since.split(":")[2]) - str(datetime.datetime.now()).split(":")[2].split(".")[0]) <= 3:
                                 print("Doesstream")  ###################
                                 await user.send(f"Der Streamer {streamer} streamt das Spiel {gamename}!")
                 print("Errorcode: 0")  ###################
