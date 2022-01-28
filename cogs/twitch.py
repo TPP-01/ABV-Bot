@@ -56,7 +56,7 @@ class twitch(commands.Cog):
     async def twitchreminder(self):
         with open("twitch.json", "r") as j:
                 print(j.read())
-                twitchjson = eval(j.read())
+                twitchjson = dict(eval(j.read()))
                 print(twitchjson)###################
                 for userid, streamers in twitchjson.items():
                     userid = int(userid)
