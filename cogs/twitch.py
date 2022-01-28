@@ -46,7 +46,7 @@ class twitch(commands.Cog):
                     await ctx.message.delete()
 
             except json.decoder.JSONDecodeError:
-                twitchjson = {str(ctx.author.id): repr([login])}
+                twitchjson = {str(ctx.author.id): repr([str(login)])}
                 json.dump(twitchjson, j)
                 await ctx.send("Der Reminder wurde gesetzt")
                 if ctx.guild:
