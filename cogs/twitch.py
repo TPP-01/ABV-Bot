@@ -55,21 +55,21 @@ class twitch(commands.Cog):
     @tasks.loop(seconds=10)
     async def twitchreminder(self):
         with open("twitch.json", "r") as j:
-            print(j.read())
-            twitchjson = json.load(j)
-            print(twitchjson)###################
-            for userid, streamers in twitchjson.items():
-                userid = int(userid)
-                streamers = eval(streamers)
-                print(twitchjson.items())###################
-                user = await self.bot.get_user(userid)
-                for streamer in streamers:
-                    print(streamers)###################
-                    streams, gamename, since = self.doesstream(streamer)
-                    if streams == True:
-                        print("Doesstream")###################
-                        await user.send(f"Der Streamer {streamer} streamt das Spiel {gamename}!")
-            print("Errorcode: 0")###################
+            if j.read() != "":
+                twitchjson = json.load(j)
+                print(twitchjson)###################
+                for userid, streamers in twitchjson.items():
+                    userid = int(userid)
+                    streamers = eval(streamers)
+                    print(twitchjson.items())###################
+                    user = await self.bot.get_user(userid)
+                    for streamer in streamers:
+                        print(streamers)###################
+                        streams, gamename, since = self.doesstream(streamer)
+                        if streams == True:
+                            print("Doesstream")###################
+                            await user.send(f"Der Streamer {streamer} streamt das Spiel {gamename}!")
+                print("Errorcode: 0")###################
 
 
 def setup(bot):
