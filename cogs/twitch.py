@@ -37,20 +37,28 @@ class twitch(commands.Cog):
     @commands.command(name="remind", help="Remind when specific twitch-streamers stream.")
     async def remind(self, ctx, login):
         with open("twitch.json", "r+") as j:
-            twitchjson = json.loads(j.read())
-            twitchjson[ctx.user.id] = twitchjson[ctx.user.id].append(login)
-            j.write(json.dumps(twitchjson))
+            try:
+                twitchjson = json.loads(j.read())
+                twitchjson[ctx.user.id] = twitchjson[ctx.user.id].append(login)
+                j.write(json.dumps(twitchjson))
+
+            except json.decoder.JSONDecodeError:
+                pass
 
     @tasks.loop(seconds=120)
     async def twitchreminder(self):
         with open("twitch.json", "r") as j:
-            twitchjson = json.loads(j.read())
-            for userid, streamers in twitchjson.items():
-                user = self.bot.get_user(userid)
-                for streamer in streamers:
-                    streams, gamename, since = self.doesstream(streamer)
-                    if streams == True:
-                        user.send(f"Der Streamer {streamer} streamt das Spiel {gamename}!")
+            try:
+                twitchjson = json.loads(j.read())
+                for userid, streamers in twitchjson.items():
+                    user = self.bot.get_user(userid)
+                    for streamer in streamers:
+                        streams, gamename, since = self.doesstream(streamer)
+                        if streams == True:
+                            user.send(f"Der Streamer {streamer} streamt das Spiel {gamename}!")
+
+            except json.decoder.JSONDecodeError:
+                pass
 
 
 def setup(bot):
