@@ -41,6 +41,9 @@ class twitch(commands.Cog):
                 twitchjson = json.loads(j.read())
                 twitchjson[ctx.user.id] = twitchjson[ctx.user.id].append(login)
                 j.write(json.dumps(twitchjson))
+                ctx.send("Der Reminder wurde gesetzt")
+                if ctx.guild:
+                    ctx.message.delete()
 
             except json.decoder.JSONDecodeError:
                 pass
