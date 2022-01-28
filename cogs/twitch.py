@@ -77,4 +77,6 @@ class twitch(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(twitch(bot))
+    t = twitch(bot)
+    t.twitchreminder.start()
+    bot.add_cog(t)
