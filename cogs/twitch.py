@@ -58,8 +58,8 @@ class twitch(commands.Cog):
     @tasks.loop(seconds=10)
     async def twitchreminder(self):
         with open("twitch.json", "r") as j:
-            print(j.read())
-            if j.read() != "":
+            s = j.read()
+            if s != "":
                 print(j.read())
                 twitchjson = json.load(j)
                 print(twitchjson)###################
