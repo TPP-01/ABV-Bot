@@ -67,11 +67,12 @@ class twitch(commands.Cog):
                     userid = int(userid)
                     streamers = streamers
                     print(twitchjson.items())  ###################
-                    user = None
                     for guild in self.bot.guilds:
-                        user = await guild.query_members(user_ids=[userid])
-                        if user is not None:
-                            break
+                        for member in guild.members:
+                            if member.id == userid:
+                                user = member
+                                break
+
                     for streamer in streamers:
                         print(streamers)  ###################
                         streams, gamename, since = self.doesstream(streamer)
