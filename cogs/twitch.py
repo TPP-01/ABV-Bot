@@ -10,6 +10,7 @@ class twitch(commands.Cog):
         self.bot = bot
         self.twitch_client_id = secrets.twitch_client_id
         self.twitch_authorization_key = secrets.twitch_authorization_key
+        self.twitchreminder.start()
 
     def doesstream(self, login_name):
         ret = json.loads(requests.get(f'https://api.twitch.tv/helix/streams?user_login={login_name}',
@@ -58,7 +59,7 @@ class twitch(commands.Cog):
     async def twitchreminder(self):
         with open("twitch.json", "r") as j:
             print(j.read())
-            if str(j.read()) != "":
+            if j.read() != "":
                 print(j.read())
                 twitchjson = json.load(j)
                 print(twitchjson)###################
@@ -78,5 +79,4 @@ class twitch(commands.Cog):
 
 def setup(bot):
     t = twitch(bot)
-    t.twitchreminder.start()
     bot.add_cog(t)
