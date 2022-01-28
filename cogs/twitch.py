@@ -48,19 +48,24 @@ class twitch(commands.Cog):
             except json.decoder.JSONDecodeError:
                 pass
 
-    @tasks.loop(seconds=120)
+    @tasks.loop(seconds=10)
     async def twitchreminder(self):
         with open("twitch.json", "r") as j:
             try:
                 twitchjson = json.loads(j.read())
                 for userid, streamers in twitchjson.items():
+                    print(twitchjson.items())###################
                     user = self.bot.get_user(userid)
                     for streamer in streamers:
+                        print(streamers)###################
                         streams, gamename, since = self.doesstream(streamer)
                         if streams == True:
+                            print("Doesstream")###################
                             user.send(f"Der Streamer {streamer} streamt das Spiel {gamename}!")
+                print("Errorcode: 0")###################
 
             except json.decoder.JSONDecodeError:
+                print("Error: json.decoder.JSONDecodeError")###################
                 pass
 
 
