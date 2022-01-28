@@ -39,7 +39,7 @@ class twitch(commands.Cog):
 
     @commands.command(name="remind", help="Remind when specific twitch-streamers stream.")
     async def remind(self, ctx, login):
-        with open("twitch.json", "r+") as j:
+        with open("twitch.json", "r+") as j:  # ToDo: Komplett überarbeiten
             try:
                 twitchjson = json.load(j)
                 print(type(twitchjson))
@@ -81,10 +81,11 @@ class twitch(commands.Cog):
                             print(self.doesstream(streamer))
                             print(streams)
                             print(since)
-                            #print(int(str(datetime.datetime.now()).split(":")[1].split(".")[0]))
-                            #print(int(since.split(":")[1]))
+                            # print(int(str(datetime.datetime.now()).split(":")[1].split(".")[0]))
+                            # print(int(since.split(":")[1]))
                             if streams == True:
-                                if int(str(datetime.datetime.now()).split(":")[1].split(".")[0]) - int(since.split(":")[1]) <= 3:
+                                if int(str(datetime.datetime.now()).split(":")[1].split(".")[0]) - int(
+                                        since.split(":")[1]) <= 3:  # ToDo: Stunden einberechnen
                                     print("Doesstream")  ###################
                                     await user.send(f"Der Streamer {streamer} streamt {gamename}!")
                 print("Errorcode: 0")  ###################
@@ -94,7 +95,8 @@ class twitch(commands.Cog):
         await self.bot.wait_until_ready()
 
 
-
 def setup(bot):
     t = twitch(bot)
     bot.add_cog(t)
+
+# ToDo: Debug entfernen, Code beschreiben + überarbeiten
