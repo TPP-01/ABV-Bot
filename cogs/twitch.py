@@ -79,9 +79,10 @@ class twitch(commands.Cog):
                             print(streamer)  ###################
                             streams, gamename, since = self.doesstream(streamer)
                             print(streams)
+                            print(since)
                             if streams == True and int(str(datetime.datetime.now()).split(":")[1].split(".")[0]) - int(since.split(":")[2]) <= 3:
                                 print("Doesstream")  ###################
-                                await user.send(f"Der Streamer {streamer} streamt das Spiel {gamename}!")
+                                await user.send(f"Der Streamer {streamer} streamt {gamename}!")
                 print("Errorcode: 0")  ###################
 
     @twitchreminder.before_loop
