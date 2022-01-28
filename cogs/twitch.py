@@ -61,7 +61,7 @@ class twitch(commands.Cog):
             s = j.read()
             if s != "":
                 print(j.read())
-                twitchjson = json.load(j)
+                twitchjson = json.loads(s)
                 print(twitchjson)###################
                 for userid, streamers in twitchjson.items():
                     userid = int(userid)
