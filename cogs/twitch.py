@@ -41,7 +41,7 @@ class twitch(commands.Cog):
     async def remind(self, ctx, login):
         with open("twitch.json", "r+") as j:
             try:
-                twitchjson = dict(json.load(j))
+                twitchjson = json.load(j)
                 print(type(twitchjson))
                 print(twitchjson)
                 twitchjson[str(ctx.author.id)] = twitchjson[str(ctx.author.id)].append(login)
