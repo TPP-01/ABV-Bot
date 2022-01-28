@@ -41,16 +41,16 @@ class twitch(commands.Cog):
                 twitchjson = json.loads(j.read())
                 twitchjson[ctx.author.id] = twitchjson[ctx.author.id].append(login)
                 j.write(json.dumps(twitchjson))
-                ctx.send("Der Reminder wurde gesetzt")
+                await ctx.send("Der Reminder wurde gesetzt")
                 if ctx.guild:
-                    ctx.message.delete()
+                    await ctx.message.delete()
 
             except json.decoder.JSONDecodeError:
                 twitchjson = {ctx.author.id: [login]}
                 j.write(json.dumps(twitchjson))
-                ctx.send("Der Reminder wurde gesetzt")
+                await ctx.send("Der Reminder wurde gesetzt")
                 if ctx.guild:
-                    ctx.message.delete()
+                    await ctx.message.delete()
 
     @tasks.loop(seconds=10)
     async def twitchreminder(self):
@@ -59,13 +59,13 @@ class twitch(commands.Cog):
                 twitchjson = json.loads(j.read())
                 for userid, streamers in twitchjson.items():
                     print(twitchjson.items())###################
-                    user = self.bot.get_user(userid)
+                    user = await self.bot.get_user(userid)
                     for streamer in streamers:
                         print(streamers)###################
                         streams, gamename, since = self.doesstream(streamer)
                         if streams == True:
                             print("Doesstream")###################
-                            user.send(f"Der Streamer {streamer} streamt das Spiel {gamename}!")
+                            await user.send(f"Der Streamer {streamer} streamt das Spiel {gamename}!")
                 print("Errorcode: 0")###################
 
             except json.decoder.JSONDecodeError:
