@@ -38,16 +38,16 @@ class twitch(commands.Cog):
     async def remind(self, ctx, login):
         with open("twitch.json", "r+") as j:
             try:
-                twitchjson = json.loads(j.read())
+                twitchjson = eval(j.read())
                 twitchjson[str(ctx.author.id)] = twitchjson[str(ctx.author.id)].append(login)
-                j.write(json.dumps(twitchjson))
+                j.write(repr(twitchjson))
                 await ctx.send("Der Reminder wurde gesetzt")
                 if ctx.guild:
                     await ctx.message.delete()
 
             except json.decoder.JSONDecodeError:
                 twitchjson = {str(ctx.author.id): [login]}
-                j.write(json.dumps(twitchjson))
+                j.write(repr(twitchjson))
                 await ctx.send("Der Reminder wurde gesetzt")
                 if ctx.guild:
                     await ctx.message.delete()
@@ -56,7 +56,7 @@ class twitch(commands.Cog):
     async def twitchreminder(self):
         with open("twitch.json", "r") as j:
                 print(j.read())
-                twitchjson = json.loads(j.read())
+                twitchjson = eval(j.read())
                 print(twitchjson)###################
                 for userid, streamers in twitchjson.items():
                     userid = int(userid)
