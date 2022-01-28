@@ -62,19 +62,22 @@ class twitch(commands.Cog):
             s = j.read()
             if s != "":
                 twitchjson = json.loads(s)
-                print(twitchjson)###################
+                print(twitchjson)  ###################
                 for userid, streamers in twitchjson.items():
                     userid = int(userid)
                     streamers = streamers
-                    print(twitchjson.items())###################
-                    user = self.bot.get_user(userid)
+                    print(twitchjson.items())  ###################
+                    for guild in self.bot.guilds:
+                        user = await guild.query_members(user_ids=[userid])
+                        if user is not None:
+                            break
                     for streamer in streamers:
-                        print(streamers)###################
+                        print(streamers)  ###################
                         streams, gamename, since = self.doesstream(streamer)
                         if streams == True:
-                            print("Doesstream")###################
+                            print("Doesstream")  ###################
                             await user.send(f"Der Streamer {streamer} streamt das Spiel {gamename}!")
-                print("Errorcode: 0")###################
+                print("Errorcode: 0")  ###################
 
 
 def setup(bot):
