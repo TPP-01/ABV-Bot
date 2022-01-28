@@ -36,14 +36,14 @@ class twitch(commands.Cog):
 
     @commands.command(name="remind", help="Remind when specific twitch-streamers stream.")
     async def remind(self, ctx, login):
-        with open("../twitch.json", "r+") as j:
+        with open("twitch.json", "r+") as j:
             twitchjson = json.loads(j.read())
             twitchjson[ctx.user.id] = twitchjson[ctx.user.id].append(login)
             j.write(json.dumps(twitchjson))
 
     @tasks.loop(seconds=120)
     async def twitchreminder(self):
-        with open("../twitch.json", "r") as j:
+        with open("twitch.json", "r") as j:
             twitchjson = json.loads(j.read())
             for userid, streamers in twitchjson.items():
                 user = self.bot.get_user(userid)
