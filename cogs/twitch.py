@@ -39,9 +39,10 @@ class twitch(commands.Cog):
 
     @commands.command(name="remind", help="Remind when specific twitch-streamers stream.")
     async def remind(self, ctx, login):
-        with open("twitch.json", "r+") as j:  # ToDo: Komplett überarbeiten
-            try:
-                twitchjson = json.load(j)
+        with open("twitch.json", "r+") as j:  # ToDo: Komplett überarbeiten und testen
+            s = j.read()
+            if s != "":
+                twitchjson = json.loads(s)
                 print(type(twitchjson))
                 print(twitchjson)
                 twitchjson[str(ctx.author.id)] = twitchjson[str(ctx.author.id)].append(login)
@@ -51,12 +52,7 @@ class twitch(commands.Cog):
                 if ctx.guild:
                     await ctx.message.delete()
 
-            except json.decoder.JSONDecodeError:
-                twitchjson = {str(ctx.author.id): [str(login)]}
-                json.dump(twitchjson, j)
-                await ctx.send("Der Reminder wurde gesetzt")
-                if ctx.guild:
-                    await ctx.message.delete()
+
 
     @tasks.loop(seconds=120)
     async def twitchreminder(self):
