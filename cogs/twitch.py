@@ -43,7 +43,7 @@ class twitch(commands.Cog):
             s = j.read()
             print(s)
             if s != "":
-                twitchjson = json.loads(s)
+                twitchjson = json.load(j)
                 print(twitchjson)
                 streamerlist = twitchjson[ctx.author.id]
                 print(streamerlist)
