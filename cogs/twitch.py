@@ -46,7 +46,8 @@ class twitch(commands.Cog):
                     twitchjson = json.loads(s)
                     try:
                         streamerlist = twitchjson[str(ctx.author.id)]
-                        streamerlist.append(login)
+                        if not login in streamerlist:
+                            streamerlist.append(login)
                         twitchjson[str(ctx.author.id)] = streamerlist
                     except KeyError:
                         twitchjson[str(ctx.author.id)] = [login]
