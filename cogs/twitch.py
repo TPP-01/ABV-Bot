@@ -46,11 +46,6 @@ class twitch(commands.Cog):
                 twitchjson = json.loads(s)
                 print(twitchjson)
 
-                try:
-                    twitchjson[ctx.author.id]
-                except KeyError:
-                    twitchjson[ctx.author.id] = []
-                    print("KeyError")
 
                 streamerlist = twitchjson[ctx.author.id]
                 streamerlist.append(login)
