@@ -80,7 +80,6 @@ class twitch(commands.Cog):
                     if user is not None:
                         for streamer in streamers:
                             streams, gamename, since = self.doesstream(streamer)
-                            print(streams)
                             if streams:
                                 if (datetime.datetime.now().minute + 60 * datetime.datetime.now().hour) - (
                                         int(since.split(":")[2]) + 60 * int(since.split(":")[1])) <= 3:
