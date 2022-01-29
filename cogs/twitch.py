@@ -45,10 +45,11 @@ class twitch(commands.Cog):
             if s != "":
                 twitchjson = json.load(j)
                 print(twitchjson)
-                streamerlist = twitchjson[ctx.author.id]
+                streamerlist = twitchjson[str(ctx.author.id)]
                 print(streamerlist)
                 streamerlist.append(login)
-                twitchjson[ctx.author.id] = streamerlist
+                print(streamerlist)
+                twitchjson[str(ctx.author.id)] = streamerlist
                 print(streamerlist)
                 print(twitchjson)
                 j.write(json.dumps(twitchjson))
@@ -58,7 +59,7 @@ class twitch(commands.Cog):
 
             else:
                 with open("twitch.json", "w") as j:
-                    json.dump({ctx.author.id: [login]}, j)
+                    json.dump({str(ctx.author.id): [login]}, j)
                     await ctx.send("Der Reminder wurde gesetzt")
                     if ctx.guild:
                         await ctx.message.delete()
@@ -78,7 +79,7 @@ class twitch(commands.Cog):
                             if int(member.id) == userid:
                                 user = member
                                 break
-                    if user != None:
+                    if user is not None:
                         for streamer in streamers:
                             streams, gamename, since = self.doesstream(streamer)
                             if streams == True:
