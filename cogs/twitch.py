@@ -39,31 +39,32 @@ class twitch(commands.Cog):
 
     @commands.command(name="remind", help="Remind when specific twitch-streamers stream.")
     async def remind(self, ctx, login):
-        with open("twitch.json", "r+") as j:
+        with open("twitch.json", "r") as j:
             s = j.read()
-            print(s)
-            if s != "":
-                twitchjson = json.loads(s)
-                print(twitchjson)
-                streamerlist = twitchjson[str(ctx.author.id)]
-                print(streamerlist)
-                streamerlist.append(login)
-                print(streamerlist)
-                twitchjson[str(ctx.author.id)] = streamerlist
-                print(streamerlist)
-                print(twitchjson)
-                j.write(json.dumps(twitchjson))
-                await ctx.send("Der Reminder wurde gesetzt")
-                if ctx.guild:
-                    await ctx.message.delete()
-
-            else:
-                with open("twitch.json", "w") as j:
-                    json.dump({str(ctx.author.id): [login]}, j)
+            with open("twitch.json", "w") as j:
+                print(s)
+                if s != "":
+                    twitchjson = json.loads(s)
+                    print(twitchjson)
+                    streamerlist = twitchjson[str(ctx.author.id)]
+                    print(streamerlist)
+                    streamerlist.append(login)
+                    print(streamerlist)
+                    twitchjson[str(ctx.author.id)] = streamerlist
+                    print(streamerlist)
+                    print(twitchjson)
+                    j.write(json.dumps(twitchjson))
                     await ctx.send("Der Reminder wurde gesetzt")
                     if ctx.guild:
                         await ctx.message.delete()
-            j.close()
+
+                else:
+                    with open("twitch.json", "w") as j:
+                        json.dump({str(ctx.author.id): [login]}, j)
+                        await ctx.send("Der Reminder wurde gesetzt")
+                        if ctx.guild:
+                            await ctx.message.delete()
+                j.close()
 
     @tasks.loop(seconds=120)
     async def twitchreminder(self):
