@@ -87,6 +87,8 @@ class twitch(commands.Cog):
                                 if (datetime.datetime.now().minute + 60 * datetime.datetime.now().hour) - (
                                         int(since.split(":")[2]) + 60 * int(since.split(":")[1])) <= 3:
                                     await user.send(f"Der Streamer {streamer} streamt {gamename}!")
+                                    print(streams)
+
             j.close()
 
     @twitchreminder.before_loop
