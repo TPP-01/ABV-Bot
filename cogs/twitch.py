@@ -45,9 +45,8 @@ class twitch(commands.Cog):
             if s != "":
                 twitchjson = json.loads(s)
                 print(twitchjson)
-
-
                 streamerlist = twitchjson[ctx.author.id]
+                print(streamerlist)
                 streamerlist.append(login)
                 twitchjson[ctx.author.id] = streamerlist
                 print(streamerlist)
