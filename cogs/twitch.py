@@ -39,7 +39,7 @@ class twitch(commands.Cog):
 
     @commands.command(name="remind", help="Remind when specific twitch-streamers stream.")
     async def remind(self, ctx, login):
-        with open("twitch.json", "w+") as j:
+        with open("twitch.json", "r+") as j:
             s = j.read()
             print(s)
             if s != "":
