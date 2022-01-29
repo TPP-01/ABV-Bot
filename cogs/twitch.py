@@ -3,7 +3,6 @@ import json
 import secrets
 
 import requests
-
 from discord.ext import commands, tasks
 
 
@@ -68,10 +67,8 @@ class twitch(commands.Cog):
     async def twitchreminder(self):
         with open("twitch.json", "r") as j:
             s = j.read()
-            print(s)
             if s != "":
                 twitchjson = json.loads(s)
-                print(twitchjson)  ###################
                 for userid, streamers in twitchjson.items():
                     userid = int(userid)
                     user = None
@@ -79,17 +76,15 @@ class twitch(commands.Cog):
                         for member in guild.members:
                             if int(member.id) == userid:
                                 user = member
-                                print("User")
                                 break
                     if user is not None:
                         for streamer in streamers:
                             streams, gamename, since = self.doesstream(streamer)
                             print(streams)
-                            if streams == True:
-                                if (datetime.datetime.now().minute + 60 * datetime.datetime.now().hour) - (int(since.split(":")[2]) + 60 * int(since.split(":")[1])) <= 3:
+                            if streams:
+                                if (datetime.datetime.now().minute + 60 * datetime.datetime.now().hour) - (
+                                        int(since.split(":")[2]) + 60 * int(since.split(":")[1])) <= 3:
                                     await user.send(f"Der Streamer {streamer} streamt {gamename}!")
-                                    print(streams)
-
             j.close()
 
     @twitchreminder.before_loop
@@ -101,4 +96,4 @@ def setup(bot):
     t = twitch(bot)
     bot.add_cog(t)
 
-# ToDo: Debug entfernen, Code beschreiben + überarbeiten
+#ToDo: Code beschreiben
