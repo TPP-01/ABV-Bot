@@ -42,17 +42,14 @@ class twitch(commands.Cog):
         with open("twitch.json", "r") as j:
             s = j.read()
             with open("twitch.json", "w") as j:
-                print(s)
                 if s != "":
                     twitchjson = json.loads(s)
-                    print(twitchjson)
-                    streamerlist = twitchjson[str(ctx.author.id)]
-                    print(streamerlist)
-                    streamerlist.append(login)
-                    print(streamerlist)
-                    twitchjson[str(ctx.author.id)] = streamerlist
-                    print(streamerlist)
-                    print(twitchjson)
+                    try:
+                        streamerlist = twitchjson[str(ctx.author.id)]
+                        streamerlist.append(login)
+                        twitchjson[str(ctx.author.id)] = streamerlist
+                    except KeyError:
+                        twitchjson[str(ctx.author.id)] = [login]
                     json.dump(twitchjson, j)
                     await ctx.send("Der Reminder wurde gesetzt")
                     if ctx.guild:
