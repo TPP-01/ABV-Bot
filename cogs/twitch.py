@@ -1,10 +1,9 @@
+import datetime
 import json
 import secrets
 
 import requests
 from discord.ext import commands, tasks
-
-import datetime
 
 
 class twitch(commands.Cog):
@@ -43,16 +42,19 @@ class twitch(commands.Cog):
             s = j.read()
             if s != "":
                 twitchjson = json.loads(s)
-                print(type(twitchjson))
                 print(twitchjson)
-                twitchjson[str(ctx.author.id)] = twitchjson[str(ctx.author.id)].append(login)
+
+                try:
+                    twitchjson[ctx.author.id]
+                except KeyError:
+                    twitchjson[ctx.author.id] = []
+
+                twitchjson[ctx.author.id].append(login)
                 print(twitchjson)
                 json.dump(twitchjson, j)
                 await ctx.send("Der Reminder wurde gesetzt")
                 if ctx.guild:
                     await ctx.message.delete()
-
-
 
     @tasks.loop(seconds=120)
     async def twitchreminder(self):
@@ -63,7 +65,6 @@ class twitch(commands.Cog):
                 print(twitchjson)  ###################
                 for userid, streamers in twitchjson.items():
                     userid = int(userid)
-                    print(twitchjson.items())  ###################
                     user = None
                     for guild in self.bot.guilds:
                         for member in guild.members:
@@ -72,19 +73,11 @@ class twitch(commands.Cog):
                                 break
                     if user != None:
                         for streamer in streamers:
-                            print(streamer)  ###################
                             streams, gamename, since = self.doesstream(streamer)
-                            print(self.doesstream(streamer))
-                            print(streams)
-                            print(since)
-                            # print(int(str(datetime.datetime.now()).split(":")[1].split(".")[0]))
-                            # print(int(since.split(":")[1]))
                             if streams == True:
-                                if int(str(datetime.datetime.now()).split(":")[1].split(".")[0]) - int(
-                                        since.split(":")[1]) <= 3:  # ToDo: Stunden einberechnen
-                                    print("Doesstream")  ###################
+                                if (datetime.datetime.now().minute + 60 * datetime.datetime.now().hour) - (
+                                        int(since.split(":")[2]) + 60 * int(since.split(":")[1])) <= 3:
                                     await user.send(f"Der Streamer {streamer} streamt {gamename}!")
-                print("Errorcode: 0")  ###################
 
     @twitchreminder.before_loop
     async def twitchremider_before_ready(self):
