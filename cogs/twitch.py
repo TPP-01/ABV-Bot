@@ -79,13 +79,14 @@ class twitch(commands.Cog):
                         for member in guild.members:
                             if int(member.id) == userid:
                                 user = member
+                                print("User")
                                 break
                     if user is not None:
                         for streamer in streamers:
                             streams, gamename, since = self.doesstream(streamer)
+                            print(streams)
                             if streams == True:
-                                if (datetime.datetime.now().minute + 60 * datetime.datetime.now().hour) - (
-                                        int(since.split(":")[2]) + 60 * int(since.split(":")[1])) <= 3:
+                                if (datetime.datetime.now().minute + 60 * datetime.datetime.now().hour) - (int(since.split(":")[2]) + 60 * int(since.split(":")[1])) <= 3:
                                     await user.send(f"Der Streamer {streamer} streamt {gamename}!")
                                     print(streams)
 
