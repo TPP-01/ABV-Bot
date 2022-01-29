@@ -62,6 +62,13 @@ class twitch(commands.Cog):
                 if ctx.guild:
                     await ctx.message.delete()
 
+            else:
+                with open("twitch.json", "w") as j:
+                    json.dump({ctx.author.id: [login]}, j)
+                    await ctx.send("Der Reminder wurde gesetzt")
+                    if ctx.guild:
+                        await ctx.message.delete()
+
     @tasks.loop(seconds=120)
     async def twitchreminder(self):
         with open("twitch.json", "r") as j:
