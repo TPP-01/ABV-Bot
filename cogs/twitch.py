@@ -41,6 +41,7 @@ class twitch(commands.Cog):
     async def remind(self, ctx, login):
         with open("twitch.json", "w+") as j:  # ToDo: Komplett überarbeiten und testen
             s = j.read()
+            print(s)
             if s != "":
                 twitchjson = json.loads(s)
                 print(twitchjson)
@@ -51,7 +52,10 @@ class twitch(commands.Cog):
                     twitchjson[ctx.author.id] = []
                     print("KeyError")
 
-                twitchjson[ctx.author.id].append(login)
+                streamerlist = twitchjson[ctx.author.id]
+                streamerlist.append(login)
+                twitchjson[ctx.author.id] = streamerlist
+                print(streamerlist)
                 print(twitchjson)
                 j.write(json.dumps(twitchjson))
                 await ctx.send("Der Reminder wurde gesetzt")
