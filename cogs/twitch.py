@@ -39,7 +39,7 @@ class twitch(commands.Cog):
 
     @commands.command(name="remind", help="Remind when specific twitch-streamers stream.")
     async def remind(self, ctx, login):
-        with open("twitch.json", "r+") as j:  # ToDo: Komplett überarbeiten und testen
+        with open("twitch.json", "w+") as j:  # ToDo: Komplett überarbeiten und testen
             s = j.read()
             if s != "":
                 twitchjson = json.loads(s)
@@ -49,6 +49,7 @@ class twitch(commands.Cog):
                     twitchjson[ctx.author.id]
                 except KeyError:
                     twitchjson[ctx.author.id] = []
+                    print("KeyError")
 
                 twitchjson[ctx.author.id].append(login)
                 print(twitchjson)
