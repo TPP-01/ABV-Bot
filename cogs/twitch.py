@@ -53,7 +53,7 @@ class twitch(commands.Cog):
                     twitchjson[str(ctx.author.id)] = streamerlist
                     print(streamerlist)
                     print(twitchjson)
-                    j.write(json.dumps(twitchjson))
+                    json.dump(twitchjson, j)
                     await ctx.send("Der Reminder wurde gesetzt")
                     if ctx.guild:
                         await ctx.message.delete()
