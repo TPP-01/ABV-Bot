@@ -79,7 +79,7 @@ class twitch(commands.Cog):
                                         streams, gamename, since = self.doesstream(streamer)
                                         if streams:
                                             print(f"cogs.twitch: streams + {since}")
-                                            last3min = (datetime.datetime.now().minute + 60 * datetime.datetime.now().hour) - (int(since.split(":")[2]) + 60 * int(since.split(":")[1]))
+                                            last3min = (datetime.datetime.now().minute + 60 * datetime.datetime.now().hour) - (int(since.split(":")[1]) + 60 * (int(since.split(":")[0]) + 1))
                                             if 2 >= last3min > 0:
                                                 print("cogs.twitch: sent")
                                                 await member.send(f"Der Streamer {streamer} streamt {gamename}!")
