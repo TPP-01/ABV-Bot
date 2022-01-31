@@ -71,19 +71,23 @@ class twitch(commands.Cog):
                 for userid, streamers in twitchjson.items():
                     userid = int(userid)
                     for guild in self.bot.guilds:
-                        for member in guild.members:
-                            if int(member.id) == userid:
-                                if member is not None:
-                                    for streamer in streamers:
-                                        streams, gamename, since = self.doesstream(streamer)
-                                        if streams:
-                                            last3min = (datetime.datetime.now().minute + 60 * (
-                                                        datetime.datetime.now().hour + 1)) - (
-                                                                   int(since.split(":")[1]) + 60 * (
-                                                                       int(since.split(":")[0]) + 1))
-                                            if 2 >= last3min > 0:
-                                                await member.send(f"Der Streamer {streamer} streamt {gamename}!")
-                                                return
+                        if sent:
+                            sent = False
+                            break
+                        else:
+                            for member in guild.members:
+                                if int(member.id) == userid:
+                                    if member is not None:
+                                        for streamer in streamers:
+                                            streams, gamename, since = self.doesstream(streamer)
+                                            if streams:
+                                                last3min = (datetime.datetime.now().minute + 60 * (
+                                                            datetime.datetime.now().hour + 1)) - (
+                                                                       int(since.split(":")[1]) + 60 * (
+                                                                           int(since.split(":")[0]) + 1))
+                                                if 2 >= last3min > 0:
+                                                    await member.send(f"Der Streamer {streamer} streamt {gamename}!")
+                                                    sent = True
 
     @twitchreminder.before_loop
     async def twitchremider_before_ready(self):
