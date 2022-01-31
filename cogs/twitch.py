@@ -83,7 +83,7 @@ class twitch(commands.Cog):
                                             if 2 >= last3min > 0:
                                                 print("cogs.twitch: sent")
                                                 await member.send(f"Der Streamer {streamer} streamt {gamename}!")
-                                    break
+                                break
 
 
     @twitchreminder.before_loop
