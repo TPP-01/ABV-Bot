@@ -81,8 +81,9 @@ class twitch(commands.Cog):
                         for streamer in streamers:
                             streams, gamename, since = self.doesstream(streamer)
                             if streams:
-                                if (datetime.datetime.now().minute + 60 * datetime.datetime.now().hour) - (
-                                        int(since.split(":")[2]) + 60 * int(since.split(":")[1])) <= 3:
+                                last3min = (datetime.datetime.now().minute + 60 * datetime.datetime.now().hour) - (
+                                        int(since.split(":")[2]) + 60 * int(since.split(":")[1])) <= 3
+                                if last3min <= 3 and last3min > 0:
                                     await user.send(f"Der Streamer {streamer} streamt {gamename}!")
             j.close()
 
