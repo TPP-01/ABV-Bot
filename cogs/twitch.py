@@ -61,7 +61,6 @@ class twitch(commands.Cog):
                         await ctx.send("Der Reminder wurde gesetzt")
                         if ctx.guild:
                             await ctx.message.delete()
-                j.close()
 
     @tasks.loop(seconds=120)
     async def twitchreminder(self):
@@ -71,21 +70,18 @@ class twitch(commands.Cog):
                 twitchjson = json.loads(s)
                 for userid, streamers in twitchjson.items():
                     userid = int(userid)
-                    user = None
                     for guild in self.bot.guilds:
                         for member in guild.members:
                             if int(member.id) == userid:
-                                user = member
                                 break
-                    if user is not None:
+                    if member is not None:
                         for streamer in streamers:
                             streams, gamename, since = self.doesstream(streamer)
                             if streams:
                                 last3min = (datetime.datetime.now().minute + 60 * datetime.datetime.now().hour) - (
-                                        int(since.split(":")[2]) + 60 * int(since.split(":")[1])) <= 3
-                                if last3min <= 3 and last3min > 0:
-                                    await user.send(f"Der Streamer {streamer} streamt {gamename}!")
-            j.close()
+                                        int(since.split(":")[2]) + 60 * int(since.split(":")[1]))
+                                if last3min <= 2 and last3min > 0:
+                                    await member.send(f"Der Streamer {streamer} streamt {gamename}!")
 
     @twitchreminder.before_loop
     async def twitchremider_before_ready(self):
