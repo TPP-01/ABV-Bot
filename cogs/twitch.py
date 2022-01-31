@@ -73,15 +73,18 @@ class twitch(commands.Cog):
                     for guild in self.bot.guilds:
                         for member in guild.members:
                             if int(member.id) == userid:
-                                break
-                    if member is not None:
-                        for streamer in streamers:
-                            streams, gamename, since = self.doesstream(streamer)
-                            if streams:
-                                last3min = (datetime.datetime.now().minute + 60 * datetime.datetime.now().hour) - (
-                                        int(since.split(":")[2]) + 60 * int(since.split(":")[1]))
-                                if last3min <= 2 and last3min > 0:
-                                    await member.send(f"Der Streamer {streamer} streamt {gamename}!")
+                                if member is not None:
+                                    print("cogs.twitch: Member found")
+                                    for streamer in streamers:
+                                        streams, gamename, since = self.doesstream(streamer)
+                                        if streams:
+                                            print("cogs.twitch: streams")
+                                            last3min = (datetime.datetime.now().minute + 60 * datetime.datetime.now().hour) - (int(since.split(":")[2]) + 60 * int(since.split(":")[1]))
+                                            if 2 >= last3min > 0:
+                                                print("cogs.twitch: sent")
+                                                await member.send(f"Der Streamer {streamer} streamt {gamename}!")
+                                    break
+
 
     @twitchreminder.before_loop
     async def twitchremider_before_ready(self):
