@@ -11,12 +11,12 @@ class MainModule(commands.Cog):
     @commands.command(name='coolbot', hidden=True)
     async def cool_bot(self, ctx):
         await ctx.send('This bot is cool. :)')
-    @commands.command(name="version", help="shows the used discord.py version andtheversion of la bot", delete_after=60)
+    @commands.command(name="version", help="shows the used discord.py version and the version of la bot", delete_after=60)
     async def version(self, ctx):
         await ctx.send(f"Used discord.py version : {discord.__version__}, Bot version : {config.bot_version}")
 
 
-    @commands.command(name="help", help="well yk what help is do you?")
+    @commands.command(name="help", help="well yk what help is, do you?")
     async def help(self, ctx):
         embed = discord.Embed(title="Help", color=0xff2600)
         embed.add_field(name="Please visit our GitHub wiki for all comands",
@@ -29,6 +29,8 @@ class MainModule(commands.Cog):
         print(member)
         print(ctx.author)
         await member.send(content)
+        if ctx.guild:
+            await ctx.message.delete()
 
     #@commands.Cog.listener()
     #async def on_command(self,ctx):
