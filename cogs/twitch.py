@@ -36,6 +36,29 @@ class twitch(commands.Cog):
         if ctx.guild:
             await ctx.message.delete()
 
+    @commands.command(name="unremind", help="Unremind streamer' streams")
+    async def unremind(self, ctx, login):
+        with open("twitch.json", "r") as j:
+            s = j.read()
+            with open("twitch.json", "w") as j:
+                if s != "":
+                    twitchjson = json.loads(s)
+                    try:
+                        streamerslist = twitchjson[str(ctx.author.id)]
+                        try:
+                            streamerslist.pop(streamerslist.index(login))
+                            twitchjson[str(ctx.author.id)] = streamerslist
+                            await ctx.send("Der Reminder wurde gelöscht.")
+                            await ctx.message.delete()
+
+                        except IndexError:
+                            await ctx.send("Du hast keinen Reminder für diesen Streamer gesetzt.")
+                            await ctx.message.delete()
+
+                    except KeyError:
+                        await ctx.send("Du bist nicht in der Datenbank.")
+                        await ctx.message.delete()
+
     @commands.command(name="remind", help="Remind when specific twitch-streamers stream.")
     async def remind(self, ctx, login):
         with open("twitch.json", "r") as j:
@@ -48,6 +71,7 @@ class twitch(commands.Cog):
                         if not login in streamerlist:
                             streamerlist.append(login)
                         twitchjson[str(ctx.author.id)] = streamerlist
+
                     except KeyError:
                         twitchjson[str(ctx.author.id)] = [login]
                     json.dump(twitchjson, j)
@@ -83,9 +107,9 @@ class twitch(commands.Cog):
                                             streams, gamename, since = self.doesstream(streamer)
                                             if streams:
                                                 last3min = (datetime.datetime.now().minute + 60 * (
-                                                            datetime.datetime.now().hour + 1)) - (
-                                                                       int(since.split(":")[1]) + 60 * (
-                                                                           int(since.split(":")[0]) + 1))
+                                                        datetime.datetime.now().hour + 1)) - (
+                                                                   int(since.split(":")[1]) + 60 * (
+                                                                   int(since.split(":")[0]) + 1))
                                                 if 2 >= last3min > 0:
                                                     await member.send(f"Der Streamer {streamer} streamt {gamename}!")
                                                     sent = True
