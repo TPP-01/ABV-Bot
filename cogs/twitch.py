@@ -38,6 +38,7 @@ class twitch(commands.Cog):
 
     @commands.command(name="unremind", help="Unremind streamer' streams")
     async def unremind(self, ctx, login):
+        login = login.lower()
         with open("twitch.json", "r") as j:
             s = j.read()
             with open("twitch.json", "w") as j:
@@ -45,10 +46,8 @@ class twitch(commands.Cog):
                     twitchjson = json.loads(s)
                     try:
                         streamerslist = twitchjson[str(ctx.author.id)]
-                        print(streamerslist)
                         try:
                             streamerslist.pop(streamerslist.index(login))
-                            print(streamerslist)
                             twitchjson[str(ctx.author.id)] = streamerslist
                             await ctx.send("Der Reminder wurde gelöscht.")
                             await ctx.message.delete()
@@ -63,6 +62,7 @@ class twitch(commands.Cog):
 
     @commands.command(name="remind", help="Remind when specific twitch-streamers stream.")
     async def remind(self, ctx, login):
+        login = login.lower()
         with open("twitch.json", "r") as j:
             s = j.read()
             with open("twitch.json", "w") as j:
