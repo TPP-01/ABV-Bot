@@ -27,6 +27,7 @@ class MainModule(commands.Cog):
     @commands.command(name="msg")
     async def msg(self, ctx, member: discord.Member, *, content):
         print(member)
+        print(ctx.author)
         await member.send(content)
         if ctx.guild:
             await ctx.message.delete()
