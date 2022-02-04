@@ -49,7 +49,7 @@ class twitch(commands.Cog):
                         try:
                             streamerslist.pop(streamerslist.index(login))
                             twitchjson[str(ctx.author.id)] = streamerslist
-                            json.dump(twitchjson, j)
+                            j.write(json.dumps(twitchjson))
                             await ctx.send("Der Reminder wurde gelöscht.")
                             await ctx.message.delete()
 
