@@ -5,7 +5,7 @@ import random
 from datetime import datetime
 import pendulum
 class mcsrv_functs():
-    #the credit to the endpoints goes to https://iapetus11.me/ d
+    #the credit to the endpoints goes to https://iapetus11.me/
     def __init__(self):
         print("good")
     def server_info_funct(ip):
