@@ -13,7 +13,7 @@ class minecraft(commands.Cog):
         self.bot = bot
 
         def json_para():
-            with open("config.json") as f:
+            with open("configdir/config.json") as f:
                 data = json.load(f)
                 print(type(data))
                 return data
