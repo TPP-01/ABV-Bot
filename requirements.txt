@@ -6,4 +6,4 @@ PyGithub==1.55
 pyowm==3.2.0
 requests==2.27.1
 pendulum~=2.1.2
-py-cord==2.0.0b1
+py-cord==2.0.0b5
