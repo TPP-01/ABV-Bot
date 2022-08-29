@@ -2,8 +2,8 @@
 ## About  
 this is the official discord bot of the ABV using pycord which is a fork of discord.py  
 ## Installation  
-Currently Development has been inactive for a few Months due to personal Stuff.
-The Project is in an Alpha phase, so its not recommended to add this bot to a server, if you still want to do this, please open a issue with the tag (invite request)
+Currently Development has been (and will be) inactive for a few Months due to personal Stuff.
+The Project is stable, its not recommended to add this bot to a server, because we did not test the bot in-Depth for bugs, if you still want to use our bot, please open a issue with the tag (invite request)
 ## Setup  
 
 ## Using our cogs in your bot  
