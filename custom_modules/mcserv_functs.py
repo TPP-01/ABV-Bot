@@ -5,11 +5,12 @@ import random
 from datetime import datetime
 import pendulum
 class mcsrv_functs():
+    #the credit to the endpoints goes to https://iapetus11.me/
     def __init__(self):
         print("good")
     def server_info_funct(ip):
         player_list_cut = []
-        API_URL = f"https://api.iapetus11.me/mc/status/{str(ip)}"
+        API_URL = f"https://api.iapetus11.me/mc/server/status/{str(ip)}"
         r = requests.get(API_URL)
         response = r.json()
         res = response
@@ -18,14 +19,14 @@ class mcsrv_functs():
         players = ""
         # IMG_API = f"https://api.iapetus11.me/mc/servercard/{str(ip)}"
         if res["online"]:
-            online_players = res["players_online"]
-            max_players = res["players_max"]
+            online_players = res["online_players"]
+            max_players = res["max_players"]
             player_list = res["players"]
             if not player_list:
                 players = "Nobody online"
             else:
                 for p in player_list:
-                    name = p["name"]
+                    name = p["username"]
                     player_list_cut.append(name)
                     # print(player_list)[debug]
                     # print(player_list_cut)[debug]
@@ -39,7 +40,7 @@ class mcsrv_functs():
             current_time = datetime.now(timezone2)
             dt_string = current_time.strftime("%d/%m/%Y %H:%M:%S")
             embed = discord.Embed(title=f"{ip} is online", color=0x07e43e)
-            embed.set_image(url=f"https://api.iapetus11.me/mc/servercard/{str(ip)}?v={random.random() * 100000}")
+            embed.set_image(url=f"https://api.iapetus11.me/mc/server/status/{str(ip)}/image?v={random.random() * 100000}")
             embed.add_field(name="IP", value=ip, inline=True)
             embed.add_field(name="Version", value=res["version"]["software"], inline=True)
             embed.add_field(name=f"Online Players ({online_players}/{max_players})", value=players, inline=False)
@@ -52,4 +53,4 @@ class mcsrv_functs():
 
 
 if __name__ == "__main__":
-    mcsrv_functs.server_info_funct("1.1.1.1")
+    print(str(mcsrv_functs.server_info_funct("185.137.121.80:25565")))
