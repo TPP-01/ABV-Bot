@@ -14,7 +14,7 @@ class utility(commands.Cog):
 
     data = rki.get_daily_data()
     commands.Bot.data = data
-
+    #
     @commands.command(name="covid", aliases=["corona", "virus"])
     async def covid(self, ctx):
         embed = discord.Embed(title="Covid in Germany")
