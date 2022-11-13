@@ -53,4 +53,4 @@ class mcsrv_functs():
 
 
 if __name__ == "__main__":
-    print(str(mcsrv_functs.server_info_funct("185.137.121.80:25565")))
+    print(str(mcsrv_functs.server_info_funct("play.abv-ttp.de:25565")))

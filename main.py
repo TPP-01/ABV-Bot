@@ -2,9 +2,14 @@ import discord
 from discord.ext import commands
 import cogs.minecraft
 import secrets
+from dotenv import load_dotenv
+import os
 
 intents = discord.Intents.default()
 intents.members = True
+load_dotenv()
+token = os.environ['TOKEN']
+
 
 def get_prefix(bot, message):
     # in this list are all prefixes allowed
@@ -38,4 +43,4 @@ async def on_ready():
                 #break
 
 
-bot.run(secrets.token, reconnect=True)
+bot.run(token, reconnect=True)
