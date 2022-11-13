@@ -7,6 +7,7 @@ import random
 import asyncio
 import custom_modules.mcserv_functs
 # Credits to the API to https://github.com/Iapetus-11
+
 class minecraft(commands.Cog):
 
     def __init__(self, bot):
@@ -18,7 +19,6 @@ class minecraft(commands.Cog):
                 print(type(data))
                 return data
         self.lock = asyncio.Lock()
-        #self.mysticcraft_serv_checker.start()
         self.minecraft_server_checker.start()
         self.json_data = json_para()
     #only here for demo
@@ -58,9 +58,9 @@ class minecraft(commands.Cog):
         #await self.bot.wait_until_ready()
 
 
-    @minecraft_server_checker.before_loop
-    async def before_minecrft_chern(self):
-        await self.bot.wait_until_ready()
+    #@minecraft_server_checker.before_loop
+    #async def before_minecrft_chern(self):
+        #await self.bot.wait_until_ready()
     @commands.command(name="serverinfo", aliases=["si"])
     async def serverinfo(self, ctx, ip):
         embed = custom_modules.mcserv_functs.mcsrv_functs.server_info_funct(ip=ip)
@@ -70,5 +70,5 @@ class minecraft(commands.Cog):
 
 
 
-def setup(bot):
-    bot.add_cog(minecraft(bot))
+async def setup(bot):
+    await bot.add_cog(minecraft(bot))

@@ -23,5 +23,5 @@ class translation(commands.Cog):
         await ctx.send(embed=embed, delete_after=60)
 
 
-def setup(bot):
-    bot.add_cog(translation(bot))
+async def setup(bot):
+    await bot.add_cog(translation(bot))

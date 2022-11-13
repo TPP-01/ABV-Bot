@@ -14,5 +14,5 @@ class memes(commands.Cog):
         embed.set_footer(text="made by the ABV-Bot Development Team")
         await ctx.send(embed=embed)
 
-def setup(bot):
-    bot.add_cog(memes(bot))
+async def setup(bot):
+    await bot.add_cog(memes(bot))

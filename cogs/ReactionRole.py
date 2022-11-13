@@ -136,5 +136,5 @@ class ReactionRole(commands.Cog):
                 break
 
 
-def setup(bot):
-    bot.add_cog(ReactionRole(bot))
+async def setup(bot):
+    await bot.add_cog(ReactionRole(bot))

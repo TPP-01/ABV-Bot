@@ -16,13 +16,13 @@ class MainModule(commands.Cog):
         await ctx.send(f"Used discord.py version : {discord.__version__}, Bot version : {config.bot_version}")
 
 
-    @commands.command(name="help", help="well yk what help is, do you?")
-    async def help(self, ctx):
-        embed = discord.Embed(title="Help", color=0xff2600)
-        embed.add_field(name="Please visit our GitHub wiki for all comands",
-                        value="https://github.com/TPP-01/ABV-Bot/wiki/Commands", inline=False)
-        embed.set_footer(text="made by the ABV-Team")
-        await ctx.send(embed=embed)
+    #@commands.command(name="help", help="well yk what help is, do you?")
+    #async def help(self, ctx):
+        #embed = discord.Embed(title="Help", color=0xff2600)
+        #embed.add_field(name="Please visit our GitHub wiki for all comands",
+                        #value="https://github.com/TPP-01/ABV-Bot/wiki/Commands", inline=False)
+        #embed.set_footer(text="made by the ABV-Team")
+        #await ctx.send(embed=embed)
 
     @commands.command(name="msg")
     async def msg(self, ctx, member: discord.Member, *, content):
@@ -90,5 +90,5 @@ class MainModule(commands.Cog):
 
 
 
-def setup(bot):
-    bot.add_cog(MainModule(bot))
+async def setup(bot):
+    await bot.add_cog(MainModule(bot))

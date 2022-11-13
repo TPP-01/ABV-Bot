@@ -126,4 +126,8 @@ def setup(bot):
     t = twitch(bot)
     bot.add_cog(t)
 
+async def setup(bot):
+    await bot.add_cog(twitch(bot))
+
 # ToDo: Code beschreiben
+

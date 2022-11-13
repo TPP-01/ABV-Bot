@@ -5,42 +5,40 @@ import secrets
 from dotenv import load_dotenv
 import os
 
-intents = discord.Intents.default()
+intents = discord.Intents.all()
 intents.members = True
+intents.message_content = True
 load_dotenv()
 token = os.environ['TOKEN']
 
 
-def get_prefix(bot, message):
-    # in this list are all prefixes allowed
-    prefixes = ['=']
-
-    # if the command is not in a guild use only this prefixes
-    if not message.guild:
-        return '='
-    return commands.when_mentioned_or(*prefixes)(bot, message)
 
 
 #cogs to use
 initial_extensions = ["cogs.MainModule", "cogs.Fun", "cogs.NSFW", "cogs.BotOwner", "cogs.Admin", "cogs.Utility", "cogs.ReactionRole", "cogs.translation", "cogs.sound", "cogs.minecraft", "cogs.memes"]
 
-bot = commands.Bot(command_prefix=get_prefix, description="The official ABV bot",intents=intents, help_command=None)
+class MyBot(commands.Bot):
+    def __init__(self):
+        super().__init__(command_prefix='=', intents=intents)
+        self.initial_extensions = [
+            'cogs.Admin',
+            'cogs.MainModule',
+            'cogs.BotOwner',
+            'cogs.Fun',
+            'cogs.memes',
+            'cogs.minecraft',
+        ]
 
-if __name__ == '__main__':
-    for extension in initial_extensions:
-        bot.load_extension(extension)
-
-
-@bot.event
-async def on_ready():
-    print(f'\n\nLogged in as: {bot.user.name} - {bot.user.id}\nVersion: {discord.__version__}\nBot Latency: {round(bot.latency * 1000,2)}ms')
-    print(f'Successfully logged in and booted...!')
-    print([str(i).replace(',', '\n') for i in bot.guilds])
-    #for server in bot.guilds:
-        #for channel in server.channels:
-            #if channel.permission_for(server.me).create_instant_invite:
-                #print(f"Invite für {server.name}: {await channel.create_invite()}")
-                #break
+    async def setup_hook(self):
+        for ext in self.initial_extensions:
+            await self.load_extension(ext)
 
 
+    async def close(self):
+        await super().close()
+
+    async def on_ready(self):
+        print('Ready!')
+
+bot = MyBot()
 bot.run(token, reconnect=True)

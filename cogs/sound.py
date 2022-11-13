@@ -72,5 +72,5 @@ class sound(commands.Cog):
             print("No Permissions to delete ctx.message")
 
 
-def setup(bot):
-    bot.add_cog(sound(bot))
+async def setup(bot):
+    await bot.add_cog(sound(bot))
