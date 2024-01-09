@@ -1,7 +1,11 @@
 import discord
 from discord.ext import commands
 import cogs.minecraft
-import secrets
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
 
 intents = discord.Intents.default()
 intents.members = True
@@ -17,7 +21,7 @@ def get_prefix(bot, message):
 
 
 #cogs to use
-initial_extensions = ["cogs.MainModule", "cogs.Fun", "cogs.NSFW", "cogs.BotOwner", "cogs.Admin", "cogs.Utility", "cogs.ReactionRole", "cogs.translation", "cogs.sound", "cogs.minecraft", "cogs.memes"]
+initial_extensions = ["cogs.MainModule", "cogs.Fun", "cogs.NSFW", "cogs.BotOwner", "cogs.Admin", "cogs.ReactionRole", "cogs.translation", "cogs.sound", "cogs.memes"]
 
 bot = commands.Bot(command_prefix=get_prefix, description="The official ABV bot",intents=intents, help_command=None)
 
@@ -38,4 +42,4 @@ async def on_ready():
                 #break
 
 
-bot.run(secrets.token, reconnect=True)
+bot.run(os.getenv("TOKEN"), reconnect=True)
