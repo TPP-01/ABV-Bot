@@ -7,7 +7,7 @@ embed.add_field(name="slap [user]", value="slaps someone", inline=False)
 embed.add_field(name="wahrheitoderpflicht", value="wahrheit oder pflicht", inline=False)
 embed.add_field(name="undefined", value="undefined", inline=False)
 embed.set_footer(text="made with hate by blockcrafter#5759")
-await ctx.send(embed=embed)
+await ctx.respond(embed=embed)
 
 
 
@@ -26,7 +26,7 @@ class audio(commands.Cog):
 
     @commands.command(name="play")
     async def play(self, ctx):
-        await ctx.send("tbd")
+        await ctx.respond("tbd")
         voice_channel = ctx.message.author.voice.channel
         voice_client = await voice_channel.connect()
         voice_client.play(discord.FFmpegPCMAudio(source="russia.mp3"))
@@ -35,7 +35,7 @@ class audio(commands.Cog):
 
     @commands.command(name="list_songs", aliases=["list"])
     async def list_songs(self, ctx):
-        await ctx.send("tbd")
+        await ctx.respond("tbd")
 def setup(bot):
     bot.add_cog(audio(bot))
 
