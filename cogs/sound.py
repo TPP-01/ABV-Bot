@@ -20,7 +20,7 @@ class sound(commands.Cog):
         if self.voice_channel is not None:
             self.voice_channel = self.voice_channel.channel
             channelname = self.voice_channel.name
-            await ctx.send(f"Playing in {channelname}")
+            await ctx.respond(f"Playing in {channelname}")
             self.vc = await self.voice_channel.connect()
             self.vc.play(discord.FFmpegPCMAudio(source="music/earrape.mp3"))
             while self.vc.is_playing():
@@ -30,8 +30,7 @@ class sound(commands.Cog):
             except:
                 pass
         else:
-            await ctx.send(f"{ctx.author.name} is not in a channel")
-        await ctx.message.delete()
+            await ctx.respond(f"{ctx.author.name} is not in a channel")
 
 
     @commands.slash_command(guild_ids = [760547427152560160, 1227685392602370088], name="tts")
@@ -50,7 +49,7 @@ class sound(commands.Cog):
         if self.voice_channel is not None:
             self.voice_channel = self.voice_channel.channel
             channelname = self.voice_channel.name
-            await ctx.send(f"Playing in {channelname}")
+            await ctx.respond(f"Playing in {channelname}")
             self.vc = await self.voice_channel.connect()
             self.vc.play(discord.FFmpegPCMAudio(source=full_path))
             while self.vc.is_playing():
@@ -62,9 +61,7 @@ class sound(commands.Cog):
             except:
                 pass
         else:
-            await ctx.send(f"{ctx.author.name} is not in a channel")
-        if ctx.guild:
-            await ctx.message.delete()
+            await ctx.respond(f"{ctx.author.name} is not in a channel")
 
     @commands.slash_command(guild_ids = [760547427152560160, 1227685392602370088], name="disconnect", aliases=["dc"])
     async def disconnect(self, ctx):
@@ -72,12 +69,8 @@ class sound(commands.Cog):
         Disconnects the bot from any VC
         """
         await self.vc.disconnect()
-        await ctx.send("Disconnected!")
-        try:
-            if ctx.guild:
-                await ctx.message.delete()
-        except:
-            print("No Permissions to delete ctx.message")
+        await ctx.respond("Disconnected!")
+
 
 
 def setup(bot):
