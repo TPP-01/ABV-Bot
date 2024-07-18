@@ -21,7 +21,7 @@ class Wetter(commands.Cog):
         embed.add_field(name=f"Aktuelle Temperatur in {Ort}", value=weather_var["temp"], inline=False)
         embed.add_field(name=f"Aktuelle Luftfeuchtigkeit in {Ort}", value=hum_var, inline=False)
         embed.add_field(name="Aktuelles Wetter (zusammengefasst)", value=w.detailed_status, inline=True)
-        embed.set_footer(text="made by blockcrafter#5759")
+        embed.set_footer(text="balls")
         await ctx.respond(embed=embed)
 
 

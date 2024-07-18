@@ -22,8 +22,7 @@ def get_prefix(bot, message):
 
 
 #cogs to use
-initial_extensions = ["cogs.Fun", "cogs.BotOwner", "cogs.Admin", "cogs.ReactionRole", "cogs.minecraft", "cogs.sound", "cogs.memes"]
-#initial_extensions = ["cogs.MainModule"]
+initial_extensions = ["cogs.MainModule", "cogs.Fun", "cogs.BotOwner", "cogs.Admin", "cogs.minecraft", "cogs.sound", "cogs.memes", "cogs.Wetter"]
 bot = commands.Bot(command_prefix=get_prefix, description="The official ABV bot", intents=intents, help_command=None)
 
 if __name__ == '__main__':
