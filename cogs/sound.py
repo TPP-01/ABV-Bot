@@ -9,8 +9,11 @@ class sound(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name="earrape", aliases=["er"])
+    @commands.slash_command(guild_ids = [760547427152560160, 1227685392602370088], name="earrape", aliases=["er"])
     async def earrape(self, ctx):
+        """
+        Plays a very very loud sound in the channel you are currently in
+        """
         self.voice_channel = ctx.author.voice
         channelname = None
 
@@ -31,9 +34,11 @@ class sound(commands.Cog):
         await ctx.message.delete()
 
 
-    @commands.command(name="tts")
+    @commands.slash_command(guild_ids = [760547427152560160, 1227685392602370088], name="tts")
     async def tts(self, ctx, text, lang="de"):
-
+        """
+        Does TTS in the vc you are currently in
+        """
         tts = gTTS(text, lang=lang)
         filename = f"temp.mp3"
         full_path = f"tts_audio/{filename}"
@@ -61,8 +66,11 @@ class sound(commands.Cog):
         if ctx.guild:
             await ctx.message.delete()
 
-    @commands.command(name="disconnect", aliases=["dc"])
+    @commands.slash_command(guild_ids = [760547427152560160, 1227685392602370088], name="disconnect", aliases=["dc"])
     async def disconnect(self, ctx):
+        """
+        Disconnects the bot from any VC
+        """
         await self.vc.disconnect()
         await ctx.send("Disconnected!")
         try:

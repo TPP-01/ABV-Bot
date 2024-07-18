@@ -28,7 +28,7 @@ class Welcome(commands.Cog):
     # a single line.
     #some_stuff = await bot.loop.run_in_executor(None, thing)
 
-
+# WTF is this code lol
 
 def setup(bot):
     bot.add_cog(Welcome(bot))

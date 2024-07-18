@@ -9,7 +9,7 @@ class Wetter(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name="Wetter", aliases=["wetter"], description="zeig das wetter an",help="Gibt Wetterinformationen zum angegebenen ort aus")
+    @commands.slash_command(guild_ids = [760547427152560160, 1227685392602370088], name="Wetter", aliases=["wetter"], description="zeigt das wetter an", help="Gibt Wetterinformationen zum angegebenen Ort aus")
     async def wetter(ctx, Ort):
         observation = mgr.weather_at_place(str(Ort))
         w = observation.weather
@@ -22,8 +22,8 @@ class Wetter(commands.Cog):
         embed.add_field(name=f"Aktuelle Luftfeuchtigkeit in {Ort}", value=hum_var, inline=False)
         embed.add_field(name="Aktuelles Wetter (zusammengefasst)", value=w.detailed_status, inline=True)
         embed.set_footer(text="made by blockcrafter#5759")
-        await ctx.send(embed=embed, delete_after=30)
-        await ctx.message.delete()
+        await ctx.respond(embed=embed)
+
 
 
 def setup(bot):

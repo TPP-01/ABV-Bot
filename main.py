@@ -7,8 +7,9 @@ import os
 load_dotenv()
 
 
-intents = discord.Intents.default()
+intents = discord.Intents.all()
 intents.members = True
+
 
 def get_prefix(bot, message):
     # in this list are all prefixes allowed
@@ -21,9 +22,9 @@ def get_prefix(bot, message):
 
 
 #cogs to use
-initial_extensions = ["cogs.MainModule", "cogs.Fun", "cogs.NSFW", "cogs.BotOwner", "cogs.Admin", "cogs.ReactionRole", "cogs.translation", "cogs.sound", "cogs.memes"]
-
-bot = commands.Bot(command_prefix=get_prefix, description="The official ABV bot",intents=intents, help_command=None)
+initial_extensions = ["cogs.Fun", "cogs.BotOwner", "cogs.Admin", "cogs.ReactionRole", "cogs.minecraft", "cogs.sound", "cogs.memes"]
+#initial_extensions = ["cogs.MainModule"]
+bot = commands.Bot(command_prefix=get_prefix, description="The official ABV bot", intents=intents, help_command=None)
 
 if __name__ == '__main__':
     for extension in initial_extensions:
@@ -34,7 +35,7 @@ if __name__ == '__main__':
 async def on_ready():
     print(f'\n\nLogged in as: {bot.user.name} - {bot.user.id}\nVersion: {discord.__version__}\nBot Latency: {round(bot.latency * 1000,2)}ms')
     print(f'Successfully logged in and booted...!')
-    print([str(i).replace(',', '\n') for i in bot.guilds])
+    #print([str(i).replace(',', '\n') for i in bot.guilds])
     #for server in bot.guilds:
         #for channel in server.channels:
             #if channel.permission_for(server.me).create_instant_invite:
@@ -42,4 +43,4 @@ async def on_ready():
                 #break
 
 
-bot.run(os.getenv("TOKEN"), reconnect=True)
+bot.run(str(os.getenv("TOKEN")))

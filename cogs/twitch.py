@@ -26,7 +26,7 @@ class twitch(commands.Cog):
 
         return streams, gamename, since
 
-    @commands.command(name="streams", help="Show the streaming state with login_names")
+    @commands.slash_command(name="streams", help="Show the streaming state with login_names")
     async def streams(self, ctx, login):
         streams, gamename, since = self.doesstream(login)
         if streams:
@@ -36,7 +36,7 @@ class twitch(commands.Cog):
         if ctx.guild:
             await ctx.message.delete()
 
-    @commands.command(name="unremind", help="Unremind streamer' streams")
+    @commands.slash_command(name="unremind", help="Unremind streamer' streams")
     async def unremind(self, ctx, login):
         login = login.lower()
         with open("twitch.json", "r") as j:
@@ -61,7 +61,7 @@ class twitch(commands.Cog):
                         await ctx.send("Du bist nicht in der Datenbank.")
                         await ctx.message.delete()
 
-    @commands.command(name="remind", help="Remind when specific twitch-streamers stream.")
+    @commands.slash_command(name="remind", help="Remind when specific twitch-streamers stream.")
     async def remind(self, ctx, login):
         login = login.lower()
         with open("twitch.json", "r") as j:
